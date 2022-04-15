@@ -1,0 +1,236 @@
+﻿<!-- 普通版请保留部分版权，感谢您对作者的尊重，一经发现可能会上黑名单的哦  -->
+<!doctype html>
+<html>
+
+<head>
+	<title>默笙工具箱V2.0</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+	/>
+	<meta name="description" content="默笙" />
+	<meta name="keywords" content="默笙工具箱V2.0" />
+	<meta name="theme-color" content="#279de4">
+	<link rel="shortcut icon" href="base/favicon.ico" />
+	<link href=".././Public/Home/css/bootstrap.min.css" rel="stylesheet" />
+	<link href=".././Public/Home/css/docs.min.css" rel="stylesheet">
+	<link href=".././Public/Home/css/font-awesome.min.css" rel="stylesheet" />
+	<link href=".././Public/Home/css/animate.min.css" rel="stylesheet">
+	<link href=".././Public/Home/css/index.css" rel="stylesheet" />
+	<script src=".././Public/Home/js/jquery.js"></script>
+	<script src=".././Public/Home/js/bootstrap.min.js"></script>
+	<script src=".././Public/Home/js/tool.js"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+  <meta name="360-site-verification" content="1e42f05e4207aff7269ecb07adf5a9a1" />
+  <style>
+  #myTab li:first-child .active{
+	  background: red;
+  }
+  </style>
+</head>
+
+<body onload="init()">
+	<header class="navbar navbar-static-top bs-docs-nav" role="banner">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar"
+				 aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="http://hkiii.cn/" class="navbar-brand" data-toggle="tooltip" data-placement="bottom" title="最全工具箱">默笙工具箱</a>
+			</div>
+			<nav id="bs-navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="http://boke.hkiii.cn" target="_blank" data-toggle="tooltip" data-placement="bottom" title="遇上更好的你！">HK的博客</a>
+					</li><li>
+						<a href="http://bbq.hkiii.cn" target="_blank" data-toggle="tooltip" data-placement="bottom" title="">HK表白网</a>
+					</li><li>
+						<a href="http://mz.hkiii.cn" target="_blank" data-toggle="tooltip" data-placement="bottom" title="">HK秒赞网</a>
+					</li><li>
+						<a href=" http://hkiii.cn/admin.php " target="_blank" data-toggle="tooltip" data-placement="bottom" title="">后台管理</a>
+					</li>					<li>
+						<div class="searchbutton">
+							<input type="text" id="getsearch" placeholder="搜索..." />
+							<button onclick="search()" data-toggle="modal" data-target="#searchmodal" data-toggle="tooltip"></button>
+						</div>
+					</li>
+				</ul>
+			</nav>
+			<div class="preloader">
+				<div class="preloader-box">
+					<div>默</div>
+					<div>笙</div>
+					<div>工</div>
+					<div>具</div>
+					<div>2.</div>
+					<div>0</div>
+					
+				</div>
+			</div>
+			<p class="stitle">发现好玩，分享有趣</p>
+			<p class="notice">
+				<marquee direction="right" behavior="scroll" scrollamount="6" scrolldelay="0" loop="-1" hspace="10" vspace="10"></marquee>
+			</p>
+		</div>
+	</header>
+	<div class="nav-list">
+		<ul id="myTab" class="nav nav-tabs nav-justified">
+			<volist name="class" id="ls" offset='0' length='10' key='k'>
+			<li <if condition="$k == 1">class="active"</if>>
+				
+				<a href="#{$ls.classid}" data-toggle="tab" id="toWx">
+					{$ls.classname}
+				</a>
+			</li>
+			</volist>
+		</ul>
+	</div>
+	<div class="container">
+		<div id="myTabContent" class="tab-content">
+			<volist name="tools" id="cs" >
+			 <div class='tab-pane fade <if condition="$cs[classid]==fun ">in active</if>' id="{$cs.classid}">
+			 	<volist name="cs.arr" id = "css" >
+
+						<a href="{$css.url}" target="_blank">
+						<li class="item">
+							<div class="i-head">
+								<span class="{$css.color}">{$css.logo}</span>
+								<p>{$css.title}</p>
+							</div>
+							<div class="i-body">
+								<p class="hot">
+									<i class="fa fa-user" aria-hidden="true"></i>{$css.author}</p>
+								<p class="goto">
+									<i class="fa fa-sign-in" aria-hidden="true"></i>Go</p>
+							</div>
+						</li>
+					</a>
+				</volist>
+			</div>
+			</volist>
+		</div>
+	</div>
+	<footer>
+		<div class="container">
+			<div class="nowtime">
+				<h4>
+					<i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;当前时间</h4>
+				<div id="time"></div>
+			</div>
+			<div class="weather">
+				<p>您的IP地址:223.91.248.191					<p>来自新乡    						<p>今天白天:西风,4级,空气湿度:11%</p>
+							 体感温度: 14℃
+							<br>主要污染物:							<br> 空气质量: 							<br>温馨提醒:  </p>
+						<p>更新于:2019/01/22&nbsp;&nbsp;15:38</p>
+						<p>享受生活每一天</p> 
+						
+
+			</div>
+			<div class="oneword">
+				<h4>
+					<i class="fa fa-commenting-o" aria-hidden="true"></i>&nbsp;一言</h4>
+				<script type="text/javascript" >
+					function xsjhitokoto(){document.write("在悲剧性的不合理世界，故事开始了。");}
+
+				</script>
+				<div id="xsjhitokoto">
+					<script>xsjhitokoto()</script>
+				</div>
+			</div>
+		</div>
+		<div class="contact">
+			<a id="weixin" data-toggle="popover" data-placement="top" data-original-title="" title="">
+					<i class="fa fa-qq" aria-hidden="true"></i>
+				</a>
+			
+			<a href="http://weibo.com/weizhuangxingfu">
+				<i class="fa fa-weibo" aria-hidden="true"></i>
+			</a>
+		</div>
+		<div class="copyright">
+			<span>Copyright © 2018 By:HK工作室<a href="http://www.miitbeian.gov.cn" title="备案" target="_blank">鄂ICP备17035777号-1</a></span>
+
+			<a href="http://mz.hkiii.cn" data-toggle="tooltip" data-placement="top" title="">HKMZ</a><a href="http://blog.hkiii.cn" data-toggle="tooltip" data-placement="top" title="遇上更好的你！">HK的博客</a>		</div>
+	</footer>
+	<div class="modal fade" id="aboutmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+	<div class="modal fade" id="searchmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h4 class="modal-title" id="myModalLabel">
+						搜索结果
+					</h4>
+				</div>
+				<div class="modal-body" id="searchresult">
+					<!-- <li class="item" style="width:50%;"><div class="i-head"><span class="open open1">百</span><p>让我帮你百度</p></div><div class="i-body"><p class="hot"><i class="fa fa-eye" aria-hidden="true"></i>5087</p><p class="goto"><i class="fa fa-sign-in" aria-hidden="true"></i>Go</p></div></li> -->
+				</div>
+				<img src="static/picture/loading.gif" class="loading" style="position: absolute;top: 50%;left: 50%;margin-left: -16px">
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="side">
+		<ul>
+			<li>
+				<a href="#wx" data-toggle="tab" id="goWx">
+					<i class="fa fa-header" aria-hidden="true">
+						<p>工作室</p>
+					</i>
+				</a>
+			</li>
+			<li>
+				<a href="#useful" data-toggle="tab" id="goUseful">
+					<i class="fa fa-cubes" aria-hidden="true">
+						<p>实用</p>
+					</i>
+				</a>
+			</li>
+			<li>
+				<a href="#effect" data-toggle="tab" id="goEffect">
+					<i class="fa fa-fire" aria-hidden="true">
+						<p>特效</p>
+					</i>
+				</a>
+			</li>
+			<li>
+				<a href="#fun" data-toggle="tab" id="goFun">
+					<i class="fa fa-paper-plane-o" aria-hidden="true">
+						<p>有趣</p>
+					</i>
+				</a>
+			</li>
+			<li>
+				<a href="#api" data-toggle="tab" id="goApi">
+					<i class="fa fa-font" aria-hidden="true">
+						<p>API</p>
+					</i>
+				</a>
+			</li>
+			<li>
+				<a href="#game" data-toggle="tab" id="goGame">
+					<i class="fa fa-gamepad" aria-hidden="true">
+						<p>游戏</p>
+					</i>
+				</a>
+			</li>
+			<li>
+				<a href="#" id="goTop">
+					<i class="fa fa-chevron-up" aria-hidden="true"></i>
+				</a>
+			</li>
+		</ul>
+	</div>
+	
+	<script src="static/js/docs.min.js"></script>
+	
+<!-- power By HK www.hkiii.cn 请保留此处版权 -->
+</html>
