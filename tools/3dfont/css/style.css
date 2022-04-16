@@ -1,0 +1,85 @@
+﻿* { 
+	transition: all 0.25s ease;
+	-webkit-transition: all 0.25s ease;
+	-moz-transition: all 0.25s ease;
+	-o-transition: all 0.25s ease;
+	-ms-transition: all 0.25s ease;
+	padding:0;
+	margin:0;
+}
+
+html, body {
+	width: 100%;
+}
+
+body {
+	background: #16a085;
+	font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+a{
+    text-decoration: none;
+}
+a:hover, a:focus{
+    text-shadow: 0 1px 1px #555;
+}
+
+/*动态背景*/
+#particles{  
+    position: fixed;  
+    right: 0px;  
+    bottom: 0px;  
+    min-width: 100%;  
+    min-height: 100%;  
+    height: auto;  
+    width: auto; 
+    z-index:-1;
+} 
+
+/*网站大标题*/
+.web-title{
+    color: #fff;
+    margin: 25px 0 30px 0;
+}
+
+.web-title small{
+    color: #e7e7e7;
+}
+
+.thumbnail{
+	height:310px;
+	margin-bottom:30px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width: 310px;
+}
+.thumbnail a{
+	text-decoration:none;
+}
+
+/*footer部分*/
+.main-footer,.main-footer a{
+    color: #fff;
+}
+.main-footer .row a{
+	padding-left:10px;
+}
+.main-footer .row{
+    margin-bottom: 50px;
+}
+.copyright{
+    margin-bottom: 10px;
+}
+
+/*导航栏收缩*/
+@media (min-width: 770px){
+    .navbar-brand {display: none;}
+}
+
+@media (max-width: 770px){
+    .web-title {display: none;}
+    .nav-main{padding: 0;}
+}
