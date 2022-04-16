@@ -1,0 +1,99 @@
+.content{
+	width: 1100px;margin:auto;
+}
+.content h2{
+	text-align: center;font-size: 24px;
+}
+.content h3{
+	font-size: 16px;color: #333;
+}
+.box{
+	position:relative;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.box input.uploadFile{
+	position:absolute;
+	top:0px;
+	opacity:0;
+	filter:alpha(opacity=0);
+	cursor:pointer;
+	width:705px;
+	height:36px;
+	overflow: hidden;
+}
+.box input.textbox{
+	float:left;
+	padding:5px;
+	color:#999;
+	height:24px;
+	line-height:24px;
+	border:1px #ccc solid;
+	width:600px;
+	margin-right:4px;
+}
+.box a.link{
+	float:left;
+	display:inline-block;
+	border: 0;
+	outline: none;
+	padding:4px 16px;
+	color:#fff;
+	font:14px "Microsoft YaHei", Verdana, Geneva, sans-serif;
+	cursor:pointer;
+	background-color:#0099ff;
+	line-height:28px;
+	text-decoration:none;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.content .ts{
+	color: #666;font-size: 13px;margin-bottom: 20px;line-height: 26px;
+}
+.result{
+	margin: 20px 0;padding:0px;font-size: 15px;color: #666;border: 1px solid #ddd;border-bottom: 0;
+}
+.result .rli{
+	height: 40px;line-height: 40px;border-bottom: 1px solid #ddd;color: #666;font-size: 14px;
+}
+.result .rli:nth-of-type(odd){
+	background: #f1f2f3;
+}
+.result .rli .name{
+	display: inline-block;height: 40px;width: 250px;border-right: 1px solid #ddd;text-align: center;
+}
+.result .rli .val{
+	padding: 0 30px;color:#333;
+}
+.result .rli .red{
+	color: #f00;font-weight: bold;
+}
+.examp p{
+	border-radius: 5px;-webkit-border-radius: 5px;
+	background: #f1f2f3;padding: 15px;font-size: 13px;color: #666;color: #555;line-height: 24px;
+}
+.all-type{
+	font-size: 13px;color: #666;color: #555;line-height: 24px;
+}
+table{
+	width: 100%;
+	border-collapse: collapse;
+	display: table;
+	width: 100%;
+	text-align: left;
+	margin-bottom: 24px;
+	margin-left: auto;
+	margin-right: auto;
+}
+table tr td, table tr th{
+	border: 1px solid #ddd;
+	font-size: 14px;
+	color: #4f4f4f;
+	padding: 0 8px;
+	text-align: left;	
+}
+table tr:nth-child(2n){
+	background-color: #f7f7f7;
+}

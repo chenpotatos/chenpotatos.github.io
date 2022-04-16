@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html class="no-js no-browser" lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>在线二维码网页生成器</title>
+	<link href='styles.css' rel='stylesheet'>
+	<script src="jquery-1.10.2.js"></script>
+	<script src="jquery.qrcode.js"></script>
+	<script src="ff-range.js"></script>
+	<script src="scripts.js"></script>
+    <meta name="description" content="二维条码/二维码是用某种特定的几何图形按一定规律在平面（二维方向）分布的黑白相间的图形记录数据符号信息的。二维码是DOI（Digital Object Unique Identifier，数字对象唯一识别符）的一种，全球最大的二维码资源中心是“渡云” ，为全球用户统一提供了“唯一数据样本”的物品、人员、组织二维码识别信息。">
+    <meta name="keywords" content="在线二维码网页生成器，二维码生成器，二维码生成，二维码，	微信二维码，">
+
+</head>
+
+<body>
+<div id="body">
+    <div id="ad_line" style="text-align: center;"></div>
+	<div id="container"></div>
+	<div class="control left">
+		<a id="banner">二维码网页生成器</a>
+		<hr/>
+		<label for="render">渲染模式 RENDER MODE</label>
+		<select id="render">
+			<option value="canvas" selected="selected">Canvas</option>
+			<option value="image">Image</option>
+			<option value="div">DIV</option>
+		</select>
+		<hr/>
+		<label for="size">大小 SIZE:</label>
+		<input id="size" type="range" value="400" min="100" max="1000" step="50" />
+		<label for="color">颜色 COLOR</label>
+		<input id="color" type="color" value="#333333" />
+		<label for="bg-color">背景颜色 BACKGROUND COLOR </label>
+		<input id="bg-color" type="color" value="#ffffff" />
+		<label for="text">内容 CONTENT </label>
+		<textarea id="text">http://www.fly63.com/</textarea>
+		<hr/>
+		<label for="minversion">属性 MINVERSION:</label>
+		<input id="minversion" type="range" value="6" min="1" max="10" step="1" />
+		<label for="eclevel">误差 校 正水平 ERROR CORRECTION LEVEL</label>
+		<select id="eclevel">
+			<option value="L">L - Low (7%)</option>
+			<option value="M">M - Medium (15%)</option>
+			<option value="Q">Q - Quartile (25%)</option>
+			<option value="H" selected="selected">H - High (30%)</option>
+		</select>
+		<label for="quiet">静区 QUIET ZONE:</label>
+		<input id="quiet" type="range" value="1" min="0" max="4" step="1" />
+		<label for="radius">圆角半径 CORNER RADIUS (not in Opera):</label>
+		<input id="radius" type="range" value="50" min="0" max="50" step="10" />
+		<!-- <hr/> -->
+		<!-- <a id="download" download="qrcode.png">DOWNLOAD</a> -->
+	</div>
+	<div class="control right">
+		<label for="mode">模式 MODE</label>
+		<select id="mode">
+			<option value="0">0 - Normal</option>
+			<option value="1">1 - Label-Strip</option>
+			<option value="2" selected="selected">2 - Label-Box</option>
+			<option value="3">3 - Image-Strip</option>
+			<option value="4">4 - Image-Box</option>
+		</select>
+		<hr/>
+		<label for="label">标签 LABEL</label>
+		<input id="label" type="text" value="文字" />
+		<label for="fontsize">标签尺寸 LABEL SIZE:</label>
+		<input id="fontsize" type="range" value="11" min="1" max="20" step="1" />
+		<label for="font">字体名 FONT NAME</label>
+		<input id="font" type="text" value="Ubuntu" />
+		<label for="fontcolor">字体颜色 FONT COLOR:</label>
+		<input id="fontcolor" type="color" value="#ff9818" />
+		<hr/>
+		<label for="image">图像 IMAGE</label>
+		<input id="image" type="file" />
+		<label for="imagesize">图像大小 IMAGE SIZE:</label>
+		<input id="imagesize" type="range" value="13" min="1" max="30" step="1" />
+	</div>
+	<img id="img-buffer" src="dummy.png" />
+	<div style="text-align:center;clear:both"></div>
+    <div class="clearfloat"></div>
+
+    <div id="footer">
+  
+    </div>
+          
+</div>
+    
+</body>
+</html>
+<script src="../../add_page.js"></script>

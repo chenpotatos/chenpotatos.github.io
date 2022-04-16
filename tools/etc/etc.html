@@ -1,0 +1,151 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>编码/解码/时间戳转换</title>
+		<meta name="description" content="内容包括：Unicode编码、UTF-8编码、URL编码/解码、Unix时间戳、Html编码/解码等，在文本框里输入要转换的内容，然后点击要转换的类型按钮，转换完成后即可看到对应的内容。" />
+		<meta name="keywords" content="Unicode编码转换,Unicode转ASCII,ASCII转Unicode,中文转Unicode,Unicode转中文" />
+		<link rel="stylesheet" href="lib/element-ui/theme-chalk/index.css" />
+		<link rel="stylesheet" href="lib/style.css" />
+	</head>
+	<body>
+        <h2 style="margin: 15px auto;margin-bottom: 0;width: 1140px;">PotatoTools</h2>
+		<div id="container" v-cloak>
+			<el-row :gutter="15" >
+				<el-col :span="24">
+					<el-tabs v-model="tabs" @tab-click="parmClick" type="border-card">
+					    <el-tab-pane label="Unicode编码" :name="1">
+							<el-col :span="12">
+								<el-input type="textarea" :rows="20" v-model="unicode.content" placeholder='请把你需要转换的内容粘贴在这里'></el-input>
+							</el-col>
+							<el-col :span="12">
+								<el-input type="textarea" :rows="20" v-model="unicode.rel" placeholder='转换后的结果' readonly></el-input>
+							</el-col>
+							<el-col :span="24" style="margin: 25px auto;">
+								<el-button type="primary" @click="handleUnicode(1)">ASCII 转 Unicode</el-button>
+								<el-button type="primary" @click="handleUnicode(2)">Unicode 转 ASCII</el-button>
+								<el-button type="primary" @click="handleUnicode(3)">Unicode 转 中文</el-button>
+								<el-button type="primary" @click="handleUnicode(4)">中文 转 Unicode</el-button>
+								<el-button @click="handleUnicode(0)">清空结果</el-button>
+								<el-button @click="handleUnicode(-1)">复制结果</el-button>
+							</el-col>
+						</el-tab-pane>
+					    <el-tab-pane label="UTF-8编码" :name="2">
+							<el-col :span="12">
+								<el-input type="textarea" :rows="20" v-model="utf.content" placeholder='请将您要转换的汉文内容粘贴在这里'></el-input>
+							</el-col>
+							<el-col :span="12">
+								<el-input type="textarea" :rows="20" v-model="utf.rel" placeholder='转换后的结果' readonly></el-input>
+							</el-col>
+							<el-col :span="24" style="margin: 25px auto;">
+								<el-button type="primary" @click="handleUtf(1)">中文 转 UTF-8</el-button>
+								<el-button type="primary" @click="handleUtf(2)">UTF-8 转 中文</el-button>
+								<el-button @click="handleUtf(0)">清空结果</el-button>
+								<el-button @click="handleUtf(-1)">复制结果</el-button>
+							</el-col>
+						</el-tab-pane>
+						<el-tab-pane label="URL编码/解码" :name="3">
+							<el-col :span="12">
+								<el-input type="textarea" :rows="20" v-model="url.content" placeholder='转换的内容粘贴在这里'></el-input>
+							</el-col>
+							<el-col :span="12">
+								<el-input type="textarea" :rows="20" v-model="url.rel" placeholder='转换后的结果' readonly></el-input>
+							</el-col>
+							<el-col :span="24" style="margin: 25px auto;">
+								<el-select v-model="url.sel" placeholder="请选择" style="width: 350px;">
+									<el-option :value="1" label="encodeURIComponent/decodeURIComponent"></el-option>
+									<el-option :value="2" label="encodeURI/decodeURI"> </el-option>
+								    <el-option :value="3" label="escape/unescape"></el-option>
+								</el-select>
+								<el-button type="primary" @click="handleUrl(1)">Url编码</el-button>
+								<el-button type="primary" @click="handleUrl(2)">Url解码</el-button>
+								<el-button @click="handleUrl(0)">清空结果</el-button>
+								<el-button @click="handleUrl(-1)">复制结果</el-button>
+							</el-col>
+						</el-tab-pane>
+						<el-tab-pane label="Unix时间戳" :name="4">
+							<el-col :span="24" class="lin" style="border-bottom: 1px solid #ddd;">
+								<span class="txt">系统当前的Unix时间戳(Unix timestamp)是</span>
+								<el-input v-model="unix.curr" style="width: 200px;margin-right: 20px;"></el-input>
+								<el-button  @click="handleCurrUnix(1)">开始</el-button>
+								<el-button  @click="handleCurrUnix(2)">停止</el-button>
+								<el-button  @click="handleCurrUnix(3)">刷新</el-button>
+							</el-col>
+							<el-col :span="24" class="lin">
+								<span class="txt">Unix时间戳（Unix timestamp）</span>
+								<el-input v-model="unix.time" type="number" style="width: 200px;"></el-input>
+								<el-select v-model="unix.sel" placeholder="请选择" style="width:80px;">
+									<el-option :value="1" label="秒"></el-option>
+									<el-option :value="2" label="毫秒"> </el-option>
+								</el-select>
+								<el-button type="primary" @click="handleUnix(1)" style="margin: 0 15px;">转换</el-button>
+								<el-input v-model="unix.timeRel" style="width: 250px;" placeholder='转换后的结果' readonly></el-input>
+							</el-col>
+							<el-col :span="24" class="lin">
+								<span class="txt">时间（年-月-日 时:分:秒）</span>
+								<el-date-picker v-model="unix.times"  type="datetime"  placeholder="选择日期时间" style="width: 250px;"></el-date-picker>
+								<el-button type="primary" @click="handleUnix(2)" style="margin: 0 15px;">转换</el-button>
+								<el-input v-model="unix.timesRel" style="width: 250px;" placeholder='转换后的结果' readonly></el-input>
+								<el-select v-model="unix.timesSel" placeholder="请选择" style="width:80px;">
+									<el-option :value="1" label="秒"></el-option>
+									<el-option :value="2" label="毫秒"> </el-option>
+								</el-select>
+							</el-col>
+							<el-button @click="handleUnix(-1)" style="float: right;">清空</el-button>
+						</el-tab-pane>	
+						<el-tab-pane label="Html编码/解码" :name="5">
+							<el-col :span="12">
+								<el-input type="textarea" :rows="20" v-model="htm.content" placeholder='转换的内容粘贴在这里'></el-input>
+							</el-col>
+							<el-col :span="12">
+								<el-input type="textarea" :rows="20" v-model="htm.rel" placeholder='转换后的结果' readonly></el-input>
+							</el-col>
+							<el-col :span="24" style="margin: 25px auto;">
+								<el-button type="primary" @click="handleHtm(1)">HtmlEncode编码</el-button>
+								<el-button type="primary" @click="handleHtm(2)">HtmlDecode解码</el-button>
+								<el-button @click="handleHtm(0)">清空结果</el-button>
+								<el-button @click="handleHtm(-1)">复制结果</el-button>
+							</el-col>
+						</el-tab-pane>
+					</el-tabs>
+				</el-col>
+			</el-row>
+			
+			<el-row :gutter="15">
+				<div id="ad_line" style="text-align: center;margin-bottom: 5px;"></div>
+				<el-col :span="24">
+					<div class="moretext">
+						<h3>工具简介</h3>
+						<div v-show="tabs==1">
+							<p>Unicode 当然是一个很大的集合，现在的规模可以容纳100多万个符号。每个符号的编码都不一样，比如，U+0639表示阿拉伯字母Ain，U+0041表示英语的大写字母A，U+4E25表示汉字严。</p>
+							<p>ASCII 码一共规定了128个字符的编码，比如空格SPACE是32（二进制00100000），大写的字母A是65（二进制01000001）。这128个符号（包括32个不能打印出来的控制符号），只占用了一个字节的后面7位，最前面的一位统一规定为0。</p>
+							<p>本工具是Unicode编码转换，为您提供ASCII与Unicode互转，Unicode与中文互转，在文本框里输入要转换的内容，然后点击要转换的类型按钮，转换完成后即可看到对应的内容。 </p>
+						</div>
+						<div v-show="tabs==2">
+							<p>UTF-8（8位元，Universal Character Set/Unicode Transformation Format）是针对Unicode的一种可变长度字符编码。它可以用来表示Unicode标准中的任何字符，而且其编码中的第一个字节仍与ASCII相容，使得原来处理ASCII字符的软件无须或只进行少部份修改后，便可继续使用</p>
+							<p>UTF-8编码在线转工具可以帮助你把中文转换成UTF-8编码，同时也支持把UTF-8编码过的还原成中文。</p>
+						</div>
+						<div v-show="tabs==3">
+							<p>escape()除了 ASCII 字母、数字和特定的符号外，对传进来的字符串全部进行转义编码，因此如果想对URL编码，最好不要使用此方法。而encodeURI() 用于编码整个URI,因为URI中的合法字符都不会被编码转换。encodeURIComponent方法在编码单个URIComponent（指请求参数）应当是最常用的，它可以讲参数中的中文、特殊字符进行转义，而不会影响整个URL。</p>
+							<p>encodeURIComponent不编码字符有71个：!， '，(，)，*，-，.，_，~，0-9，a-z，A-Z</p>
+							<p>encodeURI不编码字符有82个：!，#，$，&，'，(，)，*，+，,，-，.，/，:，;，=，?，@，_，~，0-9，a-z，A-Z</p>
+							<p>encodeURIComponent不编码字符有71个：!， '，(，)，*，-，.，_，~，0-9，a-z，A-Z</p>
+						</div>
+						<div v-show="tabs==4">
+							<p>什么是Unix时间戳(Unix timestamp)： Unix时间戳(Unix timestamp)，或称Unix时间(Unix time)、POSIX时间(POSIX time)，是一种时间表示方式，定义为从格林威治时间1970年01月01日00时00分00秒起至现在的总秒数。Unix时间戳不仅被使用在Unix系统、类Unix系统中，也在许多其他操作系统中被广泛采用</p>
+						</div>
+						<div v-show="tabs==5">
+							<p>您可以使用本工具对html字符串进行HtmlEncode编码与HtmlDecode解码。</p>
+						</div>
+					</div>
+				</el-col>
+			</el-row>
+			<div class="foot">Powered by <a href="http://www.fly63.com/" target="_blank">fly63.com</a></div>
+		</div>
+	</body>
+</html>
+
+<script src="lib/vue.min.js"></script>
+<script src="lib/element-ui/index.js"></script>
+<script src="lib/index.js"></script>
+<script src="../../add_page.js"></script>
