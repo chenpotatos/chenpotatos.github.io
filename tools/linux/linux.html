@@ -1,0 +1,41 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="description" content="" />
+		<link rel="stylesheet" type="text/css" href="res/style.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="box">
+				<h1>Linux 命令查询</h1>
+				<div class="name">请输入要查询的命令</div>
+				<input id="ipt" type="text" autocomplete="off" placeholder="请输入搜索关键词" autofocus="autofocus">
+				<div class="list">
+					<div class="name">搜索结果（点击查看详情）</div>
+					<div id="result"></div>
+				</div>
+			</div>
+			<div class="line">
+				<div id="ad_line" style="text-align: center; margin: auto;"></div>
+			</div>
+			<div class="box">
+				<h1>说明</h1>
+				<p>Linux，全称GNU/Linux，是一种免费使用和自由传播的类UNIX操作系统，其内核由林纳斯·本纳第克特·托瓦兹于1991年10月5日首次发布，它主要受到Minix和Unix思想的启发，是一个基于POSIX的多用户、多任务、支持多线程和多CPU的操作系统。</p>
+				<p>本工具输入可快捷查询linux对应的命令</p>
+				<p>数据来自 jaywcjlove/linux-command</p>
+			</div>
+			<div class="line"></div>
+		</div>
+		<div class="dialog">
+			<div class="content">
+				<div id="content"></div>
+				<svg class="close" onclick="closeDialog()" t="1638844959078" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2307" width="200" height="200"><path d="M512 456.310154L94.247385 38.557538a39.542154 39.542154 0 0 0-55.689847 0 39.266462 39.266462 0 0 0 0 55.689847L456.310154 512 38.557538 929.752615a39.542154 39.542154 0 0 0 0 55.689847 39.266462 39.266462 0 0 0 55.689847 0L512 567.689846l417.752615 417.752616c15.163077 15.163077 40.290462 15.36 55.689847 0a39.266462 39.266462 0 0 0 0-55.689847L567.689846 512 985.442462 94.247385a39.542154 39.542154 0 0 0 0-55.689847 39.266462 39.266462 0 0 0-55.689847 0L512 456.310154z" p-id="2308" fill="#bfbfbf"></path></svg>
+			</div>
+		</div>
+	</body>
+</html>
+<script src='res/data.js'></script>
+<script src='res/marked.min.js'></script>
+<script src='res/index.js'></script>
+<script src="../../add_page.js"></script>

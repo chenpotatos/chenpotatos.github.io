@@ -1,0 +1,88 @@
+*{
+	margin: 0;padding: 0;
+}
+.container{
+	max-width: 1200px;
+	width: 100%;
+	margin: auto;
+}
+.container .title{
+	font-size: 24px;
+	color: #333;
+	margin: 20px auto;
+	text-align: center;
+}
+.container .sel{
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+	font-size: 0;
+}
+.container .sel *{
+	font-size: 16px;
+}
+.container .sel label,.container .sel span{
+	margin-right: 25px;
+	cursor: pointer;
+}
+.container .sel .upload_input,.container .btn{
+	color: #fff;
+	background-color: #4775d8;
+	border-color: #4775d8;
+	display: inline-block;
+	padding: 2px 14px;
+	margin-bottom: 0;
+	line-height: 35px;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+.container .btn{
+	background: #50bb55;
+	margin: 10px 0;
+}
+.container .sel input[type="radio"]{
+	margin-right: 6px;
+	transform: scale(1.5,1.5);
+}
+.container  #make{
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+.container #make .li{
+	float: left;
+	box-sizing: border-box;
+	width: 33.33%;
+	padding: 2px;
+}
+.container #make .li  canvas{
+	display: block;
+	max-width: 100%;
+}
+.container .doing{
+	margin: 20px 0;
+	font-size: 14px;
+	color: #999;
+}
+.container  .examp{
+	margin: 10px 0;
+	margin-bottom: 20px;
+}
+.container  .examp h3{
+	color: #333;
+	margin-bottom: 5px;
+}
+.container  .examp p{
+	border-radius: 5px;-webkit-border-radius: 5px;
+	background: #f1f2f3;padding: 15px;font-size: 13px;color: #666;color: #555;line-height: 24px;
+}

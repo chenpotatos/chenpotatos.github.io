@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>gif图片分解工具_将gif每一帧都转成图片</title>
+	<meta name="description" content="动态图片分解工具用于把多帧GIF图片分解成多张静态图片。GIF动态图由多张静态图片组合而成,分解之后即可得到静态图片。" />
+	<link rel="stylesheet" type="text/css" href="res/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="top">
+			<h2>Gif图片分解成序列帧</h2>
+            <div id="ad_line" style="text-align: center;margin: 5px auto;"></div>
+			<p>gif动态图片是由多张静态图片组合而成,按照一定的顺序和时间进行播放,基于此可以将gif图片分解成多张静态图。</p>
+			<p>gif图片分解需要几秒钟时间，生成后可点击图片右键保存，也可选择批量下载。</p>
+		</div>
+		<div class="btnarea">
+			<div class="btn">
+				<input type="file" accept="image/gif" id="file"/><span>选择Gif图片</span>
+			</div>
+			<div class="btn" id="down">批量下载</div>
+		</div>
+		<div id="box"></div>
+		<div id="load" style="display: none;">
+			<div class="loader">
+			  <div class="outer"></div>
+			  <div class="inner"></div>
+			</div>
+			<p>gif图片正在分解中...</p>
+		</div>
+	</div>
+</body>
+</html>
+<script src="res/libgif.js"></script>
+<script src="res/jszip.min.js"></script>
+<script src="res/FileSaver.min.js"></script>
+<script src="res/index.js"></script>
+<script src="../../add_page.js"></script>

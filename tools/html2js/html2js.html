@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>html转js在线工具</title>
+		<meta name="keywords" content="html转js在线工具,Html拼接转换为Js脚本">
+		<meta name="description" content="html转js在线工具（实现HTML与Js脚本的转换），可以把html内容转换成js输出,提供了三种转换方式：使用document.write语句输出，在函数中使用document.write语句输出，作为一个变量输出且可以自定义变量名">
+		<script src="lib/codemirror.min.js"></script>
+		<link href="lib/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="lib/codemirror.min.css">
+		<link rel="stylesheet" href="lib/style.css">
+		<script src="lib/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div id="ad_line" style="text-align: center;margin: 6px auto;"></div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div id="compiler" class="panel-heading">
+							<form class="form-inline" role="form">
+								<label><strong style="font-size: 16px">html转js在线工具</strong></label>
+							</form>
+						</div>
+						<div class="panel-body">
+							<form role="form" id="compiler-form">
+								<div class="form-group">
+									<div class="row">
+										<div class="col-md-12">
+											<textarea id="txtRaw" name="txtRaw" cols="60" rows="10" class="form-control"></textarea>
+										</div>
+										<div class="col-md-12">
+											<div class="radio">
+												<label>
+													<input type="radio" name="outputOptions" id="outputOpt1" value="option1" checked> 使用 document.write 语句输出
+												</label>
+											</div>
+											<div class="radio">
+												<label>
+													<input type="radio" name="outputOptions" id="outputOpt2" value="option2"> 在函数中使用 document.write 语句输出
+												</label>
+											</div>
+											<div class="radio">
+												<label>
+													<input type="radio" name="outputOptions" id="outputOpt3" value="option3">作为一个变量</label> <span id="vn"
+												 style="display: none;"><label><strong>输入变量名:</strong></label> <input type="text" id="varname" value="strVar"></span>
+												</label>
+											</div>
+										</div>
+										<div class="col-md-12" style="padding-bottom: 14px;">
+											<button type="button" class="btn btn-success" id="cmdGenerate"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+												HTML 转 JS</button>
+										</div>
+										<div class="col-md-12">
+											<textarea id="txtGenerated" name="txtGenerated" cols="60" rows="10" class="form-control"></textarea>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br><hr>
+		</div>
+	</body>
+</html>
+<script>
+var editor1 = CodeMirror.fromTextArea(document.getElementById("txtRaw"), {
+	lineNumbers: true,
+	matchBrackets: true,
+	mode: "text/html",
+	indentUnit: 4,
+	indentWithTabs: true,
+});
+editor1.getDoc().setValue("<h1>html\u8f6cjs\u5728\u7ebf\u5de5\u5177<\/h1>");
+var editor2 = CodeMirror.fromTextArea(document.getElementById("txtGenerated"), {
+	lineNumbers: true,
+	matchBrackets: true,
+	mode: "text/javascript",
+	indentUnit: 4,
+	indentWithTabs: true,
+});
+$(document).ready(function() {
+	$("#vn").hide();
+	$("#outputOpt1").click();
+	$("#varname").keyup(function() {
+		$("#cmdGenerate").click()
+	});
+	$("input[name=outputOptions]").change(function() {
+		if ($(this).attr("id") == "outputOpt3") {
+			$("#vn").show()
+		} else {
+			$("#vn").hide()
+		}
+		$("#cmdGenerate").click()
+	});
+	$("#cmdGenerate").click(function() {
+		var r = editor1.getValue();
+		var strVar = $("#varname").val();
+		if (strVar == "") {
+			strVar = "strVar"
+		}
+		var g = "";
+		var arr = r.split("\n");
+		var opt = $("input[name='outputOptions']:checked").attr("id");
+		if (opt == "outputOpt2") {
+			g += "function writeHTMLasJS(){\n"
+		}
+		if (opt == "outputOpt3") {
+			g += "var " + strVar + '="";\n'
+		}
+		for (i = 0; i < arr.length; i++) {
+			var l = "";
+			if (opt == "outputOpt1") {
+				l += 'document.write("'
+			}
+			if (opt == "outputOpt2") {
+				l += '    document.write("'
+			}
+			if (opt == "outputOpt3") {
+				l += strVar + ' += "'
+			}
+			l += arr[i].replace(/\"/g, '\\"').replace(/\//g, "\\/");
+			if ((opt == "outputOpt1") || (opt == "outputOpt2")) {
+				l += '");'
+			}
+			if (opt == "outputOpt3") {
+				l += '";'
+			}
+			l += "\n";
+			g += l
+		}
+		if (opt == "outputOpt2") {
+			g += "}\n"
+		}
+		editor2.getDoc().setValue(g)
+	})
+});
+</script>
+<script src="../../add_page.js"></script>
