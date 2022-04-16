@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>代码转图片工具</title>
+		<meta name="description" content="直接将代码复制、粘贴，就能一键生成图片，内置许多配色，支持多种格式。有时代码受限于编辑器,如何截图才能正常而优雅地显示呢?做成图片或许是不错的方法!" />
+		<link rel="stylesheet" href="res/index.css"/>
+	</head>
+	<style>
+		
+	</style>
+	<body>
+		<div class="container">
+			<h2 class="title">代码转图片在线工具</h2>
+			<div class="head">
+				<div class="group">
+					<label>主题:</label>
+					<select id="js_themeSelect">
+						<option value="ambiance">ambiance</option>
+						<option value="chaos">chaos</option>
+						<option value="chrome">chrome</option>
+						<option value="clouds">clouds</option>
+						<option value="cobalt">cobalt</option>
+						<option value="dawn">dawn</option>
+						<option value="dracula">dracula</option>
+						<option value="dreamweaver">dreamweaver</option>
+						<option value="eclipse">eclipse</option>
+						<option value="github">github</option>
+						<option value="gob">gob</option>
+						<option value="gruvbox">gruvbox</option>
+						<option value="monokai">monokai</option>
+						<option value="terminal">terminal</option>
+						<option value="textmate">textmate</option>
+						<option value="tomorrow">tomorrow</option>
+						<option value="twilight">twilight</option>
+						<option value="xcode">xcode</option>
+					</select>
+				</div>
+				<div class="group">
+					<label>背景色:</label>
+					<input id="js_bgInput" type="color"/>
+				</div>
+				<div class="group">
+					<label>模式:</label>
+					<select id="js_modeSelect">
+						<option value="javascript">javascript</option>
+						<option value="typescript">typescript</option>
+						<option value="html">html</option>
+						<option value="css">css</option>
+						<option value="ruby">ruby</option>
+						<option value="python">python</option>
+						<option value="java">java</option>
+						<option value="markdown">markdown</option>
+						<option value="json">json</option>
+						<option value="lua">lua</option>
+					</select>
+				</div>
+			</div>
+			<div id="js_code">
+				<div class="code-area">
+					<div class="icon-box">
+						<div class="icon"></div>
+						<div class="icon orange"></div>
+						<div class="icon green"></div>
+					</div>
+					<div id="js_editor"></div>
+				</div>
+			</div>	
+			<div class="btn-group">
+				<button id="js_clearBtn" class="btn">清空</button>
+				<button id="js_expBtn" class="btn" style="display: none;">示例</button>
+				<button id="js_downloadBtn" class="btn">下载</button>
+				<button id="js_genBtn" class="btn">生成图片</button>
+			</div>
+			<div id="js_output"></div>
+			<div id="ad_line" style="text-align: center;"></div>
+			<p style="color: #666;margin: 10px 0; margin-bottom: 30px;">这是一款将代码转为美丽图片的免费在线工具，你只需要将本地代码复制进去，就能选择不同的配色，转为更有质感的图片。支持多种语言，多种配色，同时可设置背景颜色，高度自适应，就如同你所熟悉的代码编辑器一样。</p>
+		</div>
+	</body>
+</html>
+
+<script src="res/jquery-3.5.1.min.js"></script>
+<script src="res/jquery.serializejson.min.js"></script>
+<script src="res/lodash.min.js"></script>
+<script src="res/dom-to-image.min.js"></script>
+<script src="res/download.min.js"></script>
+<script src="ace/ace.js"></script>
+<script src="res/index.js"></script>
+<script src="../../add_page.js"></script>

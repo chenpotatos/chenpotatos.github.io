@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>RGB、RGBA、HEX、HSL、HSV等颜色在线转换工具</title>
+		<meta name="description" content="一款前端设计Css颜色在线转换的利器,可实现RGB,RGBA,HEX,HSL,HSV颜色等相互转换，输入格式在CSS color规范的基础上，有一定宽松">
+		<link rel="stylesheet" href="res/style.css">
+	</head>
+	
+	<body>
+		<h1 class="text-center">rgb(a)、hex、hsl(a)、hsv(a)颜色转换工具</h1>
+		<div id="ad_line" style="text-align: center;"></div>
+		<div class="main">
+			<div class="box">
+				<div class="li">
+					<span>rgb(a):</span><input type="text" id="rgb" placeholder="请输入RGB & RGBA"/><input class="btn" type="button" value="转换" onclick="toColor('rgb')"/>
+				</div>
+				<div class="li">
+					<span>hex:</span><input type="text" id="hex" placeholder="实例：#fff"/><input class="btn" type="button" value="转换" onclick="toColor('hex')"/>
+				</div>
+				<div class="li">
+					<span>hsl:</span><input type="text" id="hsl" placeholder="请输入HSL & HSLA"/><input class="btn" type="button" value="转换" onclick="toColor('hsl')"/>
+				</div>
+				
+				<div class="li">
+					<span>hsv:</span><input type="text" id="hsv" placeholder="请输入HSV & HSVA"/><input class="btn" type="button" value="转换" onclick="toColor('hsv')"/>
+				</div>
+				<div class="li">
+					<span>keyword:</span><input type="text" id="keyword" name="keyword" placeholder="请输入keyword"/><input class="btn" type="button" value="转换" onclick="toColor('keyword')"/>
+				</div>
+			</div>
+			<div class="result">
+				<div class="tit">输出面板：</div>
+				<div class="note">
+					<div id="result"></div>
+				</div>
+			</div>
+		</div>
+		<div class="ts">
+			<p>说明：本应用支持rgb、hex、hsl、hsv和keyword颜色之间的相互转换输入指定形式的颜色，点击对应的转换按钮，即可直接输出该颜色的所有表现形式。输入格式在CSS color规范的基础上，有一定宽松。</p>
+			<p>1、Rgb:[代表Red（红色） Green（绿色） Blue（蓝色）和 Alpha（不透明度）;r, g, b的数字范围为0 ~ 255，百分比范围为0 ~ 100，a为0 ~ 1],例如：<span>rgb(255,0,0)、 rgb(255 0 0)、 255,0,0、 rgba(255,0,0,0.5)、 rgba(255 0 0 0.5)</span>;</p>
+			<p>2、Hex输入只需要包含3位或6位十六进制的数字即可。例如：<span>#fff、#fefefe、fff、fefefe</span></p>
+			<p>3、Hsl[即色相、饱和度、亮度] 输入只需要包含3个合格的数字(包括小数)，最后两个数字需要带%号，以便于与RGB进行区分。例如：<span>hsl(100,50%,50%)、hsl(100 50% 50%)、100,50%,50%、hsla(100,50%,50%,0.5)</span>。</p>
+			<p>4、Hsv[即色相、饱和度、明度] 输入格式同Hsl类似</p>
+			<p>5、keyword：例如：<span>black，orange，red，transparent</span>等css中颜色的常量标识。</p>
+		</div>
+		 <div class="foot">Powered by <a href="http://www.fly63.com/" target="_blank">fly63.com</a></div>
+	</body>
+</html>
+<script src="res/easycolor.min.js"></script>
+<script src="../../add_page.js"></script>
+<script>
+// 输入
+function toColor(id){
+	var val=document.getElementById(id).value;
+	val=val.replace(/，/g, ",");
+	if(!val){
+		return;
+	}
+	if(val.indexOf(id)==-1){
+		switch(id){
+			case 'rgb':
+				var ma=val.split(',').length==4?'rgba':'rgb';
+				val=ma+'('+val+')';
+				break;
+			case 'hex':
+				val=val.indexOf('#')>-1?val:'#'+val;
+				break;
+			case 'hsl':
+				var ma=val.split(',').length==4?'hsla':'hsl';
+				val=ma+'('+val+')';
+				break;
+			case 'hsv':
+				var ma=val.split(',').length==4?'hsva':'hsv';
+				val=ma+'('+val+')';
+				break;
+		}
+	}
+	var color=easycolor(val);
+	var obj={
+		rgb:color.toRgbString(),
+		hsl:color.toHslString(),
+		hex:color.toHexString(),
+		hsv:color.toHsvString(),
+	}
+	var html='<div class="bg" style="background:'+obj.rgb+';"></div>';
+	html+='<div class="bli"><span>rgb:</span>'+obj.rgb+'</div>';
+	html+='<div class="bli"><span>hsl:</span>'+obj.hsl+'</div>';
+	html+='<div class="bli"><span>hex:</span>'+obj.hex+'</div>';
+	html+='<div class="bli"><span>hsv:</span>'+obj.hsv+'</div>';
+	document.getElementById('result').innerHTML=html;
+	//console.log(obj);
+}
+</script>

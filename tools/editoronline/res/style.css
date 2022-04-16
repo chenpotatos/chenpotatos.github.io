@@ -1,0 +1,138 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: #f1f2f3;
+}
+.title{
+	text-align: center;
+	margin: 10px auto;
+	color:#666;
+}
+.main{
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+.main .editorBox{
+	width: 100%;
+	max-width: 1650px;
+	margin: auto;
+}
+.editorBox .editor{
+	height: 450px;
+	width: 33.33%;
+	overflow-y: hidden;
+	background-color: rgb(44, 52, 55);
+	float: left;
+}
+.editorBox .runbox{
+	width: 66.66%;
+	height: 500px;
+	float: right;
+}
+.editorBox .btnbox{
+	width: 33.33%;
+	margin-bottom: 20px;
+	float: left;
+}
+.editorBox #ad_area{
+	margin-left: 20px;
+}
+@media screen and (max-width: 1350px) {
+	.main .editorBox{
+		max-width: 1150px;
+	}
+	.editorBox .editor{
+		width: 50%;
+	}
+	.editorBox .btnbox{
+		width: 50%;
+	}
+	.editorBox .runbox{
+		width: 100%;
+	}
+	.submit-btn{
+		clear: both;
+	}
+}
+@media screen and (max-width: 725px) {
+	.main .editorBox{
+		max-width: 550px;
+	}
+	.editorBox .btnbox{
+		width: 100%;
+	}
+	.editorBox .editor {
+		width: 100%;
+		float: none;
+	}
+}
+.editorBox .editor{
+	-webkit-box-shadow: inset 0 1px 3px rgb(22, 26, 27);
+	-moz-box-shadow: inset 0 1px 3px rgb(22, 26, 27);
+	box-shadow: inset 0 1px 3px rgb(22, 26, 27);
+}
+.label {
+	display: inline-block;
+	background: rgba(230, 230, 230, 0.5);
+	height: 18px;
+	padding: 0 6px;
+	z-index: 999;
+	text-align: center;
+	font-size: 12px;
+	color: #BBB;
+	border-radius: 3px;
+	position: relative;
+	top: -2px;
+}
+.editor iframe{
+	border: 0 !important;
+	min-height: 100px;
+	min-width: 100px;
+	height: 100%;
+	width: 100%;
+}
+.submit-btn {
+	color: #fff;
+	background: #00C48D;
+	display: inline-block;
+	line-height: 1;
+	white-space: nowrap;
+	cursor: pointer;
+	-webkit-appearance: none;
+	text-align: center;
+	box-sizing: border-box;
+	outline: none;
+	margin: 0;
+	transition: .1s;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	padding: 10px 30px;
+	font-size: 14px;
+	border-radius: 5px;
+	margin: 20px;
+	cursor: pointer;
+}
+.submit-btn:hover{
+	background: #67c23a;
+}
+#preview{
+	top: 0;background: #fff;
+}
+#editor1,#editor2,#editor3{
+	height: 90%;
+}
+.ace_gutter,.ace_gutter .ace_gutter-layer{
+	width: 25px !important;
+}
+.ace_gutter-cell{
+	padding-left: 5px !important;
+}
+.foot{
+	color:#888;
+	text-align: center;
+	margin: 10px auto;
+	font-size: 12px;
+}
