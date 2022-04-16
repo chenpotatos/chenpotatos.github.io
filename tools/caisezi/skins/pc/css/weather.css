@@ -1,0 +1,32 @@
+/*天气图标*/
+.metro .symbol-mini { background-image: url(../images/weather.png); background-repeat: no-repeat; }
+
+.symbol-mini, .symbol-minigif {display: inline-block; margin:0 2px; width: 20px; height: 20px; vertical-align: middle;  }
+
+/*微符号*/
+.symbol-mini-cloudy, .symbol-minigif-cloudy { background-position: -20px 0; }
+.symbol-mini-dustblowing, .symbol-minigif-dustblowing { background-position: -80px -60px; }
+.symbol-mini-duststorm, .symbol-minigif-duststorm { background-position: -40px -60px; }
+.symbol-mini-floatingdust, .symbol-minigif-floatingdust { background-position: -60px -60px; }
+.symbol-mini-fog, .symbol-minigif-fog { background-position: -20px -60px; }
+.symbol-mini-freezingrain, .symbol-minigif-freezingrain { background-position: -20px -40px; }
+.symbol-mini-hail, .symbol-minigif-hail { background-position: -100px 0; }
+.symbol-mini-heavyrain, .symbol-minigif-heavyrain { background-position: -100px -20px; }
+.symbol-mini-heavysnow, .symbol-minigif-heavysnow { background-position: -100px -40px; }
+.symbol-mini-lightrain, .symbol-minigif-lightrain { background-position: -20px -20px; }
+.symbol-mini-lightsnow, .symbol-minigif-lightsnow { background-position: -100px -40px; }
+.symbol-mini-moderaterain, .symbol-minigif-moderaterain { background-position: -40px -20px; }
+.symbol-mini-moderatesnow, .symbol-minigif-moderatesnow { background-position: -80px -40px; }
+.symbol-mini-overcast, .symbol-minigif-overcast { background-position: -40px 0; }
+.symbol-mini-rain, .symbol-minigif-rain { background-position: -60px -20px; }
+.symbol-mini-shower, .symbol-minigif-shower { background-position: -60px 0; }
+.symbol-mini-sleet, .symbol-minigif-sleet { background-position: 0 -20px; }
+.symbol-mini-snow, .symbol-minigif-snow { background-position: 0 -60px; }
+.symbol-mini-snowshower, .symbol-minigif-snowshower { background-position: -40px -40px; }
+.symbol-mini-sunny, .symbol-minigif-sunny { background-position: 0 0; }
+.symbol-mini-thundershower, .symbol-minigif-thundershower { background-position: -80px 0; }
+.symbol-mini-torrentialrain, .symbol-minigif-torrentialrain { background-position: -80px -20px; }
+.symbol-mini-twister, .symbol-minigif-twister { background-position: -100px -60px; }
+.symbol-mini-xrain, .symbol-minigif-xrain { background-position: 0 -40px; }
+
+#city-name .en { display: none; }

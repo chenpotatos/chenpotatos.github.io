@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>在线生成占位图片</title>
+		<meta name="description" content="提供在线生成占位图服务,纯色的占位图的实现。" />
+		<link href="res/style.css" type="text/css" rel="stylesheet"/>
+	</head>
+	<body><div class="center">
+		<h2>占位图生成工具</h2>
+		<div class="fli">
+			<div class="sdiv">
+				<div class="inner">
+					<span>宽度：</span>
+					<input type="number" size="10" id="width" placeholder="860" >
+				</div>	
+				<div class="inner">
+					<span>高度：</span>
+					<input type="number" size="10" id="height" placeholder="250" >
+				</div>
+				<div class="inner">
+					<span>大小：</span>
+					<input type="number" size="10" id="size" placeholder="auto" >
+				</div>
+			</div>
+			<div class="sdiv">
+				<div class="inner">
+					<span>背景：</span>
+					<input type="color" value="#cccccc" size="20" id="bgcolor" placeholder="cccccc" >
+				</div>	
+				<div class="inner">
+					<span>颜色：</span>
+					<input type="color" value="#969696" size="20" id="color" placeholder="969696" >
+				</div>
+			</div>
+			<div class="sdiv">
+				<div class="inner">
+					<span>样式：</span>
+					<select id="style" placeholder="oblique">
+						<option value ="normal">normal</option>
+						<option value ="italic">italic</option>
+						<option value ="oblique" selected="selected">oblique</option>
+					</select>
+				</div>
+				<div class="inner">
+					<span>粗细：</span>
+					<select id="weight" placeholder="bold">
+						<option value ="normal">normal</option>
+						<option value ="bold" selected="selected">bold</option>
+						<option value ="bolder" >bolder</option>
+						<option value ="lighter" >lighter</option>
+						<option value ="100" >100</option>
+						<option value ="200" >200</option>
+						<option value ="300" >300</option>
+						<option value ="400" >400</option>
+						<option value ="500" >500</option>
+						<option value ="600" >600</option>
+						<option value ="700" >700</option>
+						<option value ="800" >800</option>
+						<option value ="900" >900</option>
+					</select>
+				</div>
+			</div>
+			<div class="sdiv">
+				<div class="inner">
+					<span>内容：</span>
+					<textarea id="text" size="100" placeholder="860x250" ></textarea>
+				</div>
+			</div>
+			<button id="start">开始生成</button>
+		</div>
+		<div class="fli">
+			<p>预览：</p>
+			<img id="imgShow" src="bitmap.html" alt="">
+		</div>
+		<div id="ad_line" style="text-align: center;"></div>
+		<div class="fli">
+			<h3>备注：</h3>
+			<p>1、生成后的图片请选择右键保存！</p>
+			<p>2、支持的字体样式:normal / italic / oblique，其中默认: oblique。</p>
+			<p>3、支持的字体weight:normal / bold / bolder / lighter / Number，默认: bold。</p>
+			<p>4、字体大小默认为自动，计算字体大小防止文字超出图片大小。</p>
+			<p>5、请使用高版本浏览器,推荐使用Chrome。</p>
+			<p>6、使用场景:在项目开发中,经常需要填充一些图片来预览页面效果,如果设计没有提供的素材,这时我们就需要占位图片。</p>
+			<div class="foot">Powered by <a href="http://www.fly63.com/" target="_blank">fly63.com</a></div>
+		</div>
+	</div></body>
+	<script src="res/index.js"></script>
+	<script src="res/rel.js"></script>
+	<script src="../../add_page.js"></script>
+</html>
+

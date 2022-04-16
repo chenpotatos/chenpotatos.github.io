@@ -1,0 +1,78 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>中文拆字工具_在线中文拆字解字</title>
+		<meta name="description" content="在线拆字工具，是将汉字当中一部分左右结构的字进行拆分，形成有趣的排列形式，将汉字上下或左右拆分，形成有趣排列形式的一种文字转换工具。中文博大精深，汉字拆解就是其中之一。 "/>
+		<link rel="stylesheet" href="lib/element-ui/theme-chalk/index.css" />
+		<link rel="stylesheet" href="lib/style.css" />
+	</head>
+	<body>
+		<div id="container" v-cloak>
+			<h2 class="title">中文拆字工具</h2>
+			<div class="container">
+				<el-row class="radiobox">
+					<span class="label">字体类型：</span>
+					<el-radio-group v-model="type">
+					  <el-radio :label="false">简体</el-radio>
+					  <el-radio :label="true">繁体</el-radio>
+					</el-radio-group>
+				</el-row>
+				<el-row :gutter="15">
+					<el-col :span="15">
+						<el-input v-model="ipt" placeholder="请输入文字内容(不超过100个字)"></el-input>
+					</el-col>
+					<el-col :span="3">
+						<el-button type="success" @click="onSubmit" icon="el-icon-setting">查询</el-button>
+					</el-col>
+				</el-row>
+				<el-row :gutter="15">
+					<el-col :span="24">
+						<el-table :data="rels" style="width: 100%" border>
+							<el-table-column prop="txt" label="汉字" header-align="center" align="center"></el-table-column>
+							<el-table-column prop="h" label="拆法" header-align="center" align="center">
+								<template slot-scope="scope">
+									<span v-text="scope.row.h[0] || ''"></span>
+								</template>
+							</el-table-column>
+							<el-table-column prop="h" label="拆法" header-align="center" align="center">
+								<template slot-scope="scope">
+									<span v-text="scope.row.h[1] || ''"></span>
+								</template>
+							</el-table-column>
+							<el-table-column prop="h" label="拆法" header-align="center" align="center">
+								<template slot-scope="scope">
+									<span v-text="scope.row.h[2] || ''"></span>
+								</template>
+							</el-table-column>
+						</el-table>
+						<div class="ts">
+							<span>注意：部分汉字可能会出现无法拆解的情况，需要选择繁体，还是简体。</span>
+						</div>
+					</el-col>
+				</el-row>
+				<el-row :gutter="15">
+					<div id="ad_line" style="text-align: center;margin-bottom: 5px;"></div>
+					<el-col :span="24">
+						<div class="moretext">
+							<h3>使用说明</h3>
+							<p>1、该工具仅用于拆字使用，输入您需要拆解的文字内容，点击查询，即可获得结果。</p>
+							<p>2、查询结果仅供参考，不能百分之百保证准确性，使用前请注意。</p>
+							<p>3、最大支持3种拆法。</p>
+							<br/>
+							<h3>相关知识</h3>
+							<p>此在线拆字工具，是将汉字当中一部分左右结构的字进行拆分，形成有趣的排列形式。阅读时需要将前后两个字合并在一起还原为拆分过的字，才能理解文中的意思。</p>
+							<p>在线拆字工具，是把中国汉字左右结构、左中右结构的文字在线拆分，形成有趣排列形式的一种文字转换工具。中文博大精深，汉字拆解就是其中之一。阅读时需要将两个字当成一个字读，才能明白其中的意思。</p>
+							<p>比如：在线拆字可以将汉字上下或左右拆分，如输入“维护和谐 拒绝低俗”，然后点击“拆字”，将会被拆分为“纟隹扌户禾口讠皆 扌巨纟色亻氐亻谷”。</p>
+						</div>
+					</el-col>
+				</el-row>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="lib/vue.min.js"></script>
+<script src="lib/element-ui/index.js"></script>
+<script src="lib/ft.js"></script>
+<script src="lib/jt.js"></script>
+<script src="lib/index.js"></script>
+<script src="../../add_page.js"></script>
