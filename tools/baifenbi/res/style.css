@@ -1,0 +1,94 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.container{
+	width: 1200px;
+	margin: auto;
+}
+.container .title{
+	text-align: center;
+	font-size: 22px;
+	color: #333;
+	margin: 15px auto;
+	overflow: hidden;
+}
+.container .des{
+	color: #3c763d;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+.container .examp{
+	margin: 10px 0;
+}
+.container .examp h3{
+	margin: 15px 0px;
+	color: #333;
+}
+.container .examp p{
+	margin: 5px 0px;
+	border-radius: 5px;-webkit-border-radius: 5px;
+	background: #f1f2f3;padding: 15px;font-size: 13px;color: #666;color: #555;line-height: 24px;
+	word-wrap:break-word;
+}
+.container .examp .total{
+	color: #111;
+	font-size: 14px;
+}
+.container .examp .total span{
+	color: #F05654;
+	margin: 0 2px;
+	font-weight: bold;
+}
+.btn1 {
+    padding: 5px 10px;
+    color: #fff;
+    background: #1179ca;
+    border: none;
+    width: 100px;
+    cursor: pointer;
+    height: 40px;
+    margin: 10px;
+}
+.inpt {
+	width: 250px;
+    border: 1px solid #ddd;
+    text-indent: 5px;
+    height: 30px;
+}
+.bd p {
+    text-align: left;
+    padding-left: 12px;
+    line-height: 25px;
+}
+.red{
+    color: #FF0000;
+}
+.smallTitle{
+    font-weight: bold;
+}
+.table2 {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    font-size: 0.8em;
+}
+.table2 tr {
+    line-height: 40px;
+    vertical-align: middle;
+}
+.table2 tr td,th {
+    border: 1px solid #C5D5C5;
+}
+.table2 tr th{
+    background-color: #F5F5F5;
+    width: 35%;
+}
+.table2 tr td{
+    text-align: left;
+    padding-left: 15px;
+}

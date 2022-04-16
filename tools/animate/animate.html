@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>animate.css动画演示</title>
+		<link rel="stylesheet" href="res/animate.min.css">
+		<link href="res/sytle.css" rel="stylesheet">
+		<script src="res/jquery.min.js"></script>
+<script>
+$(function(){
+	if($.browser.msie && $.browser.version < 10){
+		$('.dom-explain').show();
+	}
+	var $animate = $('#animate');
+	var $btn = $('.tabCnt').find('li');
+	$btn.click(function(){
+		$(this).addClass('active').siblings().removeClass('active');
+		$animate.removeClass().addClass($(this).text() + ' animated infinite');
+		setTimeout(removeClass, 1000);
+	});
+	function removeClass(){
+		$animate.removeClass();
+	}
+	var $tabNavItem = $('.tabNav').find('a');
+	var $tabPane = $('.tabPane');
+	$tabNavItem.each(function(i){
+		$(this).click(function(){
+			$(this).parent().addClass('active').siblings().removeClass('active');
+			$tabPane.eq(i).addClass('active').siblings().removeClass('active');
+			return false;
+		});
+	});
+});
+</script>
+</head>
+
+<body>
+<h1>Animate.css动画演示</h1>
+<div class="wrap">
+	<h2 id="animate">Animate.css</h2>
+	<p>——CSS3动画库</p>
+</div>
+<p class="dom-explain">您的浏览器不支持 CSS3 animate 属性，所以您看不到任何效果，请使用 Firefox、Chrome 或 IE10</p>
+<div id="ad_line" style="text-align: center;"></div>
+<div class="tab">
+	<ul class="tabNav">
+		<li class="active"><a href="http://www.dowebok.com/">Attention Seekers</a></li>
+		<li><a href="http://www.dowebok.com/demo/2014/98/###">Bouncing Entrances</a></li>
+		<li><a href="http://www.dowebok.com/demo/2014/98/###">Bouncing Exits</a></li>
+		<li><a href="http://www.dowebok.com/demo/2014/98/###">Fading Entrances</a></li>
+		<li><a href="http://www.dowebok.com/demo/2014/98/###">Fading Exits</a></li>
+		<li><a href="http://www.dowebok.com/demo/2014/98/###">Flippers</a></li>
+		<li><a href="http://www.dowebok.com/demo/2014/98/###">Lightspeed</a></li>
+		<li><a href="http://www.dowebok.com/demo/2014/98/###">Rotating Entrances</a></li>
+		<li><a href="http://www.dowebok.com/demo/2014/98/###">Rotating Exits</a></li>
+		<li><a href="http://www.dowebok.com/demo/2014/98/###">Sliders</a></li>
+		<li><a href="http://www.dowebok.com/demo/2014/98/###">Specials</a></li>
+	</ul>
+	<div class="tabCnt">
+		<ul class="tabPane active">
+			<li>bounce</li>
+			<li>flash</li>
+			<li>pulse</li>
+			<li>rubberBand</li>
+			<li>shake</li>
+			<li>swing</li>
+			<li>tada</li>
+			<li>wobble</li>
+		</ul>
+		<ul class="tabPane">
+			<li>bounceIn</li>
+			<li>bounceInDown</li>
+			<li>bounceInLeft</li>
+			<li>bounceInRight</li>
+			<li>bounceInUp</li>
+		</ul>
+		<ul class="tabPane">
+			<li>bounceOut</li>
+			<li>bounceOutDown</li>
+			<li>bounceOutLeft</li>
+			<li>bounceOutRight</li>
+			<li>bounceOutUp</li>
+		</ul>
+		<ul class="tabPane">
+			<li>fadeIn</li>
+			<li>fadeInDown</li>
+			<li>fadeInDownBig</li>
+			<li>fadeInLeft</li>
+			<li>fadeInLeftBig</li>
+			<li>fadeInRight</li>
+			<li>fadeInRightBig</li>
+			<li>fadeInUp</li>
+			<li>fadeInUpBig</li>
+		</ul>
+		<ul class="tabPane">
+			<li>fadeOut</li>
+			<li>fadeOutDown</li>
+			<li>fadeOutDownBig</li>
+			<li>fadeOutLeft</li>
+			<li>fadeOutLeftBig</li>
+			<li>fadeOutRight</li>
+			<li>fadeOutRightBig</li>
+			<li>fadeOutUp</li>
+			<li>fadeOutUpBig</li>
+		</ul>
+		<ul class="tabPane">
+			<li>flip</li>
+			<li>flipInX</li>
+			<li>flipInY</li>
+			<li>flipOutX</li>
+			<li>flipOutY</li>
+		</ul>
+		<ul class="tabPane">
+			<li>lightSpeedIn</li>
+			<li>lightSpeedOut</li>
+		</ul>
+		<ul class="tabPane">
+			<li>rotateIn</li>
+			<li>rotateInDownLeft</li>
+			<li>rotateInDownRight</li>
+			<li>rotateInUpLeft</li>
+			<li>rotateInUpRight</li>
+		</ul>
+		<h3></h3>
+		<ul class="tabPane">
+			<li>rotateOut</li>
+			<li>rotateOutDownLeft</li>
+			<li>rotateOutDownRight</li>
+			<li>rotateOutUpLeft</li>
+			<li>rotateOutUpRight</li>
+		</ul>
+		<ul class="tabPane">
+			<li>slideInDown</li>
+			<li>slideInLeft</li>
+			<li>slideInRight</li>
+			<li>slideOutLeft</li>
+			<li>slideOutRight</li>
+			<li>slideOutUp</li>
+		</ul>
+		<ul class="tabPane">
+			<li>hinge</li>
+			<li>rollIn</li>
+			<li>rollOut</li>
+		</ul>
+	</div>
+</div>
+<div class="thead" style="width: 728px; margin: 0 auto;"></div>
+</body></html>
+<script src="../../add_page.js"></script>

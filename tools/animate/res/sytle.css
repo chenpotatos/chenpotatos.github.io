@@ -1,0 +1,24 @@
+* { margin: 0; padding: 0;}
+ul { list-style-type: none;}
+body { font: 14px "Microsoft Yahei"; overflow-x: hidden;}
+h1 { width: 900px; margin: 40px auto 100px; font: 32px "Microsoft Yahei"; text-align: center;}
+h2 { font: 96px "Microsoft Yahei"; font-weight: 500; text-align: center; color: #f35626;}
+.wrap p { margin-bottom: 100px; font: 30px "Microsoft Yahei"; text-align: center; color: #999;}
+.list { width: 1000px; margin: 0 auto;}
+dl { width: 1000px; margin: 10px auto; overflow: hidden;}
+dt { float: left; width: 1000px; padding: 5px 0; border-bottom: 1px solid #ddd; font-weight: 700;}
+dd { float: left; margin: 10px 10px 0 0; padding: 5px 10px; background-color: #eee; cursor: pointer;}
+
+.dom-explain  { display: none; margin-top: 20px; margin-bottom: 20px; font-size: 14px; text-align: center; color: #f50;}
+
+.tab { width: 900px; margin: 0 auto; border: 1px solid #ddd;}
+.tabNav { padding-bottom: 10px; overflow: hidden; zoom: 1; background-color: #f5f5f5;}
+.tabNav li { float: left; margin: 10px 0 0 10px; display: inline;}
+.tabNav a { float: left; padding: 5px 10px; color: #444; text-decoration: none;}
+.tabNav .active a { color: #fff; background-color: #f35626;}
+
+.tabPane { display: none; overflow: hidden; zoom: 1;}
+.tabCnt .active { display: block;}
+.tabCnt { padding: 10px 20px 20px;}
+.tabPane li { float: left; margin: 10px 10px 0 0; padding: 5px 10px; background-color: #eee; cursor: pointer;}
+.tabPane .active { color: #f35626;}
