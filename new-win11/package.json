@@ -1,0 +1,65 @@
+{
+  "name": "win11React",
+  "description": "Win11 made in React",
+  "repository": "https://github.com/blueedgetechno/win11React",
+  "version": "0.1.1",
+  "private": true,
+  "dependencies": {
+    "-": "^0.0.1",
+    "@crowdin/cli": "^3.7.8",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-regular-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "@sentry/react": "^6.19.6",
+    "@sentry/tracing": "^6.19.6",
+    "@tauri-apps/api": "^1.0.0-beta.8",
+    "@widgetbot/react-embed": "^1.4.1",
+    "@win11react/react-canvas-draw": "1.2.1",
+    "axios": "^0.26.1",
+    "eslint-config-react-app": "^7.0.1",
+    "i18next": "^21.6.16",
+    "i18next-browser-languagedetector": "^6.1.4",
+    "i18next-http-backend": "^1.4.0",
+    "i18next-xhr-backend": "^3.2.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-error-boundary": "^3.1.4",
+    "react-i18next": "^11.16.7",
+    "react-player": "^2.10.0",
+    "react-redux": "^8.0.1",
+    "react-scripts": "^5.0.1",
+    "redux": "^4.2.0",
+    "sass": "^1.50.1",
+    "translation-check": "^1.0.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "tauri": "tauri",
+    "crowdin": "crowdin"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "1.0.0-rc.8"
+  }
+}
