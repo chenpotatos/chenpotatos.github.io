@@ -1,0 +1,60 @@
+*{
+	margin: 0;padding: 0;
+}
+[v-cloak] {
+	display: none;
+}
+body{
+	background: #F1F2F3;
+	width: 100%;
+	min-height: 100%;
+}
+.container{
+	width: 1200px;
+	margin: auto;
+	
+}
+.container .title{
+	font-size: 24px;
+	color: #333;
+	margin:auto;
+	padding: 20px 0;
+	text-align: center;
+}
+.container .des{
+	margin-bottom: 10px;
+	color: #999;
+}
+.container .form{
+	position: relative;
+	background: #FFFFFF;
+	padding: 20px;
+	box-sizing: border-box;
+	box-shadow: 0.5rem 0.875rem 2.375rem rgb(39 44 49 / 6%), 0.0625rem 0.1875rem 0.5rem rgb(39 44 49 / 3%);
+	border: none;
+	border-radius: 10px;
+	margin-bottom: 20px;
+}
+.container #cvs {
+  margin: 0 auto;
+}
+.container .canvas-container{
+	max-width: 1200px;
+	margin-bottom: 20px;
+}
+.container canvas{
+	max-width: 100%;
+	width: auto !important;
+}
+.el-radio-group{
+	height: 30px;
+	display: flex;
+	align-items: center;
+}
+.el-radio-group .el-radio{
+	display: flex;
+	align-items: center;
+}
+.el-icon-document{
+	height: auto !important;
+}

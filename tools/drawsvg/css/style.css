@@ -1,0 +1,91 @@
+html,body{
+	margin: 0;padding: 0;
+}
+.left{float: left}
+.right{float: right}
+table,table tr th,table tr td {
+    border: 1px solid #4991F2;padding: 0;
+}
+table {
+    width: 100%;
+    min-height: 600px;
+    height: 100%;
+    line-height: 25px;
+    text-align: center;
+    border-collapse: collapse;
+}
+.editor {
+    width: 500px;
+    height: 600px;
+}
+#main{
+	padding: 10px;	
+}
+.tab{
+	overflow: hidden;margin-bottom: 25px;
+}
+.tab .logo{
+	float: left;
+	font-family:"Arial Black";
+	font-size: 22px;
+	color: #666;
+	font-weight: bold; 
+	margin-right: 20px;
+	height: 33px;
+	line-height: 33px;
+}
+.tab a{
+	display:inline-block; 
+	border: 1px solid #4991F2;
+	color: #4991F2;
+	width:80px; 
+	padding: 5px 0;
+	text-align: center; 
+	text-decoration: none;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	margin-right: 10px;
+}
+.tab .active{
+	background-color: #4991F2; 
+	color:#FFFFFF;
+}
+.toolbar{
+	background-color: #3D4757;
+	color: #FFFFFF;
+	font-size: 12px; 
+	height: 30px;
+	line-height: 30px;
+}
+.toolbar .left{
+	width:100px;
+}
+.toolbar .theme{
+	outline: none;
+	margin: 0;
+	margin-left: 5px;
+	border: none;
+	padding: 0;
+	line-height: 0;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	height: 20px;
+	line-height:20px;
+}
+.toolbar a{
+	padding: 0 5px;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.toolbar a:hover{
+	color: #FFF59D;
+}
+.toolbar .right{
+	padding-right: 4px;
+}
+.des{
+	color: #666;
+	font-size: 13px;
+	margin: 10px 0;
+	line-height: 20px;
+}

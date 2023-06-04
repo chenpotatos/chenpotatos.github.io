@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>在线地理坐标转换工具</title>
+	<meta name="description" content="在线地理坐标转换工具，用来修正百度地图、高德地图及其它互联网地图坐标系不统一的问题。支持：WGS84、GCJ02、BD09、BD09LL、BD09MC、BD09Meter等多种格式" />
+	<link rel="stylesheet" type="text/css" href="lib/element/index.css">
+	<link rel="stylesheet" type="text/css" href="lib/style.css">
+</head>
+<body>
+	<div id="app" v-cloak>
+		<h2 class="title">在线地理坐标转换工具</h2>
+		<el-form :inline="true" :model="form">
+		  <el-form-item label="转换前坐标">
+		    <el-input v-model="form.coord" placeholder="106.898471,29.274383(先经度后纬度，英文逗号隔开)" size="medium" style="width: 380px;"></el-input>
+		  </el-form-item>
+		  <el-form-item label="转换前坐标系">
+		    <el-select v-model="form.crs" placeholder="请选择" size="medium">
+		      <el-option :label="item.name" :value="item.name" v-for="item in list"></el-option>
+		    </el-select>
+		  </el-form-item>
+		  <el-form-item>
+			<el-button type="info" @click="loc()"  size="medium">定位地图</el-button>
+			<el-button type="primary" @click="sub()" size="medium">坐标转换</el-button>
+		  </el-form-item>
+		</el-form>
+		<div id="l-map" style="width: 100%; height: 360px"></div>
+		<el-table :data="list" style="width: 100%">
+			<el-table-column prop="name" label="坐标系CRS"></el-table-column>
+			<el-table-column prop="data" label="坐标值" min-width="160">
+				<template slot-scope="scope">
+					<span v-text="scope.row.data" class="red"></span>
+				</template>
+			</el-table-column>
+			<el-table-column prop="format" label="格式"></el-table-column>
+			<el-table-column prop="des" label="说明" min-width="250"></el-table-column>
+		</el-table>
+		<div id="ad_line" style="text-align: center;margin: 5px auto;"></div>
+		<div class="examp">
+			<h3>工具介绍:</h3>
+			<p>各种坐标体系之间的经纬度如何转换？到底有哪些坐标体系？什么是火星坐标？为什么我的坐标，在地图上显示会有偏移？本工具可以转换国测局坐标(火星坐标,比如高德地图在用),百度坐标,wgs84坐标(谷歌国外以及绝大部分国外在线地图使用的坐标)。
+			</p>
+		</div>
+      	<br/><br/>
+	</div>
+</body>
+</html>
+<script src="lib/vue.js"></script>
+<script src="lib/element/index.js"></script>
+<script src="lib/gcoord.js"></script>
+<script src="https://api.map.baidu.com/api?v=2.0&ak=iDjq79Yu0C1QLcZQcfKPf3Ye"></script>
+<script src="lib/index.js"></script>
+<script src="../../add_page.js"></script>

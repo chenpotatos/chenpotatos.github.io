@@ -1,0 +1,114 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.container{
+	width: 1200px;
+	margin: auto;
+}
+.container .title{
+	text-align: center;
+	font-size: 22px;
+	color: #333;
+	margin: 15px auto;
+	overflow: hidden;
+}
+.container .des{
+	color: #3c763d;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+.container .examp{
+	margin: 10px 0;
+}
+.container .examp h3{
+	margin: 15px 0px;
+	color: #333;
+}
+.container .examp p{
+	margin: 5px 0px;
+	border-radius: 5px;-webkit-border-radius: 5px;
+	background: #f1f2f3;padding: 15px;font-size: 13px;color: #666;color: #555;line-height: 24px;
+	word-wrap:break-word;
+}
+.container .examp .total{
+	color: #111;
+	font-size: 14px;
+}
+.container .examp .total span{
+	color: #F05654;
+	margin: 0 2px;
+	font-weight: bold;
+}
+
+.tablee{
+	border: 1px solid #ddd;
+	margin-bottom: 20px;
+	padding: 10px 0;
+}
+.tablee tr{
+	padding: 10px 0;
+	height: 40px;
+}
+.tablee .name{
+	text-align: right;
+	width: 34%;
+	height: 50px;
+	color: #666;
+}
+.tablee .result{
+	background-color: #F5FEFB;
+	border: 1px solid #C8E8D7;
+	width: 480px;
+	border-radius: 4px;
+	color: #000000;
+	padding: 6px;
+	font-weight: bold;
+	min-height: 35px;
+	box-sizing: border-box;
+}
+.container textarea{
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 10px;
+	max-width: 600px;
+	min-width: 600px;
+	min-height: 80px;
+	max-height: 320px;
+	outline: none;
+}
+.container input{
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	height: 30px;
+	line-height: 30px;
+	padding: 0px 10px;
+	outline: none;
+	width: 300px;
+}
+.container .tijiao ,.container .reset{
+    width: 120px;
+	min-width: auto;
+    background-color: #1D9416;
+    color: #FFFFFF;
+    height: 35px;
+    line-height: 35px;
+    font-size: 16px;
+	cursor: pointer;
+	border: 0;
+}
+.container .reset{
+	background: #e3ba47;
+}
+.container .tijiao:hover{
+	background-color: #004444;
+}
+.container .reset:hover{
+	background-color: #a38637;
+}

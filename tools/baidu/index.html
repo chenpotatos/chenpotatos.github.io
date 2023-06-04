@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html><head lang="cn"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>让我帮你百度一下|Let Me Baidu That For You</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <img src="arrow.png" id="arrow">
+    <div class="about" title="点我点我！" onclick="showAbout()">?</div>
+    <div id="msgbox" class="pop-box">
+        <span class="caption"> 专治各种伸手党</span>
+        <div class="thanks copyBaidu">
+            *本站与百度公司没有任何联系，baidu以及本站出现的百度公司Logo是百度公司的商标。你知道就好
+        </div>
+        
+        <div class="readit" onclick="hideAbout();">我知道了</div>
+        
+    </div>
+	<div id="mask" class="mask"></div>
+
+    <div class="container">
+        <div>
+            <h1 class="title">需要我帮你<img src="baidu_logo.png" class="logo">么</h1>
+            <span class="search-box">
+                <input type="text" class="search-text" id="kw">
+                <button class="btn" id="search">百度一下</button>
+            </span>
+        </div>
+        <div id="instructions">
+            输入一个问题，然后按百度一下
+        </div>
+        <div class="link" style="display: none" id="link">
+            <input type="text" readonly="" id="lmbtfyLink" class="copyable">
+            <div>
+                <a class="link_button" href="javascript:void(0);" id="copy" data-clipboard-target="lmbtfyLink">复制</a>
+                <a class="link_button" href="javascript:void(0);" id="go" target="_blank">预览</a>
+            </div>
+        </div>
+    </div>
+
+<script src="ZeroClipboard.min.js"></script>
+<script src="jquery.min.js"></script>
+<script src="lmbtfy.js"></script>
+<div style="display:none">
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261877262'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1261877262%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+</script><span id="cnzz_stat_icon_1261877262"><a href="http://www.cnzz.com/stat/website.php?web_id=1261877262" target="_blank" title="站长统计"><img border="0" hspace="0" vspace="0" src="pic1.gif"></a></span><script src="z_stat.php" type="text/javascript"></script><script src="core.php" charset="utf-8" type="text/javascript"></script>
+</div>
+<div id="global-zeroclipboard-html-bridge" class="global-zeroclipboard-container" style="position: absolute; left: 0px; top: -9999px; width: 1px; height: 1px; z-index: 999999999;"><object id="global-zeroclipboard-flash-bridge" name="global-zeroclipboard-flash-bridge" width="100%" height="100%" type="application/x-shockwave-flash" data="ZeroClipboard.swf"><param name="allowScriptAccess" value="always"><param name="allowNetworking" value="all"><param name="menu" value="false"><param name="wmode" value="transparent"><param name="flashvars" value="trustedOrigins=aptx4869.tech%2C%2F%2Faptx4869.tech%2Chttps%3A%2F%2Faptx4869.tech&amp;swfObjectId=global-zeroclipboard-flash-bridge"></object></div></body></html>

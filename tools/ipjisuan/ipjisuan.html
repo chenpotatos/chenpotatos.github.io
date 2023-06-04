@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>网络和IP地址在线计算器 - IP地址/子网掩码计算与转换工具</title>
+		<meta name="description" content="这是一款可在线计算与转换ip地址、子网掩码的工具,提供了针对IP地址换算、子网掩码计算、可用地址数量、十六进制与十进制网址转换等常见网络计算功能。"/>
+		<link rel="stylesheet" type="text/css" href="res/style.css">
+	</head>
+	<body>
+		<div class="container">
+			<h2 class="title">网络和IP地址在线计算器</h2>
+			<p class="des">这是一款可在线计算与转换ip地址、子网掩码的工具，提供了针对IP地址换算、子网掩码计算、可用地址数量、十六进制与十进制网址转换等常见网络计算功能，非常方便实用，免费提供给需要的朋友使用。</p>
+			<div class="box_main">
+				<div class="right">
+					<div class="ahr">
+						<a href="ipjisuan.html#href_1">网络和IP地址计算器</a>
+						<a href="ipjisuan.html#href_2">IP地址和网络转换器</a>
+						<a href="ipjisuan.html#href_3">子网掩码转换器（位点分十进制格式）</a>
+						<a href="ipjisuan.html#href_4">所需数量掩码地址转换器</a>
+						<a href="ipjisuan.html#href_5">点分十进制IP地址掩码转换二进制和十六进制</a>
+						<a href="ipjisuan.html#href_6">十六进制掩码转换点分十进制IP地址</a>
+						<a href="ipjisuan.html#href_7">掩码转换到网络可用地址的数量</a>
+					</div>
+					<div id="ad_area" style="margin:5px 0;width: 300px;"></div>
+				</div>
+				<div class="left">
+					<h3 class="subtit" id="href_1" style="margin-top: 0;">网络和IP地址计算器</h3 >
+					<p>显示网络，广播，第一次和最后一个给定的网络地址:</p>
+					<form>
+						<span class="name">IP/掩码位: </span> 
+						<input class="in" size="3" value="10" name="ip_1">
+						<input class="in" size="3" value="0" name="ip_2">
+						<input class="in" size="3" value="0" name="ip_3">
+						<input class="in" size="3" value="5" name="ip_4">
+						<input class="in" size="2" value="24" name="bits">
+						<input onclick="calNBFL(this.form)" type="button" value="计算">
+						<input onclick="resetform4(this.form)" type="button" value=" 清除重算 ">
+						<div class="result">结果: </div>
+						<table summary="result" border="0" align="center">
+							<tr>
+								<td>可用地址:</td>
+								<td>
+									<input readonly="" size="10" name="numofaddr">
+								</td>
+							</tr>
+							<tr>
+								<td>掩码:</td>
+								<td>
+									<input readonly="" size="3" name="snm_1">
+									<input readonly="" size="3" name="snm_2">
+									<input readonly="" size="3" name="snm_3">
+									<input readonly="" size="3" name="snm_4">
+								</td>
+							</tr>
+							<tr>
+								<td>网络:</td>
+								<td>
+									<input readonly="" size="3" name="nwadr_1">
+									<input readonly="" size="3" name="nwadr_2">
+									<input readonly="" size="3" name="nwadr_3">
+									<input readonly="" size="3" name="nwadr_4">
+								</td>
+							</tr>
+								<tr>
+									<td>第一个可用:</td>
+									<td>
+										<input readonly="" size="3" name="firstadr_1">
+										<input readonly="" size="3" name="firstadr_2">
+										<input readonly="" size="3" name="firstadr_3">
+										<input readonly="" size="3" name="firstadr_4">
+									</td>
+								</tr>
+							<tr>
+								<td>最后可用：</td>
+								<td>
+									<input readonly="" size="3" name="lastadr_1">
+									<input readonly="" size="3" name="lastadr_2">
+									<input readonly="" size="3" name="lastadr_3">
+									<input readonly="" size="3" name="lastadr_4">
+								</td>
+							</tr>
+							<tr>
+								<td>广播:</td>
+								<td>
+									<input readonly="" size="3" name="bcast_1">
+									<input readonly="" size="3" name="bcast_2">
+									<input readonly="" size="3" name="bcast_3">
+									<input readonly="" size="3" name="bcast_4">
+								</td>
+							</tr>
+						</table>
+					</form>
+					<p>在网络掩码“位格式”也被称为CIDR格式（CIDR=无类别域间路由选择）。</p>
+					<h3 class="subtit" id="href_2">IP地址和网络转换器</h3>
+					<p>子网掩码转换器（对位点分十进制格式）</p>
+					<form>
+						<input class="in" size="3" value="255" name="snm_1">
+						<input class="in" size="3" value="255" name="snm_2">
+						<input class="in" size="3" value="255" name="snm_3">
+						<input class="in" size="3" value="0" name="snm_4">
+						<div class="result">结果: </div>
+						<input readonly="" size="7" name="result">
+						<input onclick="calcNWbits(this.form)" type="button" value=" 计算 ">
+						<input onclick="resetform1(this.form)" type="button" value=" 清除重算 ">	
+					</form>
+					<h3 class="subtit" id="href_3">子网掩码转换器（位点分十进制格式）</h3 >
+					<form>
+						<input class="in" size="4" value="24" name="bits">
+						<input onclick="calcNWmaskForm2(this.form)" type="button" value=" 计算 ">
+						<input onclick="resetform2(this.form)" type="button" value=" 清除重算 ">
+						<div class="result">结果: </div>
+						<span class="name">Dec 十进制:</span> 
+						<input readonly="" size="3" name="snm_1">
+						<input readonly="" size="3" name="snm_2">
+						<input readonly="" size="3" name="snm_3">
+						<input readonly="" size="3" name="snm_4">
+						<span class="name"> <br>Hex十六进制: </span> 
+						<input readonly="" size="2" name="hex_1">
+						<input readonly="" size="2" name="hex_2">
+						<input readonly="" size="2" name="hex_3">
+						<input readonly="" size="2" name="hex_4">
+					</form>
+					<h3 class="subtit" id="href_4">所需数量掩码地址转换器</h3>
+					<form>
+						<span class="name">需要地址的数量: </span> 
+						<input class="in" size="4" value="5" name="numofaddr">
+						<input onclick="calcNeeded(this.form)" type="button" value=" 计算 ">
+						<input onclick="resetform6(this.form)" type="button" value=" 清除重算 ">
+						<div class="result">结果: </div>
+						<span class="name">掩码: </span>
+						<input readonly="" size="4" name="bits">
+						<span class="name"> dotted dec. 掩码:</span>
+						<input readonly="" size="3" name="snm_1">
+						<input readonly="" size="3" name="snm_2">
+						<input readonly="" size="3" name="snm_3">
+						<input readonly="" size="3" name="snm_4">
+						<span class="name"> <br>可用的地址数量: </span> 
+						<input readonly="" size="10" name="maxaddr">
+					</form>
+					<h3 class="subtit" id="href_5">点分十进制IP地址掩码转换二进制和十六进制</h3>
+					<form>
+						<input class="in" size="3" value="10" name="ip_1">
+						<input class="in" size="3" value="0" name="ip_2">
+						<input class="in" size="3" value="0" name="ip_3">
+						<input class="in" size="3" value="255" name="ip_4">
+						<input onclick="calcBinBits(this.form)" type="button" value=" 计算 ">
+						<input onclick="resetform3(this.form)" type="button" value=" 清除重算 ">
+						<div class="result">结果: </div>
+						<span class="name">Bin 二进制:</span> 
+						<input readonly="" size="8" name="bits_1">
+						<input readonly="" size="8" name="bits_2">
+						<input readonly="" size="8" name="bits_3">
+						<input readonly="" size="8" name="bits_4">
+						<span class="name"> <br>Hex十六进制: </span> 
+						<input readonly="" size="2" name="hex_1">
+						<input readonly="" size="2" name="hex_2">
+						<input readonly="" size="2" name="hex_3">
+						<input readonly="" size="2" name="hex_4">
+					</form>
+					<h3 class="subtit" id="href_6">十六进制掩码转换点分十进制IP地址</h3>
+					<form>
+						<input class="in" size="10" name="hex">
+						<input onclick="dot2hex(this.form)" type="button" value=" 计算 ">
+						<input onclick="resetform12(this.form)" type="button" value=" 清除重算 ">
+						<div class="result">结果: </div>
+						<span class="name">点分十进制:</span>
+						<input readonly="" size="3" name="ip_1">
+						<input readonly="" size="3" name="ip_2">
+						<input readonly="" size="3" name="ip_3">
+						<input readonly="" size="3" name="ip_4">
+						<span class="name"><br>Bin二进制:</span>
+						<input readonly="" size="8" name="bits_1">
+						<input readonly="" size="8" name="bits_2">
+						<input readonly="" size="8" name="bits_3">
+						<input readonly="" size="8" name="bits_4">
+					</form>
+					<h3 class="subtit" id="href_7">计算位补一个IP地址（逆）</h3>
+					<form>
+						<input class="in" size="3" value="255" name="ip_1">
+						<input class="in" size="3" value="255" name="ip_2">
+						<input class="in" size="3" value="240" name="ip_3">
+						<input class="in" size="3" value="0" name="ip_4">
+						<div class="result">结果: </div>
+						<input readonly="" size="3" name="invert_1">
+						<input readonly="" size="3" name="invert_2">
+						<input readonly="" size="3" name="invert_3">
+						<input readonly="" size="3" name="invert_4">
+						<input onclick="calcIpInvert(this.form)" type="button" value=" 计算 ">
+						<input onclick="resetform8(this.form)" type="button" value=" 清除重算 ">
+					</form>
+					<h3 class="subtit">掩码转换到网络可用地址的数量</h3>
+					<form>
+						<span class="name">掩码: </span>
+						<input class="in" size="2" value="27" name="bits">
+						<input onclick="calcAmount(this.form)" type="button" value=" 计算 ">
+						<input onclick="resetform7(this.form)" type="button" value=" 清除重算 ">
+						<div class="result">结果: </div>
+						<span class="name">可用地址的数量:</span>
+						<input readonly="" size="10" name="numofaddr">
+						<span class="name"> 地址总数:</span>
+						<input readonly="" size="10" name="maxaddr">
+						<span class="name"><br>点分十进制格式:</span>
+						<input readonly="" size="3" name="snm_1">
+						<input readonly="" size="3" name="snm_2">
+						<input readonly="" size="3" name="snm_3">
+						<input readonly="" size="3" name="snm_4">
+						<div class="result">IP组播地址范围: </div>
+						<p>
+							IP组播地址范围，所有的多播地址可以很容易被认出，因为同位模式“1110”开始。
+							<br />224.0.0.0 - 224.0.0.255知名多播地址，控制通道
+							<br />224.0.1.0 - 238.255.255.255全球范围的（互联网宽）组播地址
+							<br />239.0.0.0 - 239.255.255.255本地多播地址
+						</p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="res/index.js"></script>
+<script src="../../add_page.js"></script>

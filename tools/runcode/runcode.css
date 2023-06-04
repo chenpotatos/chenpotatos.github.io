@@ -1,0 +1,86 @@
+body{
+  max-width:1240px;
+  margin:auto;
+}
+
+h2{
+	color:#6f8448;margin: 20px 0;
+}
+textarea {
+	width: 100%;
+	border: 0 none;
+	overflow: auto;
+	resize: none;
+	outline: none;
+}
+a {
+	color: #333;
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+	word-wrap: break-word;
+	font-family: verdana,Microsoft YaHei,Tahoma,sans-serif;
+}
+.content .textbox {
+	right:0;
+	left:0;
+	padding-left:5px;
+	border:1px #d1d1d1 solid;
+	top: 60px;
+	background: url(inpbg.png) #fff no-repeat;
+	overflow:hidden;
+	
+}
+
+.content .textbox div textarea {
+	padding:5px 0;
+	width:100%;
+	background: url(inpbg.png) no-repeat -4px 0;
+}
+.content .btnbar {
+	margin: 20px 0;
+}
+.btns {
+	display:block;
+	margin-right:8px;
+	width:80px;
+	height:38px;
+	line-height:38px;
+	font-size:14px;
+	text-align:center;
+	border:1px #cacaca solid;
+	border-radius:2px;
+	background: url(btn_bg.png) repeat-x;
+	float:left;
+	font-family: verdana,Microsoft YaHei,Tahoma,sans-serif;
+}
+.btns:hover {
+	border:1px #a4a4a4 solid;
+	background-position:0 -40px;
+	text-decoration:none;
+}
+.btns:active {
+	background-position:0 -80px;
+}
+.btns.hilite {
+	color:#f15214;
+	border:1px #ffc88b solid;
+	background-position:0 -120px;
+}
+.btns.hilite:hover {
+	border:1px #f60 solid;
+	background-position:0 -160px;
+}
+.btns.hilite:active {
+	background-position:0 -200px;
+}
+
+
+.content #code {
+	left:25px;
+	right:25px;
+	height:440px;
+}
+.content #code textarea {
+	height:430px;
+}

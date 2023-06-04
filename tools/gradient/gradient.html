@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>渐变色生成器_Css渐变颜色在线制作</title>
+	<meta name="description" content="帮助您快速生成CSS渐变,可在线调整CSS颜色与透明度渐变效果，用户可通过本工具像操作PS一样进行颜色的选择与拖拽调整渐变效果，并且提供实时预览效果的功能，还可实时预览生成的CSS代码，并点击一键复制代码。" />
+    <link rel="stylesheet" href="lib/style.css">
+</head>
+
+<body>
+    <div id="app" style="margin-top: -5px;">
+        <info-box></info-box>
+        <social-networks :show='showShare'></social-networks>
+        <transition name="hide-background">
+            <div id='background-display' v-if="showInfo == false" :class='{"show-social-networks": (showShare == true)}'>
+                <no-ie></no-ie>
+                <div class='show-gradient' @wheel='toggleControls("wheel", $event)'
+                    @click='toggleControls("click", $event)' :style='style'></div>
+
+                <div id='presets-fullview-container' :class='{show: showPresets}'>
+                    <div class='presets-wrapper'>
+                        <div v-for='(preset, index) in presets' :style="preset.style" @click='applyGradient(index)'>
+                        </div>
+                    </div>
+                </div>
+                <div id='controls-container' :class='{show: showControls}'>
+                    <div class='controls-wrapper'>
+                        <color-slider :colors='getColors' @add='addColorStop($event)'></color-slider>
+                        <!-- <div class='title'>
+						  <h1 data-title='Gradient Generator'>Gradient Generator</h1> 
+						</div> -->
+                        <div class='gradients-stack'>
+                            <h3>库</h3>
+                            <div class='gradients-stack-container'>
+                                <div v-for='(gradient, index) in gradients'
+                                    :class='{highlight: (currentGradient == index), noneed: (gradients.length == 1)}'>
+                                    <div class='gradient-box-container'>
+                                        <div class='gradient-box' @click='setGradient(index)'
+                                            :style='showGradient(index)'>
+                                        </div>
+                                    </div>
+                                    <div class='delete' @click='deleteGradient(index)'>×</div>
+                                    <div class='hide'  :class='{hidden: (gradient.status == "hide"), tall: (gradients.length == 1)}'  @click='toggleGradient(index)'></div>
+                                </div>
+                            </div>
+                            <div class='add-gradient' @click='addGradient'>+</div>
+                        </div>
+                        <options-container :options='getData'></options-container>
+                        <div class='color-stops-container'>
+                            <h3>颜色</h3>
+                            <div class='color-picker'>
+                                <chrome-picker :value="currentColor.value" @input="updatePicker"></chrome-picker>
+                            </div>
+                        </div>
+                        <div class='color-presets-container'>
+                            <h3>预置</h3>
+                            <user-presets></user-presets>
+                            <div class='other-presets'>
+                                <div class='gradient-div' v-for='(presetObj, index) in presetsFilterd'  :style="presetObj.preset.style" @click='applyGradient(presetObj.index)'></div>
+                            </div>
+                            <div class="more-presets" @click='showPresets = true'>更多</div>
+                        </div>
+                        <div class='user-actions-container'>
+                            <div class='copy-css' @click='copyCSS'>{{copyCSSText}}</div>
+                            <!-- <div class='info' @click='showInfo = true; showShare = false'>介绍</div>-->
+                            <!-- <div class='share' @click='showShare = true'>分享</div> -->
+                            <div class='reset' @click='resetGradient'>重置</div>
+                        </div>
+                    </div>
+					<div class="controls-wrapper" style="padding: 2.5px 0;">
+						<div id="ad_line" style="text-align: center;"></div>
+					</div>
+                </div>
+            </div>
+        </transition>
+    </div>
+
+    <template id='user-presets'>
+        <div class='user-generated' v-click-outside="deselectPreset">
+            <div class='user-presets'>
+                <span v-for='(preset, index) in userPresets' :class='{selected: selectedPreset == index}'
+                    @click='selectedPreset = index' :style='preset.style'></span>
+            </div>
+            <div class='presets-actions' :class='enableClass'>
+                <div class='apply-preset' @click='applyPreset'><i class="icon ion-md-checkmark-circle-outline"></i>
+                </div>
+                <div class='save-preset' @click='savePreset'><i class="icon ion-md-save"></i></div>
+            </div>
+        </div>
+    </template>
+
+    <template id='options-container'>
+        <div class='colors-options-container'>
+            <h3>选项</h3>
+            <div class='colors-options-top'>
+                <toggle-control :options='options.type' :icons='typeIcons'></toggle-control>
+                <toggle-control :options='options.repeating' :boolean-icon='repeatIcon' :type="'boolean'" :tip="'Repeat'"></toggle-control>
+                <toggle-control :options='options.shape' v-if="(options.type.selected == 'radial')" :icons="shapeIcons"></toggle-control>
+            </div>
+            <div class='colors-options-bottom'>
+                <div class='linear-direction' v-if="(options.type.selected == 'linear')">
+                    <circular-control :direction='options.direction'></circular-control>
+                </div>
+
+                <div class='radial-size' v-if="(options.type.selected == 'radial')">
+                    <range :rangedata='options.size.ellipse.width' v-if="(options.shape.selected == 'ellipse')"></range>
+                    <range :rangedata='options.size.ellipse.height' v-if="(options.shape.selected == 'ellipse')"></range>
+                    <range :rangedata='options.size.circle.length' v-if="(options.shape.selected == 'circle')"></range>
+                </div>
+                <div class='radial-position' v-if="(options.type.selected == 'radial')">
+                    <range :rangedata='options.position.horizontal'></range>
+                    <range :rangedata='options.position.vertical'></range>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id='circular-control'>
+        <div class='control circle' @wheel='handleCircleValue'>
+            <circle-slider v-model="direction.amount" :min="0" :max="360" circle-color="#2980b9"  progress-color="#2980b9" :side=120 knob-color="#2c3e50" :circle-width="4" :progress-width="4" :knob-radius=7></circle-slider>
+            <span class='icon spread'></span>
+            <span class='amount'>
+                <span>
+                    <input v-model='direction.amount' min="0" max="360" size="3" @keydown.up="increaseValue"   @keydown.down="decreaseValue" @input="parseDigits" />
+                </span>
+                <span>角度</span>
+            </span>
+        </div>
+    </template>
+
+    <template id='range'>
+        <div class='control range'>
+            <span class='title'>{{rangedata.name}}</span>
+            <span class='range'>
+                <input type="range" :min="rangedata.min" :max="rangedata.max" :step='rangedata.step'  v-model='rangedata.amount' @input="$emit('update')" />
+            </span>
+            <span class='amount'>{{rangedata.amount}}{{rangedata.unit}}</span>
+        </div>
+    </template>
+
+    <template id='colors'>
+        <div class='control color'>
+            <span class='color-box'>
+                <span :style='{"background-color": color.value }'></span>
+            </span>
+            <span class='color-stop'>
+                <input v-model='color.stop'>
+            </span>
+            <span class='color-delete' @click='length > 2 ? $emit("delete") : null'   :class='{disabled: length <= 2}'>×</span>
+        </div>
+    </template>
+
+
+    <template id='toggle-control'>
+        <div class='toggle control'>
+            <div v-for='(selection, index) in options.selections' @click='toggleSelection(index)'  v-if='options.selected == selection' :class='{on: (selection == true), off: (selection == false)}' :data-tip="(type == 'boolean') ? tip : selection">
+                <span class='icon' v-if='showIcon == true'  :style="{'background-image': (type == 'boolean') ? 'url('+ booleanIcon +')' : 'url('+ icons[index] +')'}"></span>
+                <span class='text' v-if='showText == true'></span>
+            </div>
+        </div>
+    </template>
+
+    <template id='color-slider'>
+        <div class='colors-slider'>
+            <div class='gradient-bar' :style='displayBarGradient' @click='$emit("add", $event)'></div>
+            <color-stop v-for='(color, index) in colors' :color='color' :key='index' :index='index'></color-stop>
+        </div>
+    </template>
+
+    <template id='color-stop'>
+        <div class='color-stop' :style='{left: color.stop + "%" }'
+            :class='{hide: (color.status == "out"), selected: (this.$root.currentColorIndex == index)}'>
+            <span class='color-view' :style='opaqueColor' @mousedown="dragStart(index)"></span>
+            <span class='stop-input'>
+                <input v-model='color.stop' size='3' min="0" max="100" @keydown.up="increaseValue"  @keydown.down="decreaseValue" @keyup="parseDigits" @focus='$root.currentColorIndex = index'>
+            </span>
+        </div>
+    </template>
+    <template id='no-ie'>
+        <div id='dont-use-ie' v-if='showIENotification'>
+            <span class='text'>此渐变生成器可在IE / Edge上运行，但为获得更好的性能，请考虑使用<a href="https://www.google.com/chrome/"   target="_blank">Chrome浏览器</a> 或 <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox浏览器</a>。</span>
+            <span class='close' @click="clearNotification">×</span>
+        </div>
+    </template>
+    <template id='info-box-template'>
+        <transition name="show-info">
+            <div id='info-box-wrapper' v-if='showInfo' @keydown.esc="hideInfo">
+                <div class='info-box'>
+                    <div class='close' @click="hideInfo">×</div>
+                    <div class='logo'>渐变色生成器</div>
+                    <div class='welcome'>
+                        <h1>欢迎使用！</h1>
+                        <p>网上有很多渐变生成器，但我试图使这个生成器尽可能全面和易于使用。</p>
+                        <p>您可以自定义渐变的各个方面，包括堆叠多个渐变、创建线性和径向渐变、应用重复渐变以及许多其他功能。</p>
+                </div>
+                <div class='howto'>
+                    <h1>如何使用：</h1>
+                    <div class='howto-wrapper'>
+                        <p>使用生成器应该是直截了当的。然而，我将在这一部分提供一些细节，以了解该项目的能力。</p>
+                        <h2>「库」</h2>
+                        <p>您可以通过单击渐变库下面的添加按钮来添加新的渐变层。每层都有显示/隐藏和删除按钮。</p>
+                        <p>当您悬停或选择图层时，将显示这些按钮。如果库中只有一层，按钮将不会显示，因为使用它们没有意义。</p>
+                        <h2>「选项」</h2>
+                        <p>在此部分可以配置所有主要选项。渐变类型(线性、径向)、重复、渐变形状(圆形、椭圆形)用于径向渐变以及渐变的高度、宽度和位置。</p>
+                        <h2>「颜色」</h2>
+                        <p>要更改任何色标的颜色，请首先选择该色标，然后使用此部分修改颜色。您可以从颜色框中选择颜色，也可以在提供的输入中插入十六进制颜色。如果愿意，还可以修改颜色的Alpha通道。</p>
+                        <p>颜色框的设计类似于Chrome Developer Tools颜色选择器。因此，如果您熟悉那个拾色器，它应该类似于这个。</p>
+                        <p>您可以通过拖动渐变栏上的图钉来更改停止值，或者通过单击图钉上的值直接设置该值。</p>
+                        <h2>「预置」</h2>
+                        <p>此部分有两种主要用法。保存(或应用)您生成的预设或选择可用的预设。</p>
+                        <p>单击预置部分下面的“更多”按钮，可以查看更多500个渐变预设。</p>
+                        <p>显示后，要隐藏预置部分，您可以使用鼠标滚轮向下滚动或在渐变显示上的任意位置单击。</p>
+                    </div>
+                </div>
+
+                <div class='resources'>
+                    <h1>制作所用</h1>
+                    <li><a target="_blank" href='https://vuejs.org/'>Vue.js</a></li>
+                    <li><a target="_blank" href='https://github.com/devstark-com/vue-circle-slider'>Vue circle  slider</a></li>
+                    <li><a target="_blank" href='http://vue-color.surge.sh/'>Vue Color</a></li>
+                    <li><a target="_blank" href='https://github.com/DamonOehlman/detect-browser'>detect-browser</a></li>
+                    <hr />
+                    <li><a target="_blank" href='https://webgradients.com/'>WebGradients</a></li>
+                    <li><a target="_blank" href='https://uigradients.com/'>uiGradients</a></li>
+                    <hr />
+                    <li><a target="_blank" href='https://thenounproject.com/indygo'>Repeat icon</a></li>
+                    <li><a target="_blank" href='https://www.iconfinder.com/yanlu'>Hide icon</a></li>
+                    <li><a target="_blank" href='https://ionicons.com/'>Ionicons</a></li>
+                    <li><a target="_blank" href='http://www.socicon.com/'>Socicon</a></li>
+                    <li><a target="_blank" href='https://fonts.google.com'>Google Fonts</a></li>
+                </div>
+            </div>
+            </div>
+        </transition>
+    </template>
+    <!-- partial -->
+    <script src='lib/vue.min.js'></script>
+    <script src='lib/vue-color.min.js'></script>
+    <script src='lib/vue-circle-slider.browser.js'></script>
+    <script src="lib/index.js"></script>
+	<script src="../../add_page.js"></script>
+</body>
+
+</html>

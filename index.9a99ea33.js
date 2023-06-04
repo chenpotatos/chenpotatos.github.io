@@ -1,0 +1,1 @@
+import{b as e}from"./index.48a3615c.js";import{g as n,c as a}from"./el-select.b78411e2.js";const t=n(0),r=()=>{const n=e("zIndex",2e3),r=a((()=>n.value+t.value));return{initialZIndex:n,currentZIndex:r,nextZIndex:()=>(t.value++,r.value)}};export{r as u};

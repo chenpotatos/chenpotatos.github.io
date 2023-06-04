@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>方差计算器 - 标准差在线计算</title>
+		<meta name="description" content="标准差公式，方差计算器在线计算，能够在线准确的计算出总组数、平均数、样板标准偏差、样本标准偏差的方差、总体标准偏差以及常用的总体标准偏差的方差。" />
+		<link rel="stylesheet" type="text/css" href="res/style.css">
+	</head>
+	<body>
+		<div class="container">
+			<h2 class="title">标准差-方差在线计算器</h2>
+			<p class="des"> 输入所有组数由半角逗号分隔数字","，如: 13,23,12,44,55。常用的计算结果一般为:总体标准偏差及总体标准方差</p>
+			<div id="ad_line" style="text-align: center;margin: 5px auto;"></div>
+			<form name="first">
+			<table class="tablee" border="0" width="100%">
+				<tr id="toNum">
+					<td class="name">
+						<font color=#0000FF>输入组数：</font>
+					</td>
+					<td>
+						<textarea name="a11" placeholder="请输入组数，组数由半角逗号分隔数字','，如: 13,23,12,44,55" ></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td class="name"></td>
+					<td>
+						<input type="button" value=" 计 算 " class="tijiao" onclick="madd()">
+					</td>
+				</tr>
+				<tr>
+					<td class="name">总组数：</td>
+					<td><input name="r1" readonly></td>
+				</tr>
+				<tr>
+					<td class="name">平均数：</td>
+					<td><input name="r2" readonly></td>
+				</tr>
+				<tr>
+					<td class="name">样本标准偏差：</td>
+					<td><input name="r3" readonly></td>
+				</tr>
+				<tr>
+					<td class="name">样本标准偏差的方差：</td>
+					<td><input name="r4" readonly></td>
+				</tr>
+				<tr>
+					<td class="name">总体标准偏差：</td>
+					<td><input name="r5" readonly></td>
+				</tr>
+				<tr>
+					<td class="name">常用的总体标准偏差的方差：</td>
+					<td><input name="r6" readonly></td>
+				</tr>
+			</table>
+			</form>
+			<div class="examp">
+				<h3>方差:</h3>
+				<p>
+					方差是在概率论和统计方差衡量随机变量或一组数据时离散程度的度量。概率论中方差用来度量随机变量和其数学期望（即均值）之间的偏离程度。统计中的方差（样本方差）是每个样本值与全体样本值的平均数之差的平方值的平均数。在许多实际问题中，研究方差即偏离程度有着重要意义。
+					<br/>方差是衡量源数据和期望值相差的度量值。
+				</p>
+			</div>
+			<div class="examp">
+				<h3>标准差：</h3>
+				<p>
+					标准差（Standard Deviation） ，数学术语，是离均差平方的算术平均数（即：方差）的算术平方根，用σ表示。标准差也被称为标准偏差，或者实验标准差，在概率统计中最常使用作为统计分布程度上的测量依据。 标准差是方差的算术平方根。标准差能反映一个数据集的离散程度。
+					<br/>平均数相同的两组数据，标准差未必相同。
+				</p>
+			</div>
+			<div class="examp">
+				<h3>计算公式：</h3>
+				<p>
+					<span>样本标准差计算公式：</span><img src="res/1.jpg" style="margin-right: 10px;"/><span>总体标准差计算公式：</span><img src="res/2.jpg" style="margin-right: 10px;"/><span>差异计算公式：</span>差异 = s2
+				</p>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="res/index.js"></script>
+<script src="../../add_page.js"></script>

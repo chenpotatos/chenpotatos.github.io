@@ -1,0 +1,54 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>图片合成工具_头像加圣诞帽、头像加口罩</title>
+		<meta name="description" content="在线头像合成工具，目前支持：头像加圣诞帽、头像加口罩，以及添加自定义合同图片等功能。" />
+		<link rel="stylesheet" type="text/css" href="lib/element-ui/index.css">
+		<link rel="stylesheet" type="text/css" href="lib/style.css">
+	</head>
+	<body>
+		<div class="container" id="app" v-cloak>
+			<h2 class="title">图片在线合成工具</h2>
+			<div id="ad_line" style="text-align: center; margin: auto; margin-bottom: 15px;"></div>
+			<el-form class="form" ref="form" :model="form" label-width="120px">
+				<el-form-item label="选择制作的图片">
+					<el-upload ref="upload" action="#" :multiple="false" accept=".jpg,.png,.gif,.bmp,.jpeg" :auto-upload="false" :on-change="selAvatar">
+					  <el-button size="small" type="primary" >点击上传需制作的头像</el-button>
+					  <span slot="tip" style="color: #999; margin-left: 20px;">只能上传jpg/png/gif等格式图片！</span>
+					</el-upload>
+				</el-form-item>
+				<el-form-item label="选择制作类型">
+					<el-radio-group v-model="form.type" @change="showImg()">
+						<el-radio :label="item.type" v-for="item in objData" :key="item.type">{{item.name}}</el-radio>
+					</el-radio-group>
+				</el-form-item>
+				<el-form-item label="选择遮盖的图片" v-if="form.type==0">
+					<el-upload ref="pic" action="#" :multiple="false" accept=".jpg,.png,.gif,.bmp,.jpeg" :auto-upload="false" :on-change="selPic">
+					  <el-button size="small" type="primary" >点击上传需遮盖的图片</el-button>
+					</el-upload>
+				</el-form-item>
+				<el-form-item label="选择对应风格" v-else>
+					<el-select v-model="form.style" placeholder="请选择" style="width:370px;">
+						<el-option :label="'风格 '+(idx+1)" :value="idx" v-for="(item,idx) in imgData" :key="idx">
+							<div style="width: 100%;display: inline-flex;justify-content: space-between;align-items: center;">
+								<img :src="item" :class="'img_'+idx" style="height:34px;"><span v-text="'风格 '+(idx+1)"></span>
+							</div>
+						</el-option>
+					</el-select>
+				</el-form-item>
+				<el-form-item>
+					<el-button type="success" @click="synthesis">重新合成图片</el-button>
+					<el-button type="warning" @click="downPic">点击下载</el-button>
+				</el-form-item>
+			</el-form>
+			<div class="cvsbox">
+				<canvas id="cvs"></canvas>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="lib/vue.js"></script>
+<script src="lib/element-ui/index.js"></script>
+<script src="lib/fabric.min.js"></script>
+<script src="lib/index.js"></script>
+<script src="../../add_page.js"></script>

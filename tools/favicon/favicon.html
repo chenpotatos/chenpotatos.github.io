@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>制作icon图标 - 在线网页地址栏favicon图标制作</title>
+		<meta name="description" content="favicon.ico一般用于作为缩略的网站标志,它显示位于浏览器的地址栏或者在标签上,用于显示网站的logo,如图红圈的位置， 目前主要的浏览器都支持favicon.ico图标.">
+		<link rel="stylesheet" type="text/css" href="res/style.css">
+	</head>
+	<body><div class="container">
+		<h2 class="title">在线网页地址栏favicon图标制作</h2>
+		<div class="box">
+			<div class="imageBox">
+				<div class="thumbBox"></div>
+				<div class="spinner" style="display: none;">Loading...</div>
+			</div>
+			<div class="action">
+				<div class="new-contentarea tc">
+					<a href="javascript:void(0)" class="upload-img">
+						<label for="upload-file">上传图像</label>
+					</a>
+					<input type="file" accept="image/*" name="upload-file" id="upload-file">
+				</div>
+				<input type="button" id="btnCrop" class="Btnsty_peyton" value="裁切">
+				<input type="button" id="btnZoomIn" class="Btnsty_peyton" value="+">
+				<input type="button" id="btnZoomOut" class="Btnsty_peyton" value="-">
+			</div>
+			<div class="cropped">
+				<canvas id="myCanvas16px" width="16" height="16" ></canvas>
+				<p>
+					16px*16px <br><a id="download16">下载</a>
+				</p>
+				<canvas id="myCanvas32px" width="32" height="32"></canvas>
+				<p>
+					32px*32px <br><a id="download32">下载</a>
+				</p>
+				<canvas id="myCanvas48px" width="48" height="48"></canvas>
+				<p>
+					48px*48px <br><a id="download48">下载</a>
+				</p>
+				<canvas id="myCanvas64px" width="64" height="64"></canvas>
+				<p>
+					64px*64px <br><a id="download64">下载</a>
+				</p>
+				<canvas id="myCanvas128px" width="128" height="128"></canvas>
+				<p>
+					128px*128px <br><a id="download128">下载</a>
+				</p>
+			</div>
+		</div>
+		<img id="transparentImg" src="res/transparent_32px.ico">
+		<div id="ad_line" style="text-align: center; margin:5px 0; "></div>
+		<div class="ToolAbout">
+			<h3>如何制作favicon.ico图标</h3>
+			<p>1.点击“上传图像”上传你的图片</p>
+			<p>2.点击“-”或“+”调节图片的大小，点击图片中间选择区域部分进行调节图片位置</p>
+			<p>3.点击“裁剪”，一键生成16*16/32*32/48*48/64*64/128*128像素的效果图，最后点击“下载”即可</p>
+			<p>4.本工具网站还提供精简版生成ICO图标：<a href="../../php/ico/ico.html">点击进入</a></p>
+			<h3>favicon.ico介绍</h3>
+			<p>所谓favicon，即Favorites
+				Icon的缩写，顾名思义，便是其可以让浏览器的收藏夹中除显示相应的标题外，还以图标的方式区别不同的网站。当然，这不仅仅是Favicon的全部，根据浏览器的不同，Favicon显示也有所区别：在大多数主流浏览器如FireFox和Internet
+				Explorer
+				(5.5及以上版本)中，favicon不仅在收藏夹中显示，还会同时出现在地址栏上，这时用户可以拖曳favicon到桌面以建立到网站的快捷方式；除此之外，标签式浏览器甚至还有不少扩展的功能，如FireFox甚至支持动画格式的favicon等。
+			</p>
+			<h3>favicon.ico如何调用? | How To Use Favicon</h3>
+			<p>在网页程序代码的head与/head之间加入下以代码:</p>
+			<pre><code>
+&lt;head&gt;
+...
+&lt;link rel="shortcut icon" href="/favicon.ico"/&gt;
+&lt;link rel="bookmark" href="/favicon.ico"/&gt;
+...
+&lt;/head&gt;
+			</code></pre>
+		</div>
+	</div></body>
+</html>
+<script src="res/jquery.js"></script>
+<script src="res/cropbox.js"></script>
+<script src="res/ico.js"></script>
+<script src="res/index.js"></script>
+<script src="../../add_page.js"></script>

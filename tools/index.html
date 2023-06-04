@@ -1,0 +1,2972 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>PotatoTools</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Tools" />
+    <meta property="og:site_name" content="PotatoTools" />
+    <meta property="og:title" content="PotatoTools" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Tools" />
+    <meta property="og:image" content="/card.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="800" />
+    <meta property="og:url" content="https://chenpotatos.github.io" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://chenpotato.carrd.co" />
+    <link href="https://fonts.googleapis.com/css?family=Sora:300,300italic,400,400italic" rel="stylesheet" type="text/css" />
+    <style>
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video
+        {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section
+        {
+            display: block;
+        }
+
+        body
+        {
+            line-height: 1;
+        }
+
+        ol,
+        ul
+        {
+            list-style: none;
+        }
+
+        blockquote,
+        q
+        {
+            quotes: none;
+        }
+
+        blockquote:before,
+        blockquote:after,
+        q:before,
+        q:after
+        {
+            content: '';
+            content: none;
+        }
+
+        table
+        {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        body
+        {
+            -webkit-text-size-adjust: none
+        }
+
+        mark
+        {
+            background-color: transparent;
+            color: inherit
+        }
+
+        input::-moz-focus-inner
+        {
+            border: 0;
+            padding: 0
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea
+        {
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            -ms-appearance: none;
+            appearance: none
+        }
+
+        *,
+        *:before,
+        *:after
+        {
+            box-sizing: border-box;
+        }
+
+        body
+        {
+            line-height: 1.0;
+            min-height: var(--viewport-height);
+            min-width: 320px;
+            overflow-x: hidden;
+            word-wrap: break-word;
+        }
+
+        #bg:before
+        {
+            content: '';
+            display: block;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20512%20512%22%20width%3D%22512%22%20height%3D%22512%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%3Cfilter%20id%3D%22noise%22%3E%20%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.875%22%20result%3D%22noise%22%20%2F%3E%20%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220.03125%200%200%200%200%200%200.04296875%200%200%200%200%200%200.05078125%200%200%200%200%200%200.6875%200%22%20%2F%3E%20%3C%2Ffilter%3E%20%3Crect%20filter%3D%22url%28%23noise%29%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22512%22%20height%3D%22512%22%20fill%3D%22transparent%22%20opacity%3D%221%22%20%2F%3E%3C%2Fsvg%3E'), linear-gradient(315deg, rgba(46, 146, 201, 0.161) 0%, rgba(224, 108, 58, 0.212) 100%);
+            background-size: 512px, cover;
+            background-position: center, 0% 0%;
+            background-repeat: repeat, repeat;
+        }
+
+        #bg
+        {
+            background-attachment: scroll;
+            height: var(--background-height);
+            left: 0;
+            pointer-events: none;
+            position: fixed;
+            top: 0;
+            transform: scale(1);
+            width: 100vw;
+            z-index: 0;
+            background-position: bottom left;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #bg video
+        {
+            bottom: 0;
+            height: 100%;
+            object-fit: cover;
+            object-position: bottom left;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        body:after
+        {
+            background-color: #1B2024;
+            content: '';
+            display: block;
+            height: 100%;
+            left: 0;
+            opacity: 0;
+            position: fixed;
+            top: 0;
+            transform: scale(1);
+            transition: opacity 0.5s ease-in-out 0s, visibility 0.5s 0s;
+            visibility: hidden;
+            width: 100%;
+            z-index: 1;
+        }
+
+        body.is-loading:after
+        {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        :root
+        {
+            --background-height: 100vh;
+            --site-language-alignment: left;
+            --site-language-direction: ltr;
+            --site-language-flex-alignment: flex-start;
+            --viewport-height: 100vh;
+        }
+
+        html
+        {
+            font-size: 15pt;
+        }
+
+        u
+        {
+            text-decoration: underline;
+        }
+
+        strong
+        {
+            color: inherit;
+            font-weight: bolder;
+        }
+
+        em
+        {
+            font-style: italic;
+        }
+
+        code
+        {
+            background-color: rgba(144, 144, 144, 0.25);
+            border-radius: 0.25em;
+            font-family: 'Lucida Console', 'Courier New', monospace;
+            font-size: 0.9em;
+            font-weight: normal;
+            letter-spacing: 0;
+            margin: 0 0.25em;
+            padding: 0.25em 0.5em;
+            text-indent: 0;
+        }
+
+        mark
+        {
+            background-color: rgba(144, 144, 144, 0.25);
+        }
+
+        s
+        {
+            text-decoration: line-through;
+        }
+
+        sub
+        {
+            font-size: smaller;
+            vertical-align: sub;
+        }
+
+        sup
+        {
+            font-size: smaller;
+            vertical-align: super;
+        }
+
+        a
+        {
+            color: inherit;
+            text-decoration: underline;
+            transition: color 0.25s ease;
+        }
+
+        #wrapper
+        {
+            -webkit-overflow-scrolling: touch;
+            align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-height: var(--viewport-height);
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+        }
+
+        #main
+        {
+            --alignment: center;
+            --flex-alignment: center;
+            --border-radius-tl: 0;
+            --border-radius-tr: 0;
+            --border-radius-br: 0;
+            --border-radius-bl: 0;
+            align-items: center;
+            display: flex;
+            flex-grow: 0;
+            flex-shrink: 0;
+            justify-content: center;
+            max-width: 100%;
+            position: relative;
+            text-align: var(--alignment);
+            z-index: 1;
+            transform: perspective(1000px) rotateY(0deg);
+            transform-origin: 50% 50%;
+            transition: opacity 0.75s ease 0s, transform 0.75s ease 0s;
+        }
+
+        #main>.inner
+        {
+            --padding-horizontal: 5.625rem;
+            --padding-vertical: 3.375rem;
+            --spacing: 2.25rem;
+            --width: 100vw;
+            border-radius: var(--border-radius-tl) var(--border-radius-tr) var(--border-radius-br) var(--border-radius-bl);
+            max-width: 100%;
+            position: relative;
+            width: var(--width);
+            z-index: 1;
+            padding: var(--padding-vertical) var(--padding-horizontal);
+        }
+
+        #main>.inner>*
+        {
+            margin-top: var(--spacing);
+            margin-bottom: var(--spacing);
+        }
+
+        #main>.inner> :first-child
+        {
+            margin-top: 0 !important;
+        }
+
+        #main>.inner> :last-child
+        {
+            margin-bottom: 0 !important;
+        }
+
+        #main>.inner>.full
+        {
+            margin-left: calc(var(--padding-horizontal) * -1);
+            max-width: calc(100% + calc(var(--padding-horizontal) * 2) + 0.4725px);
+            width: calc(100% + calc(var(--padding-horizontal) * 2) + 0.4725px);
+        }
+
+        #main>.inner>.full:first-child
+        {
+            border-top-left-radius: inherit;
+            border-top-right-radius: inherit;
+            margin-top: calc(var(--padding-vertical) * -1) !important;
+        }
+
+        #main>.inner>.full:last-child
+        {
+            border-bottom-left-radius: inherit;
+            border-bottom-right-radius: inherit;
+            margin-bottom: calc(var(--padding-vertical) * -1) !important;
+        }
+
+        #main>.inner>.full.screen
+        {
+            border-radius: 0 !important;
+            max-width: 100vw;
+            position: relative;
+            width: 100vw;
+            left: 0;
+            margin-left: calc(var(--padding-horizontal) * -1);
+            right: auto;
+        }
+
+        body.is-loading #main
+        {
+            opacity: 0;
+            transform: perspective(1000px) rotateY(16.875deg);
+        }
+
+        body.is-instant #main,
+        body.is-instant #main>.inner>*,
+        body.is-instant #main>.inner>section>*
+        {
+            transition: none !important;
+        }
+
+        body.is-instant:after
+        {
+            display: none !important;
+            transition: none !important;
+        }
+
+        h1,
+        h2,
+        h3,
+        p
+        {
+            direction: var(--site-language-direction);
+        }
+
+        h1 br+br,
+        h2 br+br,
+        h3 br+br,
+        p br+br
+        {
+            display: block;
+            content: ' ';
+        }
+
+        h1 .li,
+        h2 .li,
+        h3 .li,
+        p .li
+        {
+            display: list-item;
+            margin: 0.75em 0 0 1em;
+            padding-left: 0.5em;
+        }
+
+        #text04 br+br
+        {
+            margin-top: 0.675rem;
+        }
+
+        #text04:not(:first-child)
+        {
+            margin-top: 1.875rem !important;
+        }
+
+        #text04:not(:last-child)
+        {
+            margin-bottom: 1.875rem !important;
+        }
+
+        #text04
+        {
+            color: #FFFFFF;
+            font-family: 'Sora', sans-serif;
+            letter-spacing: -0.025rem;
+            width: 100%;
+            font-size: 2.75em;
+            line-height: 1.125;
+            font-weight: 300;
+        }
+
+        #text04 a
+        {
+            text-decoration: underline;
+        }
+
+        #text04 a:hover
+        {
+            text-decoration: none;
+        }
+
+        #text01 br+br
+        {
+            margin-top: 1.2rem;
+        }
+
+        #text01
+        {
+            color: rgba(255, 255, 255, 0.478);
+            font-family: 'Sora', sans-serif;
+            font-size: 1em;
+            line-height: 2;
+            font-weight: 300;
+        }
+
+        #text01 a
+        {
+            text-decoration: none;
+        }
+
+        #text01 a:hover
+        {
+            text-decoration: underline;
+        }
+
+        #text01 mark
+        {
+            color: #FFFFFF;
+            background-color: transparent;
+        }
+
+        #text02 br+br
+        {
+            margin-top: 0.675rem;
+        }
+
+        #text02:not(:first-child)
+        {
+            margin-top: 1.875rem !important;
+        }
+
+        #text02:not(:last-child)
+        {
+            margin-bottom: 1.875rem !important;
+        }
+
+        #text02
+        {
+            color: #FFFFFF;
+            font-family: 'Sora', sans-serif;
+            letter-spacing: -0.025rem;
+            width: 100%;
+            font-size: 1.125em;
+            line-height: 1.125;
+            font-weight: 400;
+        }
+
+        #text02 a
+        {
+            text-decoration: underline;
+        }
+
+        #text02 a:hover
+        {
+            text-decoration: none;
+        }
+
+        .buttons
+        {
+            cursor: default;
+            display: flex;
+            justify-content: var(--flex-alignment);
+            letter-spacing: 0;
+            padding: 0;
+        }
+
+        .buttons li
+        {
+            max-width: 100%;
+        }
+
+        .buttons li a
+        {
+            align-items: center;
+            justify-content: center;
+            max-width: 100%;
+            text-align: center;
+            text-decoration: none;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+        #buttons01
+        {
+            gap: 1.25rem;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        #buttons01:not(:first-child)
+        {
+            margin-top: 1.875rem !important;
+        }
+
+        #buttons01:not(:last-child)
+        {
+            margin-bottom: 1.875rem !important;
+        }
+
+        #buttons01 li a
+        {
+            display: flex;
+            width: 30rem;
+            height: 3.75rem;
+            line-height: 3.75rem;
+            padding: 0 1.875rem;
+            vertical-align: middle;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.125em;
+            font-weight: 300;
+            border-radius: 2rem;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+        }
+
+        #buttons01 li a svg
+        {
+            display: block;
+            fill: #FFFFFF;
+            height: 100%;
+            min-width: 16px;
+            width: 1.625em;
+            flex-grow: 0;
+            flex-shrink: 0;
+            margin-left: 0.5em;
+            margin-right: calc(-0.125em + 0rem);
+            transition: fill 0.25s ease;
+        }
+
+        #buttons01 li a .label
+        {
+            direction: var(--site-language-direction);
+            flex-grow: 1;
+            flex-shrink: 1;
+            text-align: left;
+            width: 100%;
+        }
+
+        #buttons01 .button
+        {
+            background-color: #40A376;
+            color: #FFFFFF;
+            background-image: linear-gradient(45deg, rgba(95, 100, 217, 0.769) 0%, rgba(64, 163, 118, 0.008) 75%);
+            background-position: 0% 0%;
+            background-repeat: repeat;
+            background-size: cover;
+        }
+
+        #buttons01 .button:hover
+        {
+            background-color: #30D98B !important;
+        }
+
+        #buttons01 li a:hover
+        {
+            transform: scale(1.025);
+        }
+
+        #buttons03
+        {
+            gap: 1.25rem;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        #buttons03:not(:first-child)
+        {
+            margin-top: 1.875rem !important;
+        }
+
+        #buttons03:not(:last-child)
+        {
+            margin-bottom: 1.875rem !important;
+        }
+
+        #buttons03 li a
+        {
+            display: flex;
+            width: 30rem;
+            height: 3.75rem;
+            line-height: 3.75rem;
+            padding: 0 1.875rem;
+            vertical-align: middle;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.125em;
+            font-weight: 300;
+            border-radius: 2rem;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+        }
+
+        #buttons03 li a svg
+        {
+            display: block;
+            fill: #FFFFFF;
+            height: 100%;
+            min-width: 16px;
+            width: 1.625em;
+            flex-grow: 0;
+            flex-shrink: 0;
+            margin-left: 0.5em;
+            margin-right: calc(-0.125em + 0rem);
+            transition: fill 0.25s ease;
+        }
+
+        #buttons03 li a .label
+        {
+            direction: var(--site-language-direction);
+            flex-grow: 1;
+            flex-shrink: 1;
+            text-align: left;
+            width: 100%;
+        }
+
+        #buttons03 .button
+        {
+            background-color: #40A376;
+            color: #FFFFFF;
+            background-image: linear-gradient(45deg, rgba(95, 100, 217, 0.769) 0%, rgba(64, 163, 118, 0.008) 75%);
+            background-position: 0% 0%;
+            background-repeat: repeat;
+            background-size: cover;
+        }
+
+        #buttons03 .button:hover
+        {
+            background-color: #30D98B !important;
+        }
+
+        #buttons03 li a:hover
+        {
+            transform: scale(1.025);
+        }
+
+        #buttons02
+        {
+            gap: 1.25rem;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        #buttons02:not(:first-child)
+        {
+            margin-top: 1.875rem !important;
+        }
+
+        #buttons02:not(:last-child)
+        {
+            margin-bottom: 1.875rem !important;
+        }
+
+        #buttons02 li a
+        {
+            display: flex;
+            width: 30rem;
+            height: 3.75rem;
+            line-height: 3.75rem;
+            padding: 0 1.875rem;
+            vertical-align: middle;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.125em;
+            font-weight: 300;
+            border-radius: 2rem;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+        }
+
+        #buttons02 li a svg
+        {
+            display: block;
+            fill: #FFFFFF;
+            height: 100%;
+            min-width: 16px;
+            width: 1.625em;
+            flex-grow: 0;
+            flex-shrink: 0;
+            margin-left: 0.5em;
+            margin-right: calc(-0.125em + 0rem);
+            transition: fill 0.25s ease;
+        }
+
+        #buttons02 li a .label
+        {
+            direction: var(--site-language-direction);
+            flex-grow: 1;
+            flex-shrink: 1;
+            text-align: left;
+            width: 100%;
+        }
+
+        #buttons02 .button
+        {
+            background-color: #40A376;
+            color: #FFFFFF;
+            background-image: linear-gradient(45deg, rgba(95, 100, 217, 0.769) 0%, rgba(64, 163, 118, 0.008) 75%);
+            background-position: 0% 0%;
+            background-repeat: repeat;
+            background-size: cover;
+        }
+
+        #buttons02 .button:hover
+        {
+            background-color: #30D98B !important;
+        }
+
+        #buttons02 li a:hover
+        {
+            transform: scale(1.025);
+        }
+
+        #buttons04
+        {
+            gap: 1.25rem;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        #buttons04:not(:first-child)
+        {
+            margin-top: 1.875rem !important;
+        }
+
+        #buttons04:not(:last-child)
+        {
+            margin-bottom: 1.875rem !important;
+        }
+
+        #buttons04 li a
+        {
+            display: flex;
+            width: 30rem;
+            height: 3.75rem;
+            line-height: 3.75rem;
+            padding: 0 1.875rem;
+            vertical-align: middle;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.125em;
+            font-weight: 300;
+            border-radius: 2rem;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+        }
+
+        #buttons04 li a svg
+        {
+            display: block;
+            fill: #FFFFFF;
+            height: 100%;
+            min-width: 16px;
+            width: 1.625em;
+            flex-grow: 0;
+            flex-shrink: 0;
+            margin-left: 0.5em;
+            margin-right: calc(-0.125em + 0rem);
+            transition: fill 0.25s ease;
+        }
+
+        #buttons04 li a .label
+        {
+            direction: var(--site-language-direction);
+            flex-grow: 1;
+            flex-shrink: 1;
+            text-align: left;
+            width: 100%;
+        }
+
+        #buttons04 .button
+        {
+            background-color: #40A376;
+            color: #FFFFFF;
+            background-image: linear-gradient(45deg, rgba(95, 100, 217, 0.769) 0%, rgba(64, 163, 118, 0.008) 75%);
+            background-position: 0% 0%;
+            background-repeat: repeat;
+            background-size: cover;
+        }
+
+        #buttons04 .button:hover
+        {
+            background-color: #30D98B !important;
+        }
+
+        #buttons04 li a:hover
+        {
+            transform: scale(1.025);
+        }
+
+        #buttons05
+        {
+            gap: 1.25rem;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        #buttons05:not(:first-child)
+        {
+            margin-top: 1.875rem !important;
+        }
+
+        #buttons05:not(:last-child)
+        {
+            margin-bottom: 1.875rem !important;
+        }
+
+        #buttons05 li a
+        {
+            display: flex;
+            width: 30rem;
+            height: 3.75rem;
+            line-height: 3.75rem;
+            padding: 0 1.875rem;
+            vertical-align: middle;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.125em;
+            font-weight: 300;
+            border-radius: 2rem;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+        }
+
+        #buttons05 li a svg
+        {
+            display: block;
+            fill: #FFFFFF;
+            height: 100%;
+            min-width: 16px;
+            width: 1.625em;
+            flex-grow: 0;
+            flex-shrink: 0;
+            margin-left: 0.5em;
+            margin-right: calc(-0.125em + 0rem);
+            transition: fill 0.25s ease;
+        }
+
+        #buttons05 li a .label
+        {
+            direction: var(--site-language-direction);
+            flex-grow: 1;
+            flex-shrink: 1;
+            text-align: left;
+            width: 100%;
+        }
+
+        #buttons05 .button
+        {
+            background-color: #40A376;
+            color: #FFFFFF;
+            background-image: linear-gradient(45deg, rgba(95, 100, 217, 0.769) 0%, rgba(64, 163, 118, 0.008) 75%);
+            background-position: 0% 0%;
+            background-repeat: repeat;
+            background-size: cover;
+        }
+
+        #buttons05 .button:hover
+        {
+            background-color: #30D98B !important;
+        }
+
+        #buttons05 li a:hover
+        {
+            transform: scale(1.025);
+        }
+
+        #buttons06
+        {
+            gap: 1.25rem;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        #buttons06:not(:first-child)
+        {
+            margin-top: 1.875rem !important;
+        }
+
+        #buttons06:not(:last-child)
+        {
+            margin-bottom: 1.875rem !important;
+        }
+
+        #buttons06 li a
+        {
+            display: flex;
+            width: 30rem;
+            height: 3.75rem;
+            line-height: 3.75rem;
+            padding: 0 1.875rem;
+            vertical-align: middle;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.125em;
+            font-weight: 300;
+            border-radius: 2rem;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+        }
+
+        #buttons06 li a svg
+        {
+            display: block;
+            fill: #FFFFFF;
+            height: 100%;
+            min-width: 16px;
+            width: 1.625em;
+            flex-grow: 0;
+            flex-shrink: 0;
+            margin-left: 0.5em;
+            margin-right: calc(-0.125em + 0rem);
+            transition: fill 0.25s ease;
+        }
+
+        #buttons06 li a .label
+        {
+            direction: var(--site-language-direction);
+            flex-grow: 1;
+            flex-shrink: 1;
+            text-align: left;
+            width: 100%;
+        }
+
+        #buttons06 .button
+        {
+            background-color: #40A376;
+            color: #FFFFFF;
+            background-image: linear-gradient(45deg, rgba(95, 100, 217, 0.769) 0%, rgba(64, 163, 118, 0.008) 75%);
+            background-position: 0% 0%;
+            background-repeat: repeat;
+            background-size: cover;
+        }
+
+        #buttons06 .button:hover
+        {
+            background-color: #30D98B !important;
+        }
+
+        #buttons06 li a:hover
+        {
+            transform: scale(1.025);
+        }
+
+        #buttons07
+        {
+            gap: 1.25rem;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        #buttons07:not(:first-child)
+        {
+            margin-top: 1.875rem !important;
+        }
+
+        #buttons07:not(:last-child)
+        {
+            margin-bottom: 1.875rem !important;
+        }
+
+        #buttons07 li a
+        {
+            display: flex;
+            width: 30rem;
+            height: 3.75rem;
+            line-height: 3.75rem;
+            padding: 0 1.875rem;
+            vertical-align: middle;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.125em;
+            font-weight: 300;
+            border-radius: 2rem;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+        }
+
+        #buttons07 li a svg
+        {
+            display: block;
+            fill: #FFFFFF;
+            height: 100%;
+            min-width: 16px;
+            width: 1.625em;
+            flex-grow: 0;
+            flex-shrink: 0;
+            margin-left: 0.5em;
+            margin-right: calc(-0.125em + 0rem);
+            transition: fill 0.25s ease;
+        }
+
+        #buttons07 li a .label
+        {
+            direction: var(--site-language-direction);
+            flex-grow: 1;
+            flex-shrink: 1;
+            text-align: left;
+            width: 100%;
+        }
+
+        #buttons07 .button
+        {
+            background-color: #40A376;
+            color: #FFFFFF;
+            background-image: linear-gradient(45deg, rgba(95, 100, 217, 0.769) 0%, rgba(64, 163, 118, 0.008) 75%);
+            background-position: 0% 0%;
+            background-repeat: repeat;
+            background-size: cover;
+        }
+
+        #buttons07 .button:hover
+        {
+            background-color: #30D98B !important;
+        }
+
+        #buttons07 li a:hover
+        {
+            transform: scale(1.025);
+        }
+
+        #buttons08
+        {
+            gap: 1.25rem;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        #buttons08:not(:first-child)
+        {
+            margin-top: 1.875rem !important;
+        }
+
+        #buttons08:not(:last-child)
+        {
+            margin-bottom: 1.875rem !important;
+        }
+
+        #buttons08 li a
+        {
+            display: flex;
+            width: 30rem;
+            height: 3.75rem;
+            line-height: 3.75rem;
+            padding: 0 1.875rem;
+            vertical-align: middle;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.125em;
+            font-weight: 300;
+            border-radius: 2rem;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+        }
+
+        #buttons08 li a svg
+        {
+            display: block;
+            fill: #FFFFFF;
+            height: 100%;
+            min-width: 16px;
+            width: 1.625em;
+            flex-grow: 0;
+            flex-shrink: 0;
+            margin-left: 0.5em;
+            margin-right: calc(-0.125em + 0rem);
+            transition: fill 0.25s ease;
+        }
+
+        #buttons08 li a .label
+        {
+            direction: var(--site-language-direction);
+            flex-grow: 1;
+            flex-shrink: 1;
+            text-align: left;
+            width: 100%;
+        }
+
+        #buttons08 .button
+        {
+            background-color: #40A376;
+            color: #FFFFFF;
+            background-image: linear-gradient(45deg, rgba(95, 100, 217, 0.769) 0%, rgba(64, 163, 118, 0.008) 75%);
+            background-position: 0% 0%;
+            background-repeat: repeat;
+            background-size: cover;
+        }
+
+        #buttons08 .button:hover
+        {
+            background-color: #30D98B !important;
+        }
+
+        #buttons08 li a:hover
+        {
+            transform: scale(1.025);
+        }
+
+        #buttons09
+        {
+            gap: 1.25rem;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        #buttons09:not(:first-child)
+        {
+            margin-top: 1.875rem !important;
+        }
+
+        #buttons09:not(:last-child)
+        {
+            margin-bottom: 1.875rem !important;
+        }
+
+        #buttons09 li a
+        {
+            display: flex;
+            width: 30rem;
+            height: 3.75rem;
+            line-height: 3.75rem;
+            padding: 0 1.875rem;
+            vertical-align: middle;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.125em;
+            font-weight: 300;
+            border-radius: 2rem;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+        }
+
+        #buttons09 li a svg
+        {
+            display: block;
+            fill: #FFFFFF;
+            height: 100%;
+            min-width: 16px;
+            width: 1.625em;
+            flex-grow: 0;
+            flex-shrink: 0;
+            margin-left: 0.5em;
+            margin-right: calc(-0.125em + 0rem);
+            transition: fill 0.25s ease;
+        }
+
+        #buttons09 li a .label
+        {
+            direction: var(--site-language-direction);
+            flex-grow: 1;
+            flex-shrink: 1;
+            text-align: left;
+            width: 100%;
+        }
+
+        #buttons09 .button
+        {
+            background-color: #40A376;
+            color: #FFFFFF;
+            background-image: linear-gradient(45deg, rgba(95, 100, 217, 0.769) 0%, rgba(64, 163, 118, 0.008) 75%);
+            background-position: 0% 0%;
+            background-repeat: repeat;
+            background-size: cover;
+        }
+
+        #buttons09 .button:hover
+        {
+            background-color: #30D98B !important;
+        }
+
+        #buttons09 li a:hover
+        {
+            transform: scale(1.025);
+        }
+
+        #buttons10
+        {
+            gap: 1.25rem;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        #buttons10:not(:first-child)
+        {
+            margin-top: 1.875rem !important;
+        }
+
+        #buttons10:not(:last-child)
+        {
+            margin-bottom: 1.875rem !important;
+        }
+
+        #buttons10 li a
+        {
+            display: flex;
+            width: 30rem;
+            height: 3.75rem;
+            line-height: 3.75rem;
+            padding: 0 1.875rem;
+            vertical-align: middle;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.125em;
+            font-weight: 300;
+            border-radius: 2rem;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+        }
+
+        #buttons10 li a svg
+        {
+            display: block;
+            fill: #FFFFFF;
+            height: 100%;
+            min-width: 16px;
+            width: 1.625em;
+            flex-grow: 0;
+            flex-shrink: 0;
+            margin-left: 0.5em;
+            margin-right: calc(-0.125em + 0rem);
+            transition: fill 0.25s ease;
+        }
+
+        #buttons10 li a .label
+        {
+            direction: var(--site-language-direction);
+            flex-grow: 1;
+            flex-shrink: 1;
+            text-align: left;
+            width: 100%;
+        }
+
+        #buttons10 .button
+        {
+            background-color: #40A376;
+            color: #FFFFFF;
+            background-image: linear-gradient(45deg, rgba(95, 100, 217, 0.769) 0%, rgba(64, 163, 118, 0.008) 75%);
+            background-position: 0% 0%;
+            background-repeat: repeat;
+            background-size: cover;
+        }
+
+        #buttons10 .button:hover
+        {
+            background-color: #30D98B !important;
+        }
+
+        #buttons10 li a:hover
+        {
+            transform: scale(1.025);
+        }
+
+        #buttons11
+        {
+            gap: 1.25rem;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        #buttons11:not(:first-child)
+        {
+            margin-top: 1.875rem !important;
+        }
+
+        #buttons11:not(:last-child)
+        {
+            margin-bottom: 1.875rem !important;
+        }
+
+        #buttons11 li a
+        {
+            display: flex;
+            width: 30rem;
+            height: 3.75rem;
+            line-height: 3.75rem;
+            padding: 0 1.875rem;
+            vertical-align: middle;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.125em;
+            font-weight: 300;
+            border-radius: 2rem;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+        }
+
+        #buttons11 li a svg
+        {
+            display: block;
+            fill: #FFFFFF;
+            height: 100%;
+            min-width: 16px;
+            width: 1.625em;
+            flex-grow: 0;
+            flex-shrink: 0;
+            margin-left: 0.5em;
+            margin-right: calc(-0.125em + 0rem);
+            transition: fill 0.25s ease;
+        }
+
+        #buttons11 li a .label
+        {
+            direction: var(--site-language-direction);
+            flex-grow: 1;
+            flex-shrink: 1;
+            text-align: left;
+            width: 100%;
+        }
+
+        #buttons11 .button
+        {
+            background-color: #40A376;
+            color: #FFFFFF;
+            background-image: linear-gradient(45deg, rgba(95, 100, 217, 0.769) 0%, rgba(64, 163, 118, 0.008) 75%);
+            background-position: 0% 0%;
+            background-repeat: repeat;
+            background-size: cover;
+        }
+
+        #buttons11 .button:hover
+        {
+            background-color: #30D98B !important;
+        }
+
+        #buttons11 li a:hover
+        {
+            transform: scale(1.025);
+        }
+
+        #buttons12
+        {
+            gap: 1.25rem;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        #buttons12:not(:first-child)
+        {
+            margin-top: 1.875rem !important;
+        }
+
+        #buttons12:not(:last-child)
+        {
+            margin-bottom: 1.875rem !important;
+        }
+
+        #buttons12 li a
+        {
+            display: flex;
+            width: 30rem;
+            height: 3.75rem;
+            line-height: 3.75rem;
+            padding: 0 1.875rem;
+            vertical-align: middle;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.125em;
+            font-weight: 300;
+            border-radius: 2rem;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+        }
+
+        #buttons12 li a svg
+        {
+            display: block;
+            fill: #FFFFFF;
+            height: 100%;
+            min-width: 16px;
+            width: 1.625em;
+            flex-grow: 0;
+            flex-shrink: 0;
+            margin-left: 0.5em;
+            margin-right: calc(-0.125em + 0rem);
+            transition: fill 0.25s ease;
+        }
+
+        #buttons12 li a .label
+        {
+            direction: var(--site-language-direction);
+            flex-grow: 1;
+            flex-shrink: 1;
+            text-align: left;
+            width: 100%;
+        }
+
+        #buttons12 .button
+        {
+            background-color: #40A376;
+            color: #FFFFFF;
+            background-image: linear-gradient(45deg, rgba(95, 100, 217, 0.769) 0%, rgba(64, 163, 118, 0.008) 75%);
+            background-position: 0% 0%;
+            background-repeat: repeat;
+            background-size: cover;
+        }
+
+        #buttons12 .button:hover
+        {
+            background-color: #30D98B !important;
+        }
+
+        #buttons12 li a:hover
+        {
+            transform: scale(1.025);
+        }
+
+        #buttons13
+        {
+            gap: 1.25rem;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        #buttons13:not(:first-child)
+        {
+            margin-top: 1.875rem !important;
+        }
+
+        #buttons13:not(:last-child)
+        {
+            margin-bottom: 1.875rem !important;
+        }
+
+        #buttons13 li a
+        {
+            display: flex;
+            width: 30rem;
+            height: 3.75rem;
+            line-height: 3.75rem;
+            padding: 0 1.875rem;
+            vertical-align: middle;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.125em;
+            font-weight: 300;
+            border-radius: 2rem;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+        }
+
+        #buttons13 li a svg
+        {
+            display: block;
+            fill: #FFFFFF;
+            height: 100%;
+            min-width: 16px;
+            width: 1.625em;
+            flex-grow: 0;
+            flex-shrink: 0;
+            margin-left: 0.5em;
+            margin-right: calc(-0.125em + 0rem);
+            transition: fill 0.25s ease;
+        }
+
+        #buttons13 li a .label
+        {
+            direction: var(--site-language-direction);
+            flex-grow: 1;
+            flex-shrink: 1;
+            text-align: left;
+            width: 100%;
+        }
+
+        #buttons13 .button
+        {
+            background-color: #40A376;
+            color: #FFFFFF;
+            background-image: linear-gradient(45deg, rgba(95, 100, 217, 0.769) 0%, rgba(64, 163, 118, 0.008) 75%);
+            background-position: 0% 0%;
+            background-repeat: repeat;
+            background-size: cover;
+        }
+
+        #buttons13 .button:hover
+        {
+            background-color: #30D98B !important;
+        }
+
+        #buttons13 li a:hover
+        {
+            transform: scale(1.025);
+        }
+
+        @media (max-width: 1920px)
+        {}
+
+        @media (max-width: 1680px)
+        {
+            html
+            {
+                font-size: 11pt;
+            }
+        }
+
+        @media (max-width: 1280px)
+        {
+            html
+            {
+                font-size: 11pt;
+            }
+        }
+
+        @media (max-width: 1024px)
+        {}
+
+        @media (max-width: 980px)
+        {
+            html
+            {
+                font-size: 9pt;
+            }
+        }
+
+        @media (max-width: 736px)
+        {
+            html
+            {
+                font-size: 10pt;
+            }
+
+            #main>.inner
+            {
+                --padding-horizontal: 2rem;
+                --padding-vertical: 3.375rem;
+                --spacing: 2.25rem;
+            }
+
+            #text04:not(:first-child)
+            {
+                margin-top: 1.40625rem !important;
+            }
+
+            #text04:not(:last-child)
+            {
+                margin-bottom: 1.40625rem !important;
+            }
+
+            #text04
+            {
+                letter-spacing: -0.021875rem;
+                width: 100%;
+                font-size: 2.75em;
+                line-height: 1.125;
+            }
+
+            #text01
+            {
+                letter-spacing: 0rem;
+                width: 100%;
+                font-size: 1em;
+                line-height: 2;
+            }
+
+            #text02:not(:first-child)
+            {
+                margin-top: 1.40625rem !important;
+            }
+
+            #text02:not(:last-child)
+            {
+                margin-bottom: 1.40625rem !important;
+            }
+
+            #text02
+            {
+                letter-spacing: -0.021875rem;
+                width: 100%;
+                font-size: 1.125em;
+                line-height: 1.125;
+            }
+
+            #buttons01:not(:first-child)
+            {
+                margin-top: 1.40625rem !important;
+            }
+
+            #buttons01:not(:last-child)
+            {
+                margin-bottom: 1.40625rem !important;
+            }
+
+            #buttons01 li a
+            {
+                letter-spacing: 0rem;
+                font-size: 1.125em;
+            }
+
+            #buttons01 li a svg
+            {
+                width: 1.625em;
+            }
+
+            #buttons03:not(:first-child)
+            {
+                margin-top: 1.40625rem !important;
+            }
+
+            #buttons03:not(:last-child)
+            {
+                margin-bottom: 1.40625rem !important;
+            }
+
+            #buttons03 li a
+            {
+                letter-spacing: 0rem;
+                font-size: 1.125em;
+            }
+
+            #buttons03 li a svg
+            {
+                width: 1.625em;
+            }
+
+            #buttons02:not(:first-child)
+            {
+                margin-top: 1.40625rem !important;
+            }
+
+            #buttons02:not(:last-child)
+            {
+                margin-bottom: 1.40625rem !important;
+            }
+
+            #buttons02 li a
+            {
+                letter-spacing: 0rem;
+                font-size: 1.125em;
+            }
+
+            #buttons02 li a svg
+            {
+                width: 1.625em;
+            }
+
+            #buttons04:not(:first-child)
+            {
+                margin-top: 1.40625rem !important;
+            }
+
+            #buttons04:not(:last-child)
+            {
+                margin-bottom: 1.40625rem !important;
+            }
+
+            #buttons04 li a
+            {
+                letter-spacing: 0rem;
+                font-size: 1.125em;
+            }
+
+            #buttons04 li a svg
+            {
+                width: 1.625em;
+            }
+
+            #buttons05:not(:first-child)
+            {
+                margin-top: 1.40625rem !important;
+            }
+
+            #buttons05:not(:last-child)
+            {
+                margin-bottom: 1.40625rem !important;
+            }
+
+            #buttons05 li a
+            {
+                letter-spacing: 0rem;
+                font-size: 1.125em;
+            }
+
+            #buttons05 li a svg
+            {
+                width: 1.625em;
+            }
+
+            #buttons06:not(:first-child)
+            {
+                margin-top: 1.40625rem !important;
+            }
+
+            #buttons06:not(:last-child)
+            {
+                margin-bottom: 1.40625rem !important;
+            }
+
+            #buttons06 li a
+            {
+                letter-spacing: 0rem;
+                font-size: 1.125em;
+            }
+
+            #buttons06 li a svg
+            {
+                width: 1.625em;
+            }
+
+            #buttons07:not(:first-child)
+            {
+                margin-top: 1.40625rem !important;
+            }
+
+            #buttons07:not(:last-child)
+            {
+                margin-bottom: 1.40625rem !important;
+            }
+
+            #buttons07 li a
+            {
+                letter-spacing: 0rem;
+                font-size: 1.125em;
+            }
+
+            #buttons07 li a svg
+            {
+                width: 1.625em;
+            }
+
+            #buttons08:not(:first-child)
+            {
+                margin-top: 1.40625rem !important;
+            }
+
+            #buttons08:not(:last-child)
+            {
+                margin-bottom: 1.40625rem !important;
+            }
+
+            #buttons08 li a
+            {
+                letter-spacing: 0rem;
+                font-size: 1.125em;
+            }
+
+            #buttons08 li a svg
+            {
+                width: 1.625em;
+            }
+
+            #buttons09:not(:first-child)
+            {
+                margin-top: 1.40625rem !important;
+            }
+
+            #buttons09:not(:last-child)
+            {
+                margin-bottom: 1.40625rem !important;
+            }
+
+            #buttons09 li a
+            {
+                letter-spacing: 0rem;
+                font-size: 1.125em;
+            }
+
+            #buttons09 li a svg
+            {
+                width: 1.625em;
+            }
+
+            #buttons10:not(:first-child)
+            {
+                margin-top: 1.40625rem !important;
+            }
+
+            #buttons10:not(:last-child)
+            {
+                margin-bottom: 1.40625rem !important;
+            }
+
+            #buttons10 li a
+            {
+                letter-spacing: 0rem;
+                font-size: 1.125em;
+            }
+
+            #buttons10 li a svg
+            {
+                width: 1.625em;
+            }
+
+            #buttons11:not(:first-child)
+            {
+                margin-top: 1.40625rem !important;
+            }
+
+            #buttons11:not(:last-child)
+            {
+                margin-bottom: 1.40625rem !important;
+            }
+
+            #buttons11 li a
+            {
+                letter-spacing: 0rem;
+                font-size: 1.125em;
+            }
+
+            #buttons11 li a svg
+            {
+                width: 1.625em;
+            }
+
+            #buttons12:not(:first-child)
+            {
+                margin-top: 1.40625rem !important;
+            }
+
+            #buttons12:not(:last-child)
+            {
+                margin-bottom: 1.40625rem !important;
+            }
+
+            #buttons12 li a
+            {
+                letter-spacing: 0rem;
+                font-size: 1.125em;
+            }
+
+            #buttons12 li a svg
+            {
+                width: 1.625em;
+            }
+
+            #buttons13:not(:first-child)
+            {
+                margin-top: 1.40625rem !important;
+            }
+
+            #buttons13:not(:last-child)
+            {
+                margin-bottom: 1.40625rem !important;
+            }
+
+            #buttons13 li a
+            {
+                letter-spacing: 0rem;
+                font-size: 1.125em;
+            }
+
+            #buttons13 li a svg
+            {
+                width: 1.625em;
+            }
+        }
+
+        @media (max-width: 480px)
+        {
+            #main>.inner
+            {
+                --spacing: 1.96875rem;
+            }
+
+            #buttons01
+            {
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
+
+            #buttons01 li a
+            {
+                display: inline-flex;
+                max-width: 32rem;
+                width: 100%;
+            }
+
+            #buttons03
+            {
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
+
+            #buttons03 li a
+            {
+                display: inline-flex;
+                max-width: 32rem;
+                width: 100%;
+            }
+
+            #buttons02
+            {
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
+
+            #buttons02 li a
+            {
+                display: inline-flex;
+                max-width: 32rem;
+                width: 100%;
+            }
+
+            #buttons04
+            {
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
+
+            #buttons04 li a
+            {
+                display: inline-flex;
+                max-width: 32rem;
+                width: 100%;
+            }
+
+            #buttons05
+            {
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
+
+            #buttons05 li a
+            {
+                display: inline-flex;
+                max-width: 32rem;
+                width: 100%;
+            }
+
+            #buttons06
+            {
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
+
+            #buttons06 li a
+            {
+                display: inline-flex;
+                max-width: 32rem;
+                width: 100%;
+            }
+
+            #buttons07
+            {
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
+
+            #buttons07 li a
+            {
+                display: inline-flex;
+                max-width: 32rem;
+                width: 100%;
+            }
+
+            #buttons08
+            {
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
+
+            #buttons08 li a
+            {
+                display: inline-flex;
+                max-width: 32rem;
+                width: 100%;
+            }
+
+            #buttons09
+            {
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
+
+            #buttons09 li a
+            {
+                display: inline-flex;
+                max-width: 32rem;
+                width: 100%;
+            }
+
+            #buttons10
+            {
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
+
+            #buttons10 li a
+            {
+                display: inline-flex;
+                max-width: 32rem;
+                width: 100%;
+            }
+
+            #buttons11
+            {
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
+
+            #buttons11 li a
+            {
+                display: inline-flex;
+                max-width: 32rem;
+                width: 100%;
+            }
+
+            #buttons12
+            {
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
+
+            #buttons12 li a
+            {
+                display: inline-flex;
+                max-width: 32rem;
+                width: 100%;
+            }
+
+            #buttons13
+            {
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
+
+            #buttons13 li a
+            {
+                display: inline-flex;
+                max-width: 32rem;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 360px)
+        {
+            #main>.inner
+            {
+                --padding-horizontal: 1.5rem;
+                --padding-vertical: 2.53125rem;
+                --spacing: 1.6875rem;
+            }
+
+            #text04
+            {
+                font-size: 2em;
+            }
+
+            #text01
+            {
+                font-size: 1em;
+            }
+
+            #text02
+            {
+                font-size: 1.125em;
+            }
+
+            #buttons01
+            {
+                gap: 0.9375rem;
+            }
+
+            #buttons03
+            {
+                gap: 0.9375rem;
+            }
+
+            #buttons02
+            {
+                gap: 0.9375rem;
+            }
+
+            #buttons04
+            {
+                gap: 0.9375rem;
+            }
+
+            #buttons05
+            {
+                gap: 0.9375rem;
+            }
+
+            #buttons06
+            {
+                gap: 0.9375rem;
+            }
+
+            #buttons07
+            {
+                gap: 0.9375rem;
+            }
+
+            #buttons08
+            {
+                gap: 0.9375rem;
+            }
+
+            #buttons09
+            {
+                gap: 0.9375rem;
+            }
+
+            #buttons10
+            {
+                gap: 0.9375rem;
+            }
+
+            #buttons11
+            {
+                gap: 0.9375rem;
+            }
+
+            #buttons12
+            {
+                gap: 0.9375rem;
+            }
+
+            #buttons13
+            {
+                gap: 0.9375rem;
+            }
+        }
+
+    </style><noscript>
+        <style>
+            body:before
+            {
+                background-attachment: scroll;
+                content: '';
+                display: block;
+                height: var(--background-height);
+                left: 0;
+                pointer-events: none;
+                position: fixed;
+                top: 0;
+                transform: scale(1);
+                width: 100vw;
+                z-index: 0;
+                background-image: url('/bg.mp4.jpg');
+                background-size: 512px, cover, cover;
+                background-position: center, 0% 0%, bottom left;
+                background-repeat: repeat, repeat, no-repeat;
+            }
+
+            body
+            {
+                overflow: auto !important;
+            }
+
+            body:after
+            {
+                display: none !important;
+            }
+
+            #main>.inner
+            {
+                opacity: 1.0 !important;
+            }
+
+            #main
+            {
+                opacity: 1.0 !important;
+                transform: none !important;
+                transition: none !important;
+                filter: none !important;
+            }
+
+        </style>
+    </noscript>
+</head>
+
+<body class="is-loading"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40" display="none" width="0" height="0">
+        <symbol id="icon-996" viewBox="0 0 40 40">
+            <path d="M35.7,16l-4.8,0v18.6c0,1.1-0.6,1.6-1.6,1.6H20h0h0h-9.3c-1.1,0-1.6-0.6-1.6-1.6V16l-4.8,0L1,8.4l12.7-4.1 c0.1,0,0.2,0,0.2,0c0.5,0,0.7,0.4,0.8,0.8c0,0,0,0,0.1,0.1C15.3,6.9,16.6,9,19.9,9c0,0,0.1,0,0.1,0c0,0,0.1,0,0.1,0 c3.3,0,4.6-2.1,5.1-3.8c0,0,0.1-0.1,0.1-0.1c0.1-0.4,0.4-0.8,0.8-0.8c0,0,0.1,0,0.2,0L39,8.4L35.7,16z" />
+        </symbol>
+        <symbol id="icon-9f8" viewBox="0 0 40 40">
+            <path d="M30.79,3.55L18.33,14.86c-1.2,1.09-1.8,2.47-1.8,4.14c0,1.65,0.59,3.08,1.77,4.29s2.59,1.81,4.23,1.81 c1.58,0,2.99-0.59,4.26-1.78c1.73-1.6,4.76-6.5,9.08-14.69c0.59-1.15,0.88-2.13,0.88-2.95c0-0.91-0.34-1.67-1.03-2.28 S34.24,2.5,33.33,2.5C32.41,2.5,31.56,2.85,30.79,3.55z M13.14,22.9c-0.68,0.1-1.35,0.26-2.01,0.5s-1.24,0.54-1.72,0.93 c-0.48,0.38-0.93,0.88-1.36,1.48c-0.42,0.61-0.8,1.34-1.12,2.2c-0.18,0.48-0.54,0.72-1.07,0.72c-0.2,0-0.49-0.11-0.9-0.33 s-0.79-0.46-1.15-0.71s-0.77-0.54-1.21-0.87s-0.71-0.52-0.8-0.59c0,1.54,0.19,2.97,0.57,4.3s0.94,2.52,1.69,3.57 s1.74,1.88,2.98,2.49s2.66,0.91,4.26,0.91c2.8,0,5.07-0.87,6.81-2.62s2.58-4,2.53-6.78l-0.02-1.39c-1.08-0.29-2.06-0.78-2.94-1.48 s-1.57-1.55-2.08-2.54C14.63,22.73,13.81,22.8,13.14,22.9z" />
+        </symbol>
+        <symbol id="icon-969" viewBox="0 0 40 40">
+            <path d="M32.4,32.6h-5.1v-5.1h5.1V32.6z M26.2,32.6h-5.7v-5.1h5.7V32.6z M32.4,26.3h-5.1v-5.7h5.1V26.3z M26.2,26.3h-5.7v-5.7h5.7 V26.3z M32.4,19.6h-5.1v-5.1h5.1V19.6z M19.4,32.6h-5.7v-5.1h5.7V32.6z M26.2,19.6h-5.7v-5.1h5.7V19.6z M12.6,32.6H7.6v-5.1h5.1 V32.6z M19.4,26.3h-5.7v-5.7h5.7V26.3z M25.7,11.1V6c0-0.2,0.1-0.3,0.2-0.4c0.1-0.1,0.2-0.2,0.4-0.2h1.1c0.2,0,0.3,0.1,0.4,0.2 c0.1,0.1,0.2,0.2,0.2,0.4v5.1c0,0.2-0.1,0.3-0.2,0.4c-0.1,0.1-0.2,0.2-0.4,0.2h-1.1c-0.2,0-0.3-0.1-0.4-0.2 C25.7,11.4,25.7,11.2,25.7,11.1z M12.6,26.3H7.6v-5.7h5.1V26.3z M19.4,19.6h-5.7v-5.1h5.7V19.6z M12.6,19.6H7.6v-5.1h5.1V19.6z M12.1,11.1V6c0-0.2,0.1-0.3,0.2-0.4c0.1-0.1,0.2-0.2,0.4-0.2h1.1c0.2,0,0.3,0.1,0.4,0.2c0.1,0.1,0.2,0.2,0.2,0.4v5.1 c0,0.2-0.1,0.3-0.2,0.4c-0.1,0.1-0.2,0.2-0.4,0.2h-1.1c-0.2,0-0.3-0.1-0.4-0.2C12.1,11.4,12.1,11.2,12.1,11.1z M5.3,9.9v22.6 c0,0.6,0.2,1.1,0.7,1.6c0.4,0.4,1,0.7,1.6,0.7h24.9c0.6,0,1.1-0.2,1.6-0.7c0.4-0.4,0.7-1,0.7-1.6V9.9c0-0.6-0.2-1.1-0.7-1.6 c-0.4-0.4-1-0.7-1.6-0.7h-2.3V6c0-0.8-0.3-1.4-0.8-2s-1.2-0.8-2-0.8h-1.1c-0.8,0-1.4,0.3-2,0.8c-0.6,0.6-0.8,1.2-0.8,2v1.7h-6.8V6 c0-0.8-0.3-1.4-0.8-2s-1.2-0.8-2-0.8h-1.1c-0.8,0-1.4,0.3-2,0.8c-0.6,0.6-0.8,1.2-0.8,2v1.7H7.6C6.9,7.7,6.4,7.9,6,8.3 C5.5,8.8,5.3,9.3,5.3,9.9z" />
+        </symbol>
+        <symbol id="icon-9c2" viewBox="0 0 40 40">
+            <path d="M34,11.7c0-0.6-0.2-1.2-0.7-1.6l-3.2-3.2c-0.4-0.4-1-0.7-1.6-0.7s-1.2,0.2-1.6,0.7L20,13.8l-6.9-6.9c-0.4-0.4-1-0.7-1.6-0.7 c-0.6,0-1.2,0.2-1.6,0.7l-3.2,3.2c-0.4,0.4-0.7,1-0.7,1.6c0,0.6,0.2,1.2,0.7,1.6l6.9,6.9l-6.9,6.9c-0.4,0.4-0.7,1-0.7,1.6 s0.2,1.2,0.7,1.6l3.2,3.2c0.4,0.4,1,0.7,1.6,0.7c0.6,0,1.2-0.2,1.6-0.7l6.9-6.9l6.9,6.9c0.4,0.4,1,0.7,1.6,0.7s1.2-0.2,1.6-0.7 l3.2-3.2c0.4-0.4,0.7-1,0.7-1.6s-0.2-1.2-0.7-1.6l-6.9-6.9l6.9-6.9C33.8,12.9,34,12.3,34,11.7z" />
+        </symbol>
+        <symbol id="icon-9c1" viewBox="0 0 40 40">
+            <path d="M37.9,10.6l-3.2-3.2c-0.4-0.4-1-0.7-1.6-0.7c-0.6,0-1.2,0.2-1.6,0.7L15.9,23l-7-7c-0.4-0.4-1-0.7-1.6-0.7S6.1,15.6,5.6,16 l-3.2,3.2c-0.4,0.4-0.7,1-0.7,1.6S2,22,2.4,22.5l8.6,8.6l3.2,3.2c0.4,0.4,1,0.7,1.6,0.7c0.6,0,1.2-0.2,1.6-0.7l3.2-3.2l17.2-17.2 c0.4-0.4,0.7-1,0.7-1.6C38.6,11.6,38.4,11.1,37.9,10.6z" />
+        </symbol>
+        <symbol id="icon-a31" viewBox="0 0 40 40">
+            <path d="M2.6,20.8l1.5-1.5c0.2-0.2,0.5-0.2,0.7,0l11,11l21-21c0.2-0.2,0.5-0.2,0.7,0l1.5,1.5c0.2,0.2,0.2,0.5,0,0.7L15.8,34.7 L2.6,21.5C2.4,21.3,2.4,21,2.6,20.8z" />
+        </symbol>
+        <symbol id="icon-a4d" viewBox="0 0 40 40">
+            <path d="M32.4,34.7c-0.3,0.3-0.7,0.5-1.1,0.5H9.1c-0.4,0-0.8-0.2-1.1-0.5c-0.3-0.3-0.5-0.7-0.5-1.1V6.4 C7.5,6,7.7,5.6,8,5.3C8.3,5,8.7,4.8,9.1,4.8h13.3l-0.1,9.3c0,0.4,0.2,0.8,0.5,1.1c0.3,0.3,0.7,0.5,1.1,0.5h9v17.9 C32.9,34,32.7,34.4,32.4,34.7z M14.4,23.5c0.3-0.5,0.8-0.8,1.4-0.8c0.3,0,0.5,0.1,0.7,0.2c0.2,0.1,0.4,0.3,0.6,0.5 c0.1,0.1,0.2,0.3,0.3,0.6l2.4-0.6c-0.3-1-0.8-1.7-1.4-2.1c-0.6-0.5-1.5-0.7-2.6-0.7c-1.4,0-2.5,0.4-3.2,1.2c-0.8,0.8-1.1,2-1.1,3.5 c0,1.1,0.2,2.1,0.7,2.8c0.4,0.7,1,1.2,1.5,1.5c0.6,0.3,1.4,0.4,2.3,0.4c0.8,0,1.4-0.1,1.9-0.4c0.5-0.2,0.9-0.6,1.3-1.1 c0.3-0.5,0.6-1,0.7-1.7l-2.4-0.7c-0.1,0.6-0.3,1-0.6,1.3c-0.3,0.3-0.7,0.5-1.2,0.5c-0.5,0-0.9-0.2-1.2-0.6C14.2,27,14,26.4,14,25.3 C14,24.5,14.2,23.9,14.4,23.5z M26.9,20.8L25,27.4l-2-6.6h-2.8l3.3,9.1h2.9l3.2-9.1H26.9z M24.5,5.5c0.2,0.2,0.4,0.3,0.6,0.5 l6.8,6.9c0.2,0.2,0.3,0.4,0.5,0.6l-7.9-0.1V5.5z" />
+        </symbol>
+        <symbol id="icon-951" viewBox="0 0 40 40">
+            <path d="M24.5,13.6V5.8c0.2,0.2,0.4,0.3,0.6,0.5l6.8,6.8c0.2,0.2,0.3,0.4,0.5,0.6L24.5,13.6L24.5,13.6z M22.3,14.2 c0,0.4,0.2,0.8,0.5,1.1c0.3,0.3,0.7,0.5,1.1,0.5h9v17.5c0,0.4-0.2,0.8-0.5,1.1c-0.3,0.3-0.7,0.5-1.1,0.5H9.1c-0.4,0-0.8-0.2-1.1-0.5 c-0.3-0.3-0.5-0.7-0.5-1.1V6.7c0-0.4,0.2-0.8,0.5-1.1c0.3-0.3,0.7-0.5,1.1-0.5h13.3L22.3,14.2L22.3,14.2z" />
+        </symbol>
+        <symbol id="icon-950" viewBox="0 0 40 40">
+            <path d="M31.8,11.4c0.3,0.3,0.6,0.7,0.8,1.3s0.3,1,0.3,1.5v19.1c0,0.4-0.2,0.8-0.5,1.1c-0.3,0.3-0.7,0.5-1.1,0.5H9.1 c-0.4,0-0.8-0.2-1.1-0.5c-0.3-0.3-0.5-0.7-0.5-1.1V6.7c0-0.4,0.2-0.8,0.5-1.1c0.3-0.3,0.7-0.5,1.1-0.5h14.9c0.4,0,0.9,0.1,1.5,0.3 c0.5,0.2,1,0.5,1.3,0.8L31.8,11.4z M24.5,7.4v6.2h6.2c-0.1-0.3-0.2-0.5-0.4-0.7l-5.2-5.2C25,7.6,24.8,7.5,24.5,7.4z M30.8,32.7v-17 h-6.9c-0.4,0-0.8-0.2-1.1-0.5c-0.3-0.3-0.5-0.7-0.5-1.1V7.3H9.6v25.5L30.8,32.7L30.8,32.7z" />
+        </symbol>
+        <symbol id="icon-9e2" viewBox="0 0 40 40">
+            <path d="M35.7,36.6H4.3C3.6,36.6,3,36,3,35.3V34c0-0.7,0.6-1.3,1.3-1.3h31.5c0.7,0,1.3,0.6,1.3,1.3v1.3C37,36.1,36.4,36.6,35.7,36.6 z M21.4,28.3c-0.4,0.4-0.9,0.6-1.5,0.6s-1.1-0.2-1.5-0.6L8,18c-0.4-0.4-0.6-0.9-0.6-1.5S7.6,15.4,8,15l1.2-1.2 c0.4-0.4,0.9-0.6,1.5-0.6s1.1,0.2,1.5,0.6l4.7,4.7V7.3c0-0.6,0.2-1,0.6-1.4c0.4-0.3,0.8-0.5,1.4-0.5h2c0.6,0,1.1,0.2,1.5,0.5 C22.8,6.3,23,6.8,23,7.3v11.2l4.7-4.7c0.4-0.4,0.9-0.6,1.5-0.6s1.1,0.2,1.5,0.6l1.2,1.2c0.4,0.4,0.6,0.9,0.6,1.5s-0.2,1.1-0.6,1.5 L21.4,28.3z" />
+        </symbol>
+        <symbol id="icon-90a" viewBox="0 0 40 40">
+            <path d="M37.3,15.3v15.3c0,0.8-0.3,1.6-0.9,2.2c-0.6,0.6-1.4,0.9-2.2,0.9H5.8c-0.8,0-1.6-0.3-2.2-0.9s-0.9-1.4-0.9-2.2V15.3 c0.5,0.6,1.2,1.1,2,1.7c4.7,3.1,7.9,5.4,9.6,6.7c0.7,0.5,1.4,0.9,1.8,1.2c0.4,0.3,1,0.6,1.9,0.9c0.7,0.3,1.5,0.5,2.1,0.5l0,0 c0.6,0,1.4-0.2,2.1-0.5c0.7-0.3,1.4-0.6,1.9-0.9c0.4-0.3,1-0.7,1.8-1.2c2.2-1.6,5.4-3.8,9.6-6.7C36.1,16.5,36.7,15.9,37.3,15.3 L37.3,15.3z M37.3,9.6c0,1-0.3,2-0.9,2.9c-0.6,0.9-1.5,1.8-2.4,2.4c-4.9,3.3-7.9,5.4-9,6.2c-0.1,0.1-0.4,0.3-0.8,0.6 c-0.4,0.3-0.7,0.5-1,0.7c-0.3,0.2-0.6,0.4-1,0.6c-0.4,0.2-0.7,0.4-1.1,0.5c-0.4,0.1-0.6,0.2-0.9,0.2l0,0c-0.3,0-0.6-0.1-0.9-0.2 c-0.3-0.1-0.7-0.3-1.1-0.5c-0.4-0.2-0.7-0.4-1-0.6c-0.3-0.2-0.6-0.4-1-0.7c-0.4-0.3-0.7-0.5-0.8-0.6c-1.1-0.8-2.8-2-5.1-3.5 c-2.3-1.6-3.3-2.4-3.7-2.7c-0.8-0.5-1.6-1.2-2.3-2.2s-1-1.9-1-2.6c0-1,0.3-1.9,0.8-2.5c0.5-0.6,1.2-1,2.3-1h28.4 c0.8,0,1.6,0.3,2.2,0.9C37.1,8.1,37.3,8.8,37.3,9.6L37.3,9.6z" />
+        </symbol>
+        <symbol id="icon-901" viewBox="0 0 40 40">
+            <path d="M34.9,30.5V15.6c-0.4,0.4-0.8,0.9-1.4,1.2c-3.4,2.7-6.2,4.8-8.2,6.6c-0.6,0.5-1.1,0.9-1.6,1.2c-0.4,0.3-0.9,0.6-1.7,0.9 c-0.7,0.3-1.4,0.5-2,0.5l0,0c-0.6,0-1.2-0.2-2-0.5c-0.7-0.3-1.2-0.6-1.7-0.9c-0.4-0.3-0.9-0.7-1.6-1.2c-2.1-1.7-4.8-3.8-8.2-6.6 c-0.5-0.4-0.9-0.8-1.4-1.2v14.9c0,0.2,0.1,0.3,0.2,0.4C5.7,31,5.9,31.1,6,31.1h28.4c0.2,0,0.3-0.1,0.4-0.2 C34.8,30.8,34.9,30.7,34.9,30.5L34.9,30.5z M34.9,10.2V9.7c0,0,0-0.1,0-0.2c0-0.1,0-0.2-0.1-0.2c-0.1,0-0.1,0-0.1-0.2 c0-0.1-0.1-0.2-0.2-0.1c-0.1,0-0.2,0-0.3,0H5.8C5.6,8.9,5.4,9,5.3,9.1C5.2,9.2,5.1,9.3,5.1,9.5c0,2.2,0.9,4,2.8,5.5 c2.5,2,5.1,4,7.7,6.1c0.1,0.1,0.3,0.2,0.7,0.5c0.4,0.3,0.6,0.5,0.9,0.7c0.2,0.2,0.5,0.4,0.8,0.6c0.3,0.2,0.7,0.4,0.9,0.5 c0.3,0.1,0.6,0.2,0.8,0.2l0,0c0.2,0,0.5-0.1,0.8-0.2c0.3-0.1,0.6-0.3,0.9-0.5c0.3-0.2,0.6-0.4,0.8-0.6c0.2-0.2,0.5-0.4,0.9-0.7 c0.4-0.3,0.6-0.5,0.6-0.5c2.7-2.1,5.3-4.2,7.7-6.1c0.7-0.5,1.4-1.2,2-2.2C34.6,11.8,34.9,11,34.9,10.2L34.9,10.2z M37.3,9.5v21 c0,0.8-0.3,1.6-0.9,2.2s-1.4,0.9-2.2,0.9H5.8c-0.8,0-1.6-0.3-2.2-0.9c-0.6-0.6-0.9-1.4-0.9-2.2v-21c0-0.8,0.3-1.6,0.9-2.2 s1.4-0.9,2.2-0.9h28.4c0.8,0,1.6,0.3,2.2,0.9S37.3,8.7,37.3,9.5z" />
+        </symbol>
+        <symbol id="icon-921" viewBox="0 0 40 40">
+            <path d="M9.5,11.1c0.8,0,1.4,0.3,2,0.8s0.8,1.2,0.8,2v18.8c0,0.8-0.3,1.4-0.8,2s-1.2,0.8-2,0.8H7.3c-0.8,0-1.4-0.3-2-0.8 c-0.5-0.5-0.8-1.2-0.8-2V13.9c0-0.8,0.3-1.4,0.8-2s1.2-0.8,2-0.8C7.3,11.1,9.5,11.1,9.5,11.1z M33.3,14c0.7,0.4,1.2,0.9,1.6,1.6 c0.4,0.7,0.6,1.4,0.6,2.2v13.3c0,1.2-0.4,2.3-1.3,3.1c-0.9,0.9-1.9,1.3-3.1,1.3h-15c-0.8,0-1.4-0.3-2-0.8c-0.5-0.5-0.8-1.2-0.8-2 V6.1c0-0.5,0.2-0.9,0.5-1.2s0.7-0.5,1.2-0.5h11.6c0.5,0,1,0.1,1.5,0.3c0.6,0.2,1,0.5,1.3,0.8l2.6,2.6c0.3,0.3,0.6,0.8,0.8,1.3 s0.3,1.1,0.3,1.5L33.3,14L33.3,14z M20.6,31.1v-2.2c0-0.2-0.1-0.3-0.2-0.4c-0.1-0.1-0.2-0.2-0.4-0.2h-2.2c-0.2,0-0.3,0.1-0.4,0.2 c-0.1,0.1-0.2,0.2-0.2,0.4v2.2c0,0.2,0.1,0.3,0.2,0.4c0.1,0.1,0.2,0.2,0.4,0.2H20c0.2,0,0.3-0.1,0.4-0.2 C20.5,31.4,20.6,31.2,20.6,31.1z M20.6,26.7v-2.2c0-0.2-0.1-0.3-0.2-0.4c-0.1-0.1-0.2-0.2-0.4-0.2h-2.2c-0.2,0-0.3,0.1-0.4,0.2 c-0.1,0.1-0.2,0.2-0.2,0.4v2.2c0,0.2,0.1,0.3,0.2,0.4c0.1,0.1,0.2,0.2,0.4,0.2H20c0.2,0,0.3-0.1,0.4-0.2 C20.5,26.9,20.6,26.8,20.6,26.7z M20.6,22.2V20c0-0.2-0.1-0.3-0.2-0.4c-0.1-0.1-0.2-0.2-0.4-0.2h-2.2c-0.2,0-0.3,0.1-0.4,0.2 c-0.1,0.1-0.2,0.2-0.2,0.4v2.2c0,0.2,0.1,0.3,0.2,0.4c0.1,0.1,0.2,0.2,0.4,0.2H20c0.2,0,0.3-0.1,0.4-0.2S20.6,22.4,20.6,22.2z M25,31.1v-2.2c0-0.2-0.1-0.3-0.2-0.4c-0.1-0.1-0.2-0.2-0.4-0.2h-2.2c-0.2,0-0.3,0.1-0.4,0.2c-0.1,0.1-0.2,0.2-0.2,0.4v2.2 c0,0.2,0.1,0.3,0.2,0.4c0.1,0.1,0.2,0.2,0.4,0.2h2.2c0.2,0,0.3-0.1,0.4-0.2C24.9,31.4,25,31.2,25,31.1z M25,26.7v-2.2 c0-0.2-0.1-0.3-0.2-0.4c-0.1-0.1-0.2-0.2-0.4-0.2h-2.2c-0.2,0-0.3,0.1-0.4,0.2c-0.1,0.1-0.2,0.2-0.2,0.4v2.2c0,0.2,0.1,0.3,0.2,0.4 c0.1,0.1,0.2,0.2,0.4,0.2h2.2c0.2,0,0.3-0.1,0.4-0.2C24.9,26.9,25,26.8,25,26.7z M25,22.2V20c0-0.2-0.1-0.3-0.2-0.4 c-0.1-0.1-0.2-0.2-0.4-0.2h-2.2c-0.2,0-0.3,0.1-0.4,0.2c-0.1,0.1-0.2,0.2-0.2,0.4v2.2c0,0.2,0.1,0.3,0.2,0.4 c0.1,0.1,0.2,0.2,0.4,0.2h2.2c0.2,0,0.3-0.1,0.4-0.2C24.9,22.5,25,22.4,25,22.2z M29.4,31.1v-2.2c0-0.2-0.1-0.3-0.2-0.4 c-0.1-0.1-0.2-0.2-0.4-0.2h-2.2c-0.2,0-0.3,0.1-0.4,0.2c-0.1,0.1-0.2,0.2-0.2,0.4v2.2c0,0.2,0.1,0.3,0.2,0.4 c0.1,0.1,0.2,0.2,0.4,0.2h2.2c0.2,0,0.3-0.1,0.4-0.2C29.4,31.4,29.4,31.2,29.4,31.1z M29.4,26.7v-2.2c0-0.2-0.1-0.3-0.2-0.4 c-0.1-0.1-0.2-0.2-0.4-0.2h-2.2c-0.2,0-0.3,0.1-0.4,0.2c-0.1,0.1-0.2,0.2-0.2,0.4v2.2c0,0.2,0.1,0.3,0.2,0.4 c0.1,0.1,0.2,0.2,0.4,0.2h2.2c0.2,0,0.3-0.1,0.4-0.2C29.4,26.9,29.4,26.8,29.4,26.7z M29.4,22.2V20c0-0.2-0.1-0.3-0.2-0.4 c-0.1-0.1-0.2-0.2-0.4-0.2h-2.2c-0.2,0-0.3,0.1-0.4,0.2c-0.1,0.1-0.2,0.2-0.2,0.4v2.2c0,0.2,0.1,0.3,0.2,0.4 c0.1,0.1,0.2,0.2,0.4,0.2h2.2c0.2,0,0.3-0.1,0.4-0.2S29.4,22.4,29.4,22.2z M31.1,15.6v-4.4h-2.8c-0.5,0-0.9-0.2-1.2-0.5 c-0.3-0.3-0.5-0.7-0.5-1.2V6.7H15.6v8.9L31.1,15.6L31.1,15.6z" />
+        </symbol>
+        <symbol id="icon-9f4" viewBox="0 0 40 40">
+            <path d="M13.98,30.77c0,1.17-0.41,2.17-1.23,2.99C11.94,34.59,10.94,35,9.77,35c-1.17,0-2.16-0.41-2.98-1.23 c-0.82-0.82-1.23-1.82-1.23-2.99s0.41-2.17,1.23-2.99c0.82-0.82,1.81-1.23,2.98-1.23c1.17,0,2.16,0.41,2.98,1.23 C13.57,28.6,13.98,29.6,13.98,30.77z M25.21,33.48c0.03,0.41-0.1,0.76-0.37,1.06C24.57,34.85,24.23,35,23.8,35h-2.96 c-0.37,0-0.68-0.12-0.94-0.36c-0.26-0.24-0.41-0.55-0.44-0.91c-0.32-3.36-1.67-6.23-4.05-8.62c-2.38-2.39-5.24-3.74-8.58-4.06 c-0.37-0.03-0.67-0.18-0.91-0.44c-0.24-0.26-0.36-0.58-0.36-0.95v-2.97c0-0.43,0.15-0.77,0.46-1.03c0.25-0.25,0.56-0.37,0.94-0.37 h0.11c2.34,0.19,4.57,0.78,6.71,1.77c2.13,0.99,4.03,2.32,5.68,4c1.67,1.66,2.99,3.56,3.98,5.7C24.43,28.89,25.02,31.13,25.21,33.48 z M36.43,33.52c0.03,0.4-0.1,0.74-0.39,1.03c-0.26,0.29-0.6,0.44-1.01,0.44h-3.14c-0.38,0-0.71-0.13-0.98-0.39 c-0.27-0.26-0.41-0.57-0.43-0.94c-0.18-3.16-0.91-6.15-2.21-8.99c-1.3-2.84-2.99-5.31-5.08-7.4c-2.08-2.09-4.54-3.79-7.37-5.1 c-2.83-1.31-5.81-2.05-8.96-2.25C6.51,9.93,6.2,9.79,5.95,9.52C5.69,9.24,5.56,8.92,5.56,8.56V5.41C5.56,5,5.71,4.66,6,4.4 C6.26,4.13,6.59,4,6.97,4h0.07c3.83,0.19,7.49,1.07,11,2.64c3.5,1.57,6.61,3.73,9.33,6.47c2.73,2.73,4.88,5.85,6.45,9.37 C35.37,26,36.24,29.68,36.43,33.52z" />
+        </symbol>
+        <symbol id="icon-b42" viewBox="0 0 40 40">
+            <path d="M5,6.7c3.3,0,6.6,0,9.9,0c0,0,0,0,0.1,0c1.3,0.3,1.9,1.1,1.9,2.4c0,0.8,0,1.5,0,2.3c0,0.1,0,0.1,0,0.2c0.1,0,0.2,0,0.3,0 c3.8,0,7.6,0,11.5,0c0.2,0,0.4,0,0.5,0c1.2,0.2,1.9,1.1,1.9,2.3c0,1.5,0,2.9,0,4.4c0,0.1,0,0.2,0,0.3c0.1,0,0.2,0,0.3,0 c1.3,0,2.7,0,4,0c1.1,0,2.1,0,3.2,0c0.8,0,1.2,0.3,1.4,0.9c0,0,0,0.1,0,0.1c-0.1,0.2-0.2,0.5-0.3,0.7c-2.5,3.7-4.9,7.5-7.4,11.2 c-0.2,0.3-0.5,0.5-0.7,0.8c-0.4,0.3-0.9,0.6-1.5,0.7c-0.4,0.1-0.8,0.1-1.2,0.2c-7.9,0-15.7,0-23.6,0c-0.1,0-0.2,0-0.3,0 c-0.3-0.1-0.5-0.1-0.8-0.2C3.4,32.5,3,31.7,3,30.8c0-3.7,0-7.4,0-11.1c0-3.5,0-7.1,0-10.6C3,8,3.6,7.2,4.6,6.8 C4.7,6.8,4.9,6.8,5,6.7z M37.3,20.6c-0.1,0-0.2,0-0.3,0c-2.6,0-5.3,0-7.9,0c-4.7,0-9.4,0-14,0c-0.6,0-1.1,0.2-1.6,0.5 c-0.1,0.1-0.3,0.2-0.4,0.4c-2.2,3.3-4.3,6.5-6.5,9.8c0,0-0.1,0.1-0.1,0.2c0.1,0,0.1,0,0.2,0c7.4,0,14.7,0,22.1,0 c0.2,0,0.5,0,0.7-0.1c0.5-0.2,1-0.4,1.3-0.9c2.1-3.2,4.2-6.4,6.4-9.6C37.2,20.7,37.2,20.7,37.3,20.6z M29.3,18.7c0-0.1,0-0.2,0-0.3 c0-1.4,0-2.8,0-4.2c0-0.5-0.1-0.6-0.6-0.6c-4.4,0-8.9,0-13.3,0c-0.1,0-0.2,0-0.3,0c0-0.1,0-0.2,0-0.3c0-1.4,0-2.8,0-4.1 c0-0.4-0.2-0.6-0.6-0.6c-3,0-6.1,0-9.1,0C5,8.6,4.9,8.7,4.9,9.1c0,7,0,14,0,21c0,0.1,0,0.1,0,0.2C5,30.3,5,30.2,5,30.2 c2.2-3.2,4.3-6.5,6.5-9.8c0.3-0.4,0.6-0.7,0.9-0.9c0.8-0.5,1.7-0.8,2.6-0.8c4.6,0,9.3,0,13.9,0C29.1,18.7,29.2,18.7,29.3,18.7z" />
+        </symbol>
+        <symbol id="icon-a26" viewBox="0 0 40 40">
+            <path d="M36.3,32.1c-2.6,0.7-5.5-0.9-6.8-3.5l-2.9-6.2H20h-6.6l-2.9,6.2c-1.2,2.6-4.1,4.2-6.8,3.5 c-2.6-0.7-4.2-3.4-3.5-6L2,19.3C2,19.2,2,19.1,2.1,19l1.5-5.8c0.8-3,3.9-5.4,6.9-5.4H20h9.5c3,0,6.1,2.4,6.9,5.4l1.5,5.8 c0,0.1,0.1,0.2,0.1,0.3l1.8,6.8C40.5,28.7,39,31.4,36.3,32.1z M16.2,15c0-0.5-0.4-0.9-0.9-0.9h-2.5v-2.5c0-0.5-0.4-0.9-0.9-0.9H11 c-0.5,0-0.9,0.4-0.9,0.9v2.5H7.5c-0.5,0-0.9,0.4-0.9,0.9v0.8c0,0.5,0.4,0.9,0.9,0.9h2.6v2.6c0,0.5,0.4,0.9,0.9,0.9h0.8 c0.5,0,0.9-0.4,0.9-0.9v-2.6h2.5c0.5,0,0.9-0.4,0.9-0.9V15z M25.4,13.8c-0.9,0-1.7,0.7-1.7,1.7s0.7,1.7,1.7,1.7 c0.9,0,1.7-0.7,1.7-1.7S26.3,13.8,25.4,13.8z M28.7,10.5c-0.9,0-1.7,0.7-1.7,1.7c0,0.9,0.7,1.7,1.7,1.7c0.9,0,1.7-0.7,1.7-1.7 C30.3,11.2,29.6,10.5,28.7,10.5z M28.7,17c-0.9,0-1.7,0.7-1.7,1.7c0,0.9,0.7,1.7,1.7,1.7c0.9,0,1.7-0.7,1.7-1.7 C30.3,17.8,29.6,17,28.7,17z M31.9,13.8c-0.9,0-1.7,0.7-1.7,1.7s0.7,1.7,1.7,1.7c0.9,0,1.7-0.7,1.7-1.7S32.9,13.8,31.9,13.8z" />
+        </symbol>
+        <symbol id="icon-a3c" viewBox="0 0 40 40">
+            <path d="M30.1,22.8c-0.1-0.1-0.3-0.2-0.5-0.2h-1.3c-0.2,0-0.3,0.1-0.5,0.2c-0.1,0.1-0.2,0.3-0.2,0.5v6.4c0,0.9-0.3,1.6-0.9,2.3 c-0.6,0.6-1.4,0.9-2.3,0.9H7.8c-0.9,0-1.6-0.3-2.3-0.9c-0.6-0.6-0.9-1.4-0.9-2.3V12.9c0-0.9,0.3-1.6,0.9-2.3C6.1,10,6.9,9.7,7.8,9.7 h14.1c0.2,0,0.3-0.1,0.5-0.2c0.1-0.1,0.2-0.3,0.2-0.5V7.8c0-0.2-0.1-0.3-0.2-0.5c-0.1-0.1-0.3-0.2-0.5-0.2H7.8c-1.6,0-3,0.6-4.1,1.7 S2,11.3,2,12.9v16.7c0,1.6,0.6,3,1.7,4.1c1.1,1.1,2.5,1.7,4.1,1.7h16.7c1.6,0,3-0.6,4.1-1.7c1.1-1.1,1.7-2.5,1.7-4.1v-6.4 C30.3,23,30.2,22.9,30.1,22.8z M37.6,5c-0.3-0.3-0.6-0.4-0.9-0.4H26.4c-0.3,0-0.6,0.1-0.9,0.4s-0.4,0.6-0.4,0.9s0.1,0.6,0.4,0.9 l3.5,3.5L16,23.4c-0.1,0.1-0.2,0.3-0.2,0.5s0.1,0.3,0.2,0.5l2.3,2.3c0.1,0.1,0.3,0.2,0.5,0.2c0.2,0,0.3-0.1,0.5-0.2l13.1-13.1 l3.5,3.5c0.3,0.3,0.6,0.4,0.9,0.4c0.3,0,0.6-0.1,0.9-0.4s0.4-0.6,0.4-0.9V5.9C38,5.5,37.9,5.2,37.6,5z" />
+        </symbol>
+        <symbol id="icon-a32" viewBox="0 0 40 40">
+            <path d="M3,32.2l0-1.6c0-0.3,0.2-0.5,0.5-0.5l33-0.1c0.3,0,0.5,0.2,0.5,0.5l0,1.6c0,0.3-0.2,0.5-0.5,0.5l-33,0.1 C3.2,32.7,3,32.5,3,32.2z M3,20.8l0-1.6c0-0.3,0.2-0.5,0.5-0.5l33-0.1c0.3,0,0.5,0.2,0.5,0.5l0,1.6c0,0.3-0.2,0.5-0.5,0.5l-33,0.1 C3.2,21.3,3,21.1,3,20.8z M3,9.5l0-1.6c0-0.3,0.2-0.5,0.5-0.5l33-0.1c0.3,0,0.5,0.2,0.5,0.5l0,1.6c0,0.3-0.2,0.5-0.5,0.5L3.5,10 C3.2,10,3,9.8,3,9.5z" />
+        </symbol>
+        <symbol id="icon-9a6" viewBox="0 0 40 40">
+            <path d="M31.2,4.4C29.6,4.9,28.2,5.8,27,7l-3.9,3.9l-16-3.8C6.9,7,6.6,7,6.4,7.3l-3.1,3.1c-0.2,0.2-0.2,0.4-0.2,0.7 c0,0.3,0.2,0.5,0.4,0.6l12.2,6.7l-6.2,6.2l-4.7-1.3c0,0-0.1,0-0.2,0c-0.2,0-0.4,0.1-0.6,0.2l-2.3,2.3c-0.2,0.2-0.2,0.4-0.2,0.6 c0,0.3,0.1,0.4,0.3,0.6l6.1,4.6l4.6,6.1c0.1,0.2,0.3,0.3,0.6,0.3h0c0.2,0,0.4-0.1,0.6-0.2l2.3-2.3c0.2-0.2,0.3-0.5,0.2-0.7l-1.3-4.7 l6.2-6.2l6.7,12.2c0.1,0.2,0.3,0.3,0.5,0.4c0,0,0.1,0,0.2,0c0.2,0,0.3,0,0.5-0.1l3.1-2.3c0.3-0.2,0.4-0.5,0.3-0.8l-3.9-16.8l3.9-3.9 c1.2-1.2,2.1-2.6,2.6-4.1s0.4-2.7-0.3-3.6C33.9,4,32.7,3.9,31.2,4.4z" />
+        </symbol>
+        <symbol id="icon-b45" viewBox="0 0 40 40">
+            <path d="M34.5,21.6H21.6v12.9c0,0.3-0.2,0.5-0.5,0.5h-2.2c-0.3,0-0.5-0.2-0.5-0.5V21.6H5.5c-0.3,0-0.5-0.2-0.5-0.5v-2.2 c0-0.3,0.2-0.5,0.5-0.5h12.9V5.5c0-0.3,0.2-0.5,0.5-0.5h2.2c0.3,0,0.5,0.2,0.5,0.5v12.9h12.9c0.3,0,0.5,0.2,0.5,0.5v2.2 C35,21.4,34.8,21.6,34.5,21.6z" />
+        </symbol>
+        <symbol id="icon-b6d" viewBox="0 0 40 40">
+            <path d="M38,20.1l-8.9,15.3c0,0-0.1,0.1-0.1,0.1h-4.7c-0.1,0-0.2-0.1-0.1-0.2L33,20L24.1,4.7c-0.1-0.1,0-0.2,0.1-0.2 h4.7c0.1,0,0.1,0,0.1,0.1L38,19.9C38,20,38,20,38,20.1z M27.9,18.2h-4.7c-0.1,0-0.1,0-0.1-0.1L15.3,4.7c-0.1-0.1,0-0.2,0.1-0.2h4.7 c0.1,0,0.1,0,0.1,0.1L28,18C28.1,18.1,28,18.2,27.9,18.2z M20.3,20.1l-9,15.3c-0.1,0.1-0.2,0.1-0.3,0L2,20.1c0,0,0-0.1,0-0.2l9-15.3 c0.1-0.1,0.2-0.1,0.3,0l9.1,15.3C20.3,20,20.3,20,20.3,20.1z M22.9,22.1c0,0,0.1-0.1,0.1-0.1h4.7c0.1,0,0.2,0.1,0.1,0.2l-7.7,13.2 c0,0-0.1,0.1-0.1,0.1h-4.7c-0.1,0-0.2-0.1-0.1-0.2L22.9,22.1z" />
+        </symbol>
+        <symbol id="icon-986" viewBox="0 0 40 40">
+            <path d="M33.5,34.8l-9.1,0l-3.6-4.2h-2.2L18,29.9l-1.3,4.9H8.5l-7.5-7l7-22.1l8.2,0l4,5.5l0.4-1.7l2.3,0l1-3.8l8.5,0 l5.8,7.2L33.5,34.8z M10.8,21.9H6.4L6,23.3h4.5L10.8,21.9z M2.3,26.9l7,0l0.7-2.5h-7L2.3,26.9z M3.5,23.3h1.3l1.3-3.9H4.7L3.5,23.3z M8.8,6.6L8.3,8.1h6.6l0.5-1.6L8.8,6.6z M20.4,14.3h-5.1l1.1-4l-2.3-0.1l0.3-1H7.9l-2.8,8.9h1.3h1.2l-0.8,2.5h4.4l0.7-2.4l2.6,0 l-1.2,4.2l4.7,0l1.1-4.2l2.6,0l-2.2,8.7l7.2,0L30,13h-2.8H26h-5.2L20.4,14.3z M23.8,10.4l-2.3,0l-0.4,1.4h5.2L27,9.3h-2.9L23.8,10.4 z M24.8,6.5l-0.4,1.6h3h1.2l-0.3,1.2l-0.7,2.6h2.7l1.2-5.3L24.8,6.5z" />
+        </symbol>
+        <symbol id="icon-a4b" viewBox="0 0 40 40">
+            <path d="M31.2,37.5H11.3v-6h19.9V7.9H7.8v20.9H4.3V4.5h0h3.4h23.5h3.4v3.4v23.6v6H31.2z" />
+        </symbol>
+    </svg>
+    <div id="wrapper">
+        <div id="main">
+            <div class="inner">
+                <h1 id="text04">PotatoTools</h1>
+                <p id="text01">最全的在线工具集，包含50多种实用工具。</p>
+                <ul id="buttons01" class="buttons">
+                    <li><a href="http://chenpotatos.github.io/tools/bzdm/index.html" class="button n01"><svg>
+                                <use xlink:href="#icon-a31"></use>
+                            </svg><span class="label">在线HTML</span></a></li>
+                    <li><a href="http://chenpotatos.github.io/tools/caisezi/index.html" class="button n02"><svg>
+                                <use xlink:href="#icon-996"></use>
+                            </svg><span class="label">彩字生成器</span></a></li>
+                    <li><a href="http://chenpotatos.github.io/tools/chism/index.html" class="button n03"><svg>
+                                <use xlink:href="#icon-a3c"></use>
+                            </svg><span class="label">午饭吃什么</span></a></li>
+                    <li><a href="http://chenpotatos.github.io/click-game/index.html" class="button n04"><svg>
+                                <use xlink:href="#icon-a26"></use>
+                            </svg><span class="label">小游戏</span></a></li>
+                </ul>
+                <ul id="buttons03" class="buttons">
+                    <li><a href="http://chenpotatos.github.io/tools/3dfont/index.html" class="button n01"><svg>
+                                <use xlink:href="#icon-b6d"></use>
+                            </svg><span class="label">3D字体在线生成</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/yiqing/index.html" class="button n02"><svg>
+                                <use xlink:href="#icon-a4b"></use>
+                            </svg><span class="label">新冠肺炎疫情查询</span></a></li>
+                    <li><a href="http://chenpotatos.github.io/tools/baidu/index.html" class="button n03"><svg>
+                                <use xlink:href="#icon-b42"></use>
+                            </svg><span class="label">帮你百度</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/1loc/index.html" class="button n04"><svg>
+                                <use xlink:href="#icon-b42"></use>
+                            </svg><span class="label">JavaScript实用代码</span></a></li>
+                </ul>
+                <ul id="buttons02" class="buttons">
+                    <li><a href="https://chenpotatos.github.io/tools/24dian/24dian.html" class="button n01"><svg>
+                                <use xlink:href="#icon-b45"></use>
+                            </svg><span class="label">24点计算器</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/animate/animate.html" class="button n02"><svg>
+                                <use xlink:href="#icon-9a6"></use>
+                            </svg><span class="label">CSS3动画库</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/areacode/areacode.html" class="button n03"><svg>
+                                <use xlink:href="#icon-986"></use>
+                            </svg><span class="label">世界各国区号时差查询</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/ascii/ascii.html" class="button n04"><svg>
+                                <use xlink:href="#icon-969"></use>
+                            </svg><span class="label">ASCII码表</span></a></li>
+                </ul>
+                <ul id="buttons04" class="buttons">
+                    <li><a href="https://chenpotatos.github.io/tools/audioedit/audioedit.html" class="button n01"><svg>
+                                <use xlink:href="#icon-951"></use>
+                            </svg><span class="label">音频剪辑</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/avatar/avatar.html" class="button n02"><svg>
+                                <use xlink:href="#icon-996"></use>
+                            </svg><span class="label">图片在线合成</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/baifenbi/baifenbi.html" class="button n03"><svg>
+                                <use xlink:href="#icon-b45"></use>
+                            </svg><span class="label">百分比计算器</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/base64/base64.html" class="button n04"><svg>
+                                <use xlink:href="#icon-9f8"></use>
+                            </svg><span class="label">图片转Base64数据</span></a></li>
+                </ul>
+                <ul id="buttons05" class="buttons">
+                    <li><a href="https://chenpotatos.github.io/tools/beautify/beautify.html" class="button n01"><svg>
+                                <use xlink:href="#icon-a31"></use>
+                            </svg><span class="label">格式化 Javascript</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/new/win11/index.html" class="button n02"><svg>
+                                <use xlink:href="#icon-90a"></use>
+                            </svg><span class="label">在线Win11</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/calendar/calender.html" class="button n03"><svg>
+                                <use xlink:href="#icon-969"></use>
+                            </svg><span class="label">多功能日历</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/chaizi/chaizi.html" class="button n04"><svg>
+                                <use xlink:href="#icon-9f4"></use>
+                            </svg><span class="label">拆字</span></a></li>
+                </ul>
+                <ul id="buttons06" class="buttons">
+                    <li><a href="https://chenpotatos.github.io/tools/cipher/cipher.html" class="button n01"><svg>
+                                <use xlink:href="#icon-9e2"></use>
+                            </svg><span class="label">在线加密解密</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/clearhtm/clearhtm.html" class="button n02"><svg>
+                                <use xlink:href="#icon-a4d"></use>
+                            </svg><span class="label">HTML标签清除</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/code/code.html" class="button n03"><svg>
+                                <use xlink:href="#icon-950"></use>
+                            </svg><span class="label">js常用代码</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/code2img/code2img.html" class="button n04"><svg>
+                                <use xlink:href="#icon-9e2"></use>
+                            </svg><span class="label">代码转图片</span></a></li>
+                </ul>
+                <ul id="buttons07" class="buttons">
+                    <li><a href="https://chenpotatos.github.io/tools/color/color.html" class="button n01"><svg>
+                                <use xlink:href="#icon-a31"></use>
+                            </svg><span class="label">颜色转换</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/coordinate/coordinate.html" class="button n02"><svg>
+                                <use xlink:href="#icon-921"></use>
+                            </svg><span class="label">地理坐标转换</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/random/random.html" class="button n03"><svg>
+                                <use xlink:href="#icon-950"></use>
+                            </svg><span class="label">随机数生成</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/relationship/relationship.html" class="button n04"><svg>
+                                <use xlink:href="#icon-901"></use>
+                            </svg><span class="label">亲戚关系计算器</span></a></li>
+                </ul>
+                <ul id="buttons08" class="buttons">
+                    <li><a href="https://chenpotatos.github.io/tools/runcode/runcode.html" class="button n01"><svg>
+                                <use xlink:href="#icon-a31"></use>
+                            </svg><span class="label">在线代码运行</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/screenRecord/sreenRecord.html" class="button n02"><svg>
+                                <use xlink:href="#icon-90a"></use>
+                            </svg><span class="label">在线录屏</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/zidian/zidian.html" class="button n03"><svg>
+                                <use xlink:href="#icon-921"></use>
+                            </svg><span class="label">汉字查询</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/yanyu/yanyu.html" class="button n04"><svg>
+                                <use xlink:href="#icon-969"></use>
+                            </svg><span class="label">谚语查询</span></a></li>
+                </ul>
+                <ul id="buttons09" class="buttons">
+                    <li><a href="https://chenpotatos.github.io/tools/diagram_sfd/diagram_sfd.html" class="button n01"><svg>
+                                <use xlink:href="#icon-9c1"></use>
+                            </svg><span class="label">在线画图</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/drawsvg/drawsvg.html" class="button n02"><svg>
+                                <use xlink:href="#icon-996"></use>
+                            </svg><span class="label">在线生成时序图</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/editoronline/editoronline.html" class="button n03"><svg>
+                                <use xlink:href="#icon-a4d"></use>
+                            </svg><span class="label">代码在线编辑</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/email/email.html" class="button n04"><svg>
+                                <use xlink:href="#icon-90a"></use>
+                            </svg><span class="label">常用电子邮件</span></a></li>
+                </ul>
+                <ul id="buttons10" class="buttons">
+                    <li><a href="https://chenpotatos.github.io/tools/etc/etc.html" class="button n01"><svg>
+                                <use xlink:href="#icon-9c1"></use>
+                            </svg><span class="label">编码转换</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/ewm/ewm.html" class="button n02"><svg>
+                                <use xlink:href="#icon-950"></use>
+                            </svg><span class="label">二维码生成器</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/fangcha/fangcha.html" class="button n03"><svg>
+                                <use xlink:href="#icon-a32"></use>
+                            </svg><span class="label">方差计算器</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/fantizi/fatizi.html" class="button n04"><svg>
+                                <use xlink:href="#icon-996"></use>
+                            </svg><span class="label">繁体字转换</span></a></li>
+                </ul>
+                <ul id="buttons11" class="buttons">
+                    <li><a href="https://chenpotatos.github.io/tools/favicon/favicon.html" class="button n01"><svg>
+                                <use xlink:href="#icon-9c1"></use>
+                            </svg><span class="label">ICO设计</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/filetype/iletype.html" class="button n02"><svg>
+                                <use xlink:href="#icon-9c2"></use>
+                            </svg><span class="label">文件格式识别</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/flexbox/flexbox.html" class="button n03"><svg>
+                                <use xlink:href="#icon-996"></use>
+                            </svg><span class="label">CSS3 Flexbox</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/fooplot/fooplot.html" class="button n04"><svg>
+                                <use xlink:href="#icon-9f4"></use>
+                            </svg><span class="label">数学函数绘图</span></a></li>
+                </ul>
+                <ul id="buttons12" class="buttons">
+                    <li><a href="https://chenpotatos.github.io/tools/gifres/gifres.html" class="button n01"><svg>
+                                <use xlink:href="#icon-9c1"></use>
+                            </svg><span class="label">Gif图片分解</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/gifttxt/giftxt.html" class="button n02"><svg>
+                                <use xlink:href="#icon-951"></use>
+                            </svg><span class="label">视频转化GIF</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/gradient/gradient.html" class="button n03"><svg>
+                                <use xlink:href="#icon-996"></use>
+                            </svg><span class="label">渐变色生成</span></a></li>
+                    <li><a href="https://chenpotatos.github.com/tools/html2js/html2js.html" class="button n04"><svg>
+                                <use xlink:href="#icon-9e2"></use>
+                            </svg><span class="label">html转js</span></a></li>
+                </ul>
+                <ul id="buttons13" class="buttons">
+                    <li><a href="https://chenpotatos.github.io/tools/ipjisuan/ipjisuan.html" class="button n01"><svg>
+                                <use xlink:href="#icon-9c1"></use>
+                            </svg><span class="label">IP计算</span></a></li>
+                    <li><a href="https://chenpotato.github.io/tools/jisuanqi/jisuanqi.html" class="button n02"><svg>
+                                <use xlink:href="#icon-996"></use>
+                            </svg><span class="label">计算器</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/jiugongge/jiugongge.html" class="button n03"><svg>
+                                <use xlink:href="#icon-90a"></use>
+                            </svg><span class="label">九宫格</span></a></li>
+                    <li><a href="https://chenpotatos.github.io/tools/linux/linux.html" class="button n04"><svg>
+                                <use xlink:href="#icon-b42"></use>
+                            </svg><span class="label">linux命令大全</span></a></li>
+                </ul>
+                <p id="text02">Chenpotato-PotatoTools All Right Reverce</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        (function()
+        {
+            var on = addEventListener,
+                $ = function(q)
+                {
+                    return document.querySelector(q)
+                },
+                $$ = function(q)
+                {
+                    return document.querySelectorAll(q)
+                },
+                $body = document.body,
+                $inner = $('.inner'),
+                client = (function()
+                {
+                    var o = {
+                            browser: 'other',
+                            browserVersion: 0,
+                            os: 'other',
+                            osVersion: 0,
+                            mobile: false,
+                            canUse: null,
+                            flags:
+                            {
+                                lsdUnits: false,
+                            },
+                        },
+                        ua = navigator.userAgent,
+                        a, i;
+                    a = [
+                        ['firefox', /Firefox\/([0-9\.]+)/],
+                        ['edge', /Edge\/([0-9\.]+)/],
+                        ['safari', /Version\/([0-9\.]+).+Safari/],
+                        ['chrome', /Chrome\/([0-9\.]+)/],
+                        ['chrome', /CriOS\/([0-9\.]+)/],
+                        ['ie', /Trident\/.+rv:([0-9]+)/]
+                    ];
+                    for (i = 0; i < a.length; i++)
+                    {
+                        if (ua.match(a[i][1]))
+                        {
+                            o.browser = a[i][0];
+                            o.browserVersion = parseFloat(RegExp.$1);
+                            break;
+                        }
+                    }
+                    a = [
+                        ['ios', /([0-9_]+) like Mac OS X/, function(v)
+                        {
+                            return v.replace('_', '.').replace('_', '');
+                        }],
+                        ['ios', /CPU like Mac OS X/, function(v)
+                        {
+                            return 0
+                        }],
+                        ['ios', /iPad; CPU/, function(v)
+                        {
+                            return 0
+                        }],
+                        ['android', /Android ([0-9\.]+)/, null],
+                        ['mac', /Macintosh.+Mac OS X ([0-9_]+)/, function(v)
+                        {
+                            return v.replace('_', '.').replace('_', '');
+                        }],
+                        ['windows', /Windows NT ([0-9\.]+)/, null],
+                        ['undefined', /Undefined/, null],
+                    ];
+                    for (i = 0; i < a.length; i++)
+                    {
+                        if (ua.match(a[i][1]))
+                        {
+                            o.os = a[i][0];
+                            o.osVersion = parseFloat(a[i][2] ? (a[i][2])(RegExp.$1) : RegExp.$1);
+                            break;
+                        }
+                    }
+                    if (o.os == 'mac' && ('ontouchstart' in window) && ((screen.width == 1024 && screen.height == 1366) || (screen.width == 834 && screen.height == 1112) || (screen.width == 810 && screen.height == 1080) || (screen.width == 768 && screen.height == 1024))) o.os = 'ios';
+                    o.mobile = (o.os == 'android' || o.os == 'ios');
+                    var _canUse = document.createElement('div');
+                    o.canUse = function(property, value)
+                    {
+                        var style;
+                        style = _canUse.style;
+                        if (!(property in style)) return false;
+                        if (typeof value !== 'undefined')
+                        {
+                            style[property] = value;
+                            if (style[property] == '') return false;
+                        }
+                        return true;
+                    };
+                    o.flags.lsdUnits = o.canUse('width', '100dvw');
+                    return o;
+                }()),
+                trigger = function(t)
+                {
+                    dispatchEvent(new Event(t));
+                },
+                cssRules = function(selectorText)
+                {
+                    var ss = document.styleSheets,
+                        a = [],
+                        f = function(s)
+                        {
+                            var r = s.cssRules,
+                                i;
+                            for (i = 0; i < r.length; i++)
+                            {
+                                if (r[i] instanceof CSSMediaRule && matchMedia(r[i].conditionText).matches)(f)(r[i]);
+                                else if (r[i] instanceof CSSStyleRule && r[i].selectorText == selectorText) a.push(r[i]);
+                            }
+                        },
+                        x, i;
+                    for (i = 0; i < ss.length; i++) f(ss[i]);
+                    return a;
+                },
+                thisHash = function()
+                {
+                    var h = location.hash ? location.hash.substring(1) : null,
+                        a;
+                    if (!h) return null;
+                    if (h.match(/\?/))
+                    {
+                        a = h.split('?');
+                        h = a[0];
+                        history.replaceState(undefined, undefined, '#' + h);
+                        window.location.search = a[1];
+                    }
+                    if (h.length > 0 && !h.match(/^[a-zA-Z]/)) h = 'x' + h;
+                    if (typeof h == 'string') h = h.toLowerCase();
+                    return h;
+                },
+                scrollToElement = function(e, style, duration)
+                {
+                    var y, cy, dy, start, easing, offset, f;
+                    if (!e) y = 0;
+                    else
+                    {
+                        offset = (e.dataset.scrollOffset ? parseInt(e.dataset.scrollOffset) : 0) * parseFloat(getComputedStyle(document.documentElement).fontSize);
+                        switch (e.dataset.scrollBehavior ? e.dataset.scrollBehavior : 'default')
+                        {
+                            case 'default':
+                            default:
+                                y = e.offsetTop + offset;
+                                break;
+                            case 'center':
+                                if (e.offsetHeight < window.innerHeight) y = e.offsetTop - ((window.innerHeight - e.offsetHeight) / 2) + offset;
+                                else y = e.offsetTop - offset;
+                                break;
+                            case 'previous':
+                                if (e.previousElementSibling) y = e.previousElementSibling.offsetTop + e.previousElementSibling.offsetHeight + offset;
+                                else y = e.offsetTop + offset;
+                                break;
+                        }
+                    }
+                    if (!style) style = 'smooth';
+                    if (!duration) duration = 750;
+                    if (style == 'instant')
+                    {
+                        window.scrollTo(0, y);
+                        return;
+                    }
+                    start = Date.now();
+                    cy = window.scrollY;
+                    dy = y - cy;
+                    switch (style)
+                    {
+                        case 'linear':
+                            easing = function(t)
+                            {
+                                return t
+                            };
+                            break;
+                        case 'smooth':
+                            easing = function(t)
+                            {
+                                return t < .5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1
+                            };
+                            break;
+                    }
+                    f = function()
+                    {
+                        var t = Date.now() - start;
+                        if (t >= duration) window.scroll(0, y);
+                        else
+                        {
+                            window.scroll(0, cy + (dy * easing(t / duration)));
+                            requestAnimationFrame(f);
+                        }
+                    };
+                    f();
+                },
+                scrollToTop = function()
+                {
+                    scrollToElement(null);
+                },
+                loadElements = function(parent)
+                {
+                    var a, e, x, i;
+                    a = parent.querySelectorAll('iframe[data-src]:not([data-src=""])');
+                    for (i = 0; i < a.length; i++)
+                    {
+                        a[i].src = a[i].dataset.src;
+                        a[i].dataset.src = "";
+                    }
+                    a = parent.querySelectorAll('video[autoplay]');
+                    for (i = 0; i < a.length; i++)
+                    {
+                        if (a[i].paused) a[i].play();
+                    }
+                    e = parent.querySelector('[data-autofocus="1"]');
+                    x = e ? e.tagName : null;
+                    switch (x)
+                    {
+                        case 'FORM':
+                            e = e.querySelector('.field input, .field select, .field textarea');
+                            if (e) e.focus();
+                            break;
+                        default:
+                            break;
+                    }
+                },
+                unloadElements = function(parent)
+                {
+                    var a, e, x, i;
+                    a = parent.querySelectorAll('iframe[data-src=""]');
+                    for (i = 0; i < a.length; i++)
+                    {
+                        if (a[i].dataset.srcUnload === '0') continue;
+                        a[i].dataset.src = a[i].src;
+                        a[i].src = '';
+                    }
+                    a = parent.querySelectorAll('video');
+                    for (i = 0; i < a.length; i++)
+                    {
+                        if (!a[i].paused) a[i].pause();
+                    }
+                    e = $(':focus');
+                    if (e) e.blur();
+                };
+            window._scrollToTop = scrollToTop;
+            var thisURL = function()
+            {
+                return window.location.href.replace(window.location.search, '').replace(/#$/, '');
+            };
+            var getVar = function(name)
+            {
+                var a = window.location.search.substring(1).split('&'),
+                    b, k;
+                for (k in a)
+                {
+                    b = a[k].split('=');
+                    if (b[0] == name) return b[1];
+                }
+                return null;
+            };
+            var errors = {
+                handle: function(handler)
+                {
+                    window.onerror = function(message, url, line, column, error)
+                    {
+                        (handler)(error.message);
+                        return true;
+                    };
+                },
+                unhandle: function()
+                {
+                    window.onerror = null;
+                }
+            };
+            on('load', function()
+            {
+                setTimeout(function()
+                {
+                    $body.className = $body.className.replace(/\bis-loading\b/, 'is-playing');
+                    setTimeout(function()
+                    {
+                        $body.className = $body.className.replace(/\bis-playing\b/, 'is-ready');
+                    }, 750);
+                }, 100);
+            });
+            loadElements(document.body);
+            var style, sheet, rule;
+            style = document.createElement('style');
+            style.appendChild(document.createTextNode(''));
+            document.head.appendChild(style);
+            sheet = style.sheet;
+            if (client.mobile)
+            {
+                (function()
+                {
+                    if (client.flags.lsdUnits)
+                    {
+                        document.documentElement.style.setProperty('--viewport-height', '100dvh');
+                        document.documentElement.style.setProperty('--background-height', '100lvh');
+                    }
+                    else
+                    {
+                        var f = function()
+                        {
+                            document.documentElement.style.setProperty('--viewport-height', window.innerHeight + 'px');
+                            document.documentElement.style.setProperty('--background-height', (window.innerHeight + 250) + 'px');
+                        };
+                        on('load', f);
+                        on('resize', f);
+                        on('orientationchange', function()
+                        {
+                            setTimeout(function()
+                            {
+                                (f)();
+                            }, 100);
+                        });
+                    }
+                })();
+            }
+            if (client.os == 'android')
+            {
+                (function()
+                {
+                    sheet.insertRule('body::after { }', 0);
+                    rule = sheet.cssRules[0];
+                    var f = function()
+                    {
+                        rule.style.cssText = 'height: ' + (Math.max(screen.width, screen.height)) + 'px';
+                    };
+                    on('load', f);
+                    on('orientationchange', f);
+                    on('touchmove', f);
+                })();
+                $body.classList.add('is-touch');
+            }
+            else if (client.os == 'ios')
+            {
+                if (client.osVersion <= 11)(function()
+                {
+                    sheet.insertRule('body::after { }', 0);
+                    rule = sheet.cssRules[0];
+                    rule.style.cssText = '-webkit-transform: scale(1.0)';
+                })();
+                if (client.osVersion <= 11)(function()
+                {
+                    sheet.insertRule('body.ios-focus-fix::before { }', 0);
+                    rule = sheet.cssRules[0];
+                    rule.style.cssText = 'height: calc(100% + 60px)';
+                    on('focus', function(event)
+                    {
+                        $body.classList.add('ios-focus-fix');
+                    }, true);
+                    on('blur', function(event)
+                    {
+                        $body.classList.remove('ios-focus-fix');
+                    }, true);
+                })();
+                $body.classList.add('is-touch');
+            }
+
+            function videoBackground(id, settings)
+            {
+                var _this = this;
+                this.id = id;
+                this.src = settings.src;
+                this.poster = settings.poster;
+                this.position = settings.position;
+                this.loop = settings.loop;
+                this.$target = $(settings.target);
+                this.$video = null;
+                this.init();
+            };
+            videoBackground.prototype.autoplay = function()
+            {
+                if (client.os != 'ios' && client.os != 'android' && client.os != 'undefined') return true;
+                switch (client.os)
+                {
+                    case 'ios':
+                        if (client.osVersion >= 10 && (client.browser == 'safari' || client.browser == 'chrome')) return true;
+                        break;
+                    case 'android':
+                        if ((client.browser == 'chrome' && client.browserVersion >= 54) || (client.browser == 'firefox' && client.browserVersion >= 49)) return true;
+                        break;
+                    default:
+                        break;
+                }
+                return false;
+            };
+            videoBackground.prototype.init = function()
+            {
+                if (this.autoplay())
+                {
+                    this.$video = document.createElement('video');
+                    this.$video.src = this.src;
+                    this.$video.poster = this.poster;
+                    this.$video.autoplay = true;
+                    this.$video.muted = true;
+                    this.$video.loop = this.loop;
+                    this.$video.playsInline = true;
+                    this.$video.disablePictureInPicture = true;
+                    this.$video.disableRemotePlayback = true;
+                    this.$target.appendChild(this.$video);
+                }
+                else this.$target.style.backgroundImage = 'url(\'' + this.poster + '\')';
+            };
+            (function()
+            {
+                var $bg = document.createElement('div');
+                $bg.id = 'bg';
+                $body.insertBefore($bg, $body.firstChild);
+                new videoBackground('bg',
+                {
+                    target: '#bg',
+                    src: '/bg.mp4',
+                    poster: '/bg.mp4.jpg',
+                    position: 'bottom-left',
+                    loop: true
+                });
+            })();
+        })();
+
+    </script>
+</body>
+
+</html> 

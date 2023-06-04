@@ -1,0 +1,1 @@
+import{b as o}from"./baseRequest.da51274f.js";import"./el-select.b78411e2.js";import"./axios.91e25212.js";import"./version.8d34b113.js";const s=(s={})=>o.post("/api/top/category",s),t=(s={})=>o.post("/api/top/list",s);export{s as getTopCategoryApi,t as getTopListApi};

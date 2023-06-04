@@ -1,0 +1,77 @@
+<!doctype html>
+	<head>
+		<meta charset="utf-8">
+		<title>在线加密解密工具_Base64、AES、DES加密解密</title>
+		<meta name="description" content="这是一款采用Base64、AES、DES算法进行加密解密的在线工具，提供在线文本加密/解密,包括Base64加密解密、AES加密解密、DES加密/解密。可以输入密钥后进行加密和解密,支持可逆加密解密。基于Crypto-JS实现" />
+		<link rel="stylesheet" href="res/style.css"/>
+	</head>
+	
+	<body>
+		<h2 class="tit">在线加密解密(采用Crypto-JS实现)</h2>
+		<div id="ad_line" style="text-align: center;"></div>
+		<div class="box">
+			<div class="sel">
+				<p>加密算法</p>
+				<input onclick="setIpt()" type="radio" name="radio" id="AES" value="AES" hidden checked><label for="AES">AES加密解密</label>
+			 	<input onclick="setIpt()" type="radio" name="radio" id="DES" value="DES" hidden><label for="DES">DES加密/解密</label>
+                <input onclick="setIpt()" type="radio" name="radio" id="Base64" value="Base64" hidden ><label for="Base64">Base64加密解密</label>
+			</div>
+			<div class="sel" style="display: none;" id="ipt1">
+				<p>混淆字符</p>
+				<input type="text" id="baseTransfer" placeholder="字符之前请使用英文逗号隔开"/>
+				<input type="text" id="baseTransferTo" placeholder="对应字符"/>
+			</div>
+			<div class="sel" style="display: block;" id="ipt2">
+				<p>选择栏目</p>
+				<span>模式</span>
+				<select id="select_mode" style="width: 150px;">
+					<option value="CBC" checked>CBC</option>
+					<option value="ECB">ECB</option>
+					<option value="CFB">CFB</option>
+					<option value="CTR">CTR</option>
+					<option value="OFB">OFB</option>
+				</select>
+				<span>填充</span>
+				<select id="select_pad" style="width: 200px;">
+					<option value="Pkcs7" checked>Pkcs7</option>
+					<option value="Iso97971">Iso97971</option>
+					<option value="AnsiX923">AnsiX923</option>
+					<option value="Iso10126">Iso10126</option>
+					<option value="ZeroPadding">ZeroPadding</option>
+					<option value="NoPadding">NoPadding</option>
+				</select>
+				<span>偏移量</span>
+				<input type="text" id="input_iv" placeholder="ECB模式不需要" style="width: 350px;"/>
+				<span>密文编码</span>
+				<select id="output_encode" style="width: 120px;">
+					<option value="Base64" checked>Base64</option>
+					<option value="HEX">HEX</option>
+				</select>
+				<br/>
+				<span>密钥</span>
+				<input type="text" id="input_code" placeholder="请输入加密的密钥" style="width: 840px;"/>
+			</div>
+			<div class="content">
+				<textarea id="text" placeholder="请输入需要加密或者解密的内容"></textarea>
+				<textarea id="result" placeholder="得到的结果" readonly="readonly"></textarea>
+			</div>
+			<div class="ts">
+				<p id="tsnew"></p>
+			</div>
+			<div class="btns">
+				<button  onclick="toEncryption()">加密</button>
+				<button  onclick="toDecrypt()">解密</button>
+				<button style="background: #F08047;" onclick="toclear()">清空结果</button>
+			</div>
+			<p class="des">
+				<br>
+			</p>
+		</div>
+		<div class="foot">Powered by <a href="http://www.fly63.com/" target="_blank">fly63.com</a></div>
+	</body>
+</html>
+<script src="../../add_page.js"></script>
+<script src="res/crypto-js/core-min.js"></script>
+<script src="res/crypto-js/crypto-js.min.js"></script>
+<script src="res/crypto-js/enc-base64.min.js"></script>
+<script src="res/index.js"></script>

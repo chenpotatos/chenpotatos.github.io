@@ -1,0 +1,58 @@
+<!doctype html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>JS常用代码生成器_js代码在线生成</title>
+		<meta name="keywords" content="js常用代码,js基础代码,js代码整理,js代码在线生成器,js代码调用,js常用代码收集,javascript代码大全"/>
+		<meta name="description" content="本工具提供常用JS代码一键生成，整理了工作中常用的js代码片段，自动生成你想要的javascript代码,节省您的开发时间，高效工作" />
+		<link rel="stylesheet" href="res/style.css"/>
+	</head>
+
+	<body>
+		<h2 class="tit">js常用代码在线生成</h2>
+		<div class="box">
+			<div class="left">
+				<div class="fli">
+					<span class="name">选择函数</span>
+					<select class="val" id="opt" multip></select>
+				</div>
+        <div class="fli">
+        	<span class="name">封装方式</span>
+        	<select class="val" id="type">
+            <option value="1" selected="selected">闭包方式导出</option>
+            <option value="2">简单函数形式</option>
+            <option value="3">ES6 import/export</option>
+            <option value="4">ES6 export default</option>
+          </select>
+        </div>
+				<div class="fli">
+					<div class="ts">
+						<h2>温馨提示:</h2>
+						<p id="ts">
+							请选择需要生成的函数，点击生成代码即可。<br/>
+							本工具仅用于学习使用，功能正在逐渐完善中....<br/>
+						</p>
+					</div>
+				</div>
+				<div class="fli">
+					<button  id="toData">生成代码</button>
+				</div>
+                <div id="ad_area"></div>
+			</div>
+			<div class="right">
+				<textarea id="text" placeholder="Js代码生成" readonly></textarea>
+				<div class="btns">
+					<button  id="toCopy">点击复制</button>
+				</div>
+			</div>
+		</div>
+		<p class="des">
+			本工具仅收集整理了一些常用js代码的封装，并不能完全保证代码的可用性、准确性，使用前请先测试。<a href="http://fly63code.mikecrm.com/R6Ymufc" target="_blank" rel="nofollow">反馈提交</a><br>
+		</p>
+		<div class="foot">Powered by <a href="../../www_fly63_default_2.html" target="_blank">fly63.com</a></div>
+	</body>
+</html>
+<script src="res/code.js"></script>
+<script src="res/index.js"></script>
+<script src="res/selectMultip.js"></script>
+<script src="../../add_page.js"></script>

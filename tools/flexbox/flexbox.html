@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<!-- tell angular this is flexboxDemoApp -->
+<html lang="en" ng-app="flexboxDemoApp">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS3 Flexbox 在线演示</title>
+    <meta name="description" content="Flexbox布局是一个用于页面布局的全新CSS3模块功能，在线提供CSS3弹性盒模型flexbox布局演示" />
+    <!-- Angulars Material CSS -->
+    <link rel="stylesheet" href="css/angular-material.min.css">
+    <!-- include our compiled CSS -->
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <!-- this will be the only controller AppCtrl -->
+  <body ng-controller="AppCtrl">
+  	<h2 style="text-align: center;color:#888">CSS3 Flexbox 在线演示</h2>
+    <!-- Here's the main container -->
+    <md-content class="md-padding">
+      <div layout-gt-md="row" layout="column">
+        <div flex-gt-md="60" flex="100" class="right-padding">
+          <h3>子元素宽度</h3>
+          <div layout="row" layout-align="center center" class="code">
+            <div flex="15">width: {{children_width}}%</div>
+            <md-slider flex min="0" max="100" ng-model="children_width" aria-label="width"></md-slider>
+          </div>
+
+          <md-divider></md-divider>
+
+          <h3>父级 Flex 属性 &ndash; <span class="highlight">flex container</span></h3>
+          <div layout="column" layout-gt-md="row" class="code">
+            <div layout="row">
+              <div flex>
+                <strong>flex-direction</strong>
+                <md-radio-group ng-model="parent.flexDirection">
+                  <md-radio-button value="row" class="highlight">row</md-radio-button>
+                  <md-radio-button value="row-reverse">row-reverse</md-radio-button>
+                  <md-radio-button value="column">column</md-radio-button>
+                  <md-radio-button value="column-reverse">column-reverse</md-radio-button>
+                </md-radio-group>
+              </div>
+              
+              <div flex>
+                <strong>flex-wrap</strong>
+                <md-radio-group ng-model="parent.flexWrap">
+                  <md-radio-button value="nowrap" class="highlight">nowrap</md-radio-button>
+                  <md-radio-button value="wrap">wrap</md-radio-button>
+                  <md-radio-button value="wrap-reverse">wrap-reverse</md-radio-button>
+                </md-radio-group>
+              </div>
+            </div>
+
+            <div layout="row">
+              <div flex>
+                <strong>justify-content</strong>
+                <md-radio-group ng-model="parent.justifyContent">
+                  <md-radio-button value="flex-start" class="highlight">flex-start</md-radio-button>
+                  <md-radio-button value="flex-end">flex-end</md-radio-button>
+                  <md-radio-button value="center">center</md-radio-button>
+                  <md-radio-button value="space-between">space-between</md-radio-button>
+                  <md-radio-button value="space-around">space-around</md-radio-button>
+                </md-radio-group>
+              </div>
+
+              <div flex>
+                <strong>align-items</strong>
+                <md-radio-group ng-model="parent.alignItems">
+                  <md-radio-button value="stretch" class="highlight">stretch</md-radio-button>
+                  <md-radio-button value="flex-start">flex-start</md-radio-button>
+                  <md-radio-button value="flex-end">flex-end</md-radio-button>
+                  <md-radio-button value="center">center</md-radio-button>
+                  <md-radio-button value="baseline">baseline</md-radio-button>
+                </md-radio-group>
+              </div>
+            </div>
+
+            <div layout="row">
+              <div flex>
+                <strong>align-content</strong>
+                <md-radio-group ng-model="parent.alignContent">
+                  <md-radio-button value="stretch" class="highlight">stretch</md-radio-button>
+                  <md-radio-button value="flex-start">flex-start</md-radio-button>
+                  <md-radio-button value="flex-end">flex-end</md-radio-button>
+                  <md-radio-button value="center">center</md-radio-button>
+                  <md-radio-button value="space-between">space-between</md-radio-button>
+                  <md-radio-button value="space-around">space-around</md-radio-button>
+                </md-radio-group>
+              </div>
+            </div>
+          </div>
+
+          <small>* The default property values are <span class="highlight">highlighed</span>.</small>
+
+          <md-divider></md-divider>
+
+          <h3>子元素 Flex 属性  &ndash; <span class="highlight">flex items</span></h3>
+
+          <div>
+            <p>子元素 Flex 属性应用在子元素上，每个子元素分别应用。 请查看演示部分，并修改其中的一些属性。 鼠标指针悬停或触摸字段可以查看属性名称。</p>
+          </div>
+
+          <md-divider hide show-sm show-md></md-divider>
+        </div>
+
+        <div flex>
+          <h3 class="pull-left">Result</h3>
+          <p class="pull-right">
+            <md-button class="md-accent md-raised" ng-click="addChild()">Add child</md-button>
+          </p>
+
+          <div class="clearfix"></div>
+
+          <div
+            class="flexbox-parent" 
+            ng-attr-style="
+              -webkit-flex-direction:  {{parent.flexDirection}};
+              flex-direction:          {{parent.flexDirection}};
+
+              -webkit-flex-wrap:       {{parent.flexWrap}};
+              flex-wrap:               {{parent.flexWrap}};
+
+              -webkit-justify-content: {{parent.justifyContent}};
+              justify-content:         {{parent.justifyContent}};
+
+              -webkit-align-items:     {{parent.alignItems}};
+              align-items:             {{parent.alignItems}};
+
+              -webkit-align-content:   {{parent.alignContent}};
+              align-content:           {{parent.alignContent}};
+              "
+          >
+            <div 
+              class="code md-whiteframe-z1"
+              ng-repeat="child in children"
+              ng-attr-style="
+                width:               {{children_width}}%;
+
+                -webkit-order:       {{child.order}};
+                order:               {{child.order}};
+
+                -webkit-flex-grow:   {{child.flexGrow}};
+                flex-grow:           {{child.flexGrow}};
+
+                -webkit-flex-shrink: {{child.flexShrink}};
+                flex-shrink:         {{child.flexShrink}};
+
+                -webkit-flex-basis:  {{child.flexBasis}};
+                flex-basis:          {{child.flexBasis}};
+
+                -webkit-align-self:  {{child.alignSelf}};
+                align-self:          {{child.alignSelf}};
+
+              "
+            >
+              <div class="clearfix">
+                <span class="child-number" aria-label="Number">{{$index + 1}}</span>
+                <span class="remove-child pull-right" ng-click="removeChild($index)" title="Remove">
+                  &#x2716;
+                </span>
+              </div>
+
+              <div class="child-controls">
+                <md-input-container>
+                  <md-tooltip md-direction="top">order</md-tooltip>
+                  <input type="number" ng-model="children[$index].order">
+                </md-input-container>
+
+                <md-input-container>
+                  <md-tooltip md-direction="top">flex-grow</md-tooltip>
+                  <input type="number" ng-model="children[$index].flexGrow">
+                </md-input-container>
+
+                <md-input-container>
+                  <md-tooltip md-direction="top">flex-shrink</md-tooltip>
+                  <input type="number" ng-model="children[$index].flexShrink">
+                </md-input-container>
+
+                <md-input-container>
+                  <md-tooltip md-direction="top">flex-basis</md-tooltip>
+                  <input type="text" ng-model="children[$index].flexBasis">
+                </md-input-container>
+
+                <md-input-container>
+                  <md-tooltip md-direction="top">align-self</md-tooltip>
+                  <md-select ng-model="children[$index].alignSelf">
+                    <md-option ng-value="value" ng-repeat="value in ['auto', 'flex-start', 'flex-end', 'center', 'baseline', 'stretch']">{{value}}</md-option>
+                  </md-select>
+                </md-input-container>
+              </div>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </md-content>
+    <p style="padding-top: 10px;padding-left: 10px;">作者:chenpotato</p>
+    <br/><div id="ad_line" style="text-align: center;"></div>
+    <!-- AngularJS -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-animate.min.js"></script>
+    <script src="js/angular-aria.min.js"></script>
+
+    <!-- Angular Material JavaScript -->
+    <script src="js/angular-material.min.js"></script>
+
+    <!-- App.js -->
+    <script src="js/app.js"></script>
+  </body>
+</html>
+
+<script src="../../add_page.js"></script>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>百分比计算器</title>
+		<meta name="description" content="在线百分比计算. 这是一款可在你的台式机或者移动设备上使用的易用的计算器。支持输入百分率及总数,求占总数的多少数目和数入总数及要求的数目,求占总数百分比率计算功能。" />
+		<link rel="stylesheet" type="text/css" href="res/style.css">
+	</head>
+	<body>
+		<div class="container">
+			<h2 class="title">百分比计算器</h2>
+			<p class="des">如何计算百分比？百分比计算器提供百分比计算器在线计算，百分比计算公式，您需要做的就是填写相应的字段，通过百分比计算器便可以计算出你想要的答案。</p>
+			<div id="ad_line" style="text-align: center;margin: 5px auto;"></div>
+			<table class="table2">
+				<tbody>
+					<tr>
+						<td colspan="2" class="smallTitle" style="text-align: center;">
+							输入百分率及总数，求占总数的多少数目
+						</td>
+					</tr>
+					<tr>
+						<th>百分比数</th>
+						<td><input type="text" id="percentage" class="inpt">&nbsp;&nbsp;%</td>
+					</tr>
+					<tr>
+						<th>总数</th>
+						<td><input type="text" id="sum1" class="inpt"></td>
+					</tr>
+					<tr>
+						<td colspan="2" style="text-align: center;">
+							<input type="button" id="btnCalculat1" class="btn1" value="计 算" onclick="btnCalc1_onClick()">
+						</td>
+					</tr>
+					<tr>
+						<th>结果</th>
+						<td><label id="result1" class="red"></label></td>
+					</tr>
+					<tr>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table2">
+				<tbody>
+					<tr>
+						<td colspan="2" class="smallTitle" style="text-align: center;">
+							数入总数及要求的数目，求占总数百分比率
+						</td>
+					</tr>
+					<tr>
+						<th>总数</th>
+						<td><input type="text" id="sum2" class="inpt"></td>
+					</tr>
+					<tr>
+						<th>要求的数目</th>
+						<td><input type="text" id="num1" class="inpt"></td>
+					</tr>
+					<tr>
+						<td colspan="2" style="text-align: center;">
+							<input type="button" id="btnCalculat1" class="btn1" value="计 算" onclick="btnCalc2_onClick()">
+						</td>
+					</tr>
+					<tr>
+						<th>占总数百分比结果</th>
+						<td><label id="result2" class="red"></label>&nbsp;&nbsp;%</td>
+					</tr>
+					<tr>
+					</tr>
+				</tbody>
+			</table>
+			<div class="examp">
+				<h3>百分比计算器:</h3>
+				<p>
+					百分数表示一个数是另一个数的百分之几，也叫百分率或百分比。百分数通常不会写成分数的形式，而采用符号“%”（百分号）来表示。
+					<br/>例1：某单位生产变压器这个月的产量是150台，下个月计划新增产能50%，求下个月的产量是多少台？答：75台
+					<br/>例2：某单位生产阀门这个月的产量是150件，下个月计划新增产能30件，求下个月比这个月多增产百分之多少？答：20%
+				</p>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="res/jquery.js"></script>
+<script>
+function stripBad(string) {
+    for (var i=0, output='', valid="eE+/*-0123456789.()"; i<string.length; i++)
+       if (valid.indexOf(string.charAt(i)) != -1)
+          output += string.charAt(i)
+    return output;
+} 
+
+function btnCalc1_onClick() {
+	if(isNaN($("#percentage").val()))
+	{
+		alert("请输入数字");
+		$("#percentage").focus();
+		return;
+	}
+	if(isNaN($("#sum1").val()))
+	{
+		alert("请输入数字");
+		$("#sum1").focus();
+		return;
+	}
+	percentage = stripBad($("#percentage").val()) / 100;
+	result1 = percentage * stripBad($("#sum1").val());
+	$("#result1").html(result1);
+}
+
+function btnCalc2_onClick() {
+	if(isNaN($("#num1").val()))
+	{
+		alert("请输入数字");
+		$("#num1").focus();
+		return;
+	}
+	if(isNaN($("#sum2").val()))
+	{
+		alert("请输入数字");
+		$("#sum2").focus();
+		return;
+	}
+	sum2 = stripBad($("#sum2").val());
+	num1 = stripBad($("#num1").val());
+	c = num1/sum2;
+	result2 = c*100;
+	$("#result2").html(parseFloat(result2.toFixed(2)));
+}
+</script>
+<script src="../../add_page.js"></script>

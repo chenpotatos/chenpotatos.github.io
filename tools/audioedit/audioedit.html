@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>在线音频编辑器 - 在线音乐剪辑 - Audio Editor</title>
+	<link href="ico.png" rel="shortcut icon">
+	<meta charset="utf-8" />
+	<link rel="manifest" href="manifest.json">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+	<meta name="description" content="免费且功能强大的在线音频/波形编辑器，直接在浏览器里打开即可使用，无需下载软件，无需安装插件！"/>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<div id="app"></div>
+
+	<script src="dist/wavesurfer.js"></script>
+	<script src="dist/plugin/wavesurfer.regions.js"></script>
+	<script src="oneup.js"></script>
+
+	<script src="app.js"></script>
+	<script src="keys.js"></script>
+	<script src="contextmenu.js"></script>
+	<script src="ui-fx.js"></script>
+	<script src="ui.js"></script>
+	<script src="modal.js"></script>
+	<script src="state.js"></script>
+	<script src="engine.js"></script>
+	<script src="actions.js"></script>
+	<script src="drag.js"></script>
+	<script src="recorder.js"></script>
+
+	<script src="welcome.js"></script>
+	<script src="fx-pg-eq.js"></script>
+	<script src="fx-auto.js"></script>
+	<script src="local.js"></script>
+	<script src="id3.js"></script>
+	<script src="lzma.js"></script>
+
+
+<!--
+	<script src="multitrack.js"></script>
+	<script src="multitrack-ui.js"></script>
+-->
+	<script>
+		var editor = PKAudioEditor.init ('app');
+
+		if ('serviceWorker' in navigator) {
+			try {
+			//	navigator.serviceWorker.register( 'sw.js' );
+			} catch ( error ) {}
+		}
+	</script>
+
+</body>
+</html>
+<script>
+   window.isHideNav=true;
+</script>
+<script src="../../add_page.js"></script>

@@ -1,0 +1,129 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	width: 100%;
+}
+
+.container{
+	width: 1100px;
+	margin: 20px auto;
+}
+.container .title{
+	font-size: 24px;
+	color: #666;
+	margin-bottom: 15px;
+	text-align: center;
+}
+.head{
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+.head .group{
+	float: left;
+	margin-right: 20px;
+}
+.head label{
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	color: #333;
+	font-size: 14px;
+	margin-right: 5px;
+	float: left;
+}
+.head input,.head select{
+	box-sizing: border-box;
+	height: 30px;
+	color: #666;
+	font-size: 14px;
+	min-width: 80px;
+}
+#js_code{
+	position: relative;
+	width: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+#js_code .code-area{
+	padding: 15px;
+	color: #cfd2d1;
+	background-color: #151718;
+	box-shadow: rgb(0 0 0 / 55%) 0px 5px 30px;
+	border-radius: 5px;
+}
+
+#js_code .icon-box{
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+
+#js_code .icon-box .icon{
+	float: left;
+	width: 12px;
+	height: 12px;
+	margin-right: 10px;
+	border-radius: 50%;
+	background: #ff5e56;
+}
+
+#js_code .icon-box .orange{
+	background: #ffbd2e;
+}
+
+#js_code .icon-box .green{
+	background: #27c93f;
+}
+
+#js_code #js_editor{
+	min-height: 250px;
+    font-size: 18px;
+	height: auto;
+	overflow: hidden;
+	background: transparent !important;
+}
+
+#js_editor .ace_gutter{
+	width: 0 !important;
+}
+
+#js_editor .ace_scrollbar{
+	display: none !important;
+}
+.btn-group{
+	overflow: hidden;
+	margin: 15px 0;
+}
+.btn-group .btn{
+	margin-right: 15px;
+	padding: 8px 20px;
+	background: #FFFFFF;
+	color: #127BA3;
+	border: 1px solid #127BA3;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.btn-group #js_genBtn{
+	background: #127BA3;
+	color: #fff;
+}
+.container .ace_marker-layer *{
+	border: 0 !important;
+}
+.container .ace_gutter{
+  width: 0 !important;
+  border: 0 !important;
+}
+.container  .ace_active-line{
+  background: transparent !important;
+}
+.container .ace_editor .ace_cursor{
+	border-color:transparent;
+}
+.container .ace_focus .ace_cursor{
+	border-color:#FFFFFF;
+}

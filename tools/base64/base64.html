@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>图片在线转换Base64数据工具</title>
+		<meta name="description" content="图片在线转换Base64数据工具，能快速的将你上传的小图标等图片文件编码为Base64编码码。通过base64我们把图像文件的内容直接写在了HTML 文件中,这样做的好处是,节省了一个HTTP请求" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta http-equiv="Cache-Control" content="no-transform,no-siteapp">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link href="res/style.css" type="text/css" rel="stylesheet"/>
+	</head>
+	<body><div class="center">
+        <div id="ad_line" style="text-align: center;"></div>
+		<h2>图片在线转换Base64数据</h2>
+		<div class="fli">
+			<span>选择图片：</span><input type="file" id="img">
+			<button id="start">开始转换</button>
+		</div>
+		<div class="fli">
+			<span>预览：</span>
+			<img id="imgShow" src="base64.html" alt="">
+		</div>
+		<div class="fli">
+			<div class="name">Base64数据：</div>
+			<textarea rows=15 cols=60 id="conte"></textarea>
+		</div>	
+		<div class="fli">
+			<button id='cpData'>复制数据</button><span id="succ"></span>
+			<div id="len" class="name">数据长度：</div>
+		</div>
+	</div></body>
+	<script src="res/index.js"></script>
+    <script src="../../add_page.js"></script>
+</html>

@@ -1,0 +1,1 @@
+import{h as r,l as e}from"./index.48a3615c.js";import{f as t}from"./_Uint8Array.e97e1f00.js";import{a as i}from"./isObject.a01dee34.js";function a(a,n,s){if(!i(s))return!1;var o=typeof n;return!!("number"==o?t(s)&&r(n,s.length):"string"==o&&n in s)&&e(s[n],a)}export{a as i};

@@ -1,0 +1,102 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>公历农历转换查询_阳历阴历对照表(在线日历)</title>
+		<meta name="description" content="公历农历转换查询工具可以在线将阴历(农历)转为阳历(公历),或者将阳历(公历)转为阴历(农历)的日期,可准确查询多年的日历对照表" />
+		<meta name="keywords" content="阳历阴历转换,公历农历转换,阴历阳历换算,农历阳历转换,阴历转公历查询" />
+		<link rel="stylesheet" href="lib/element-ui/theme-chalk/index.css" />
+		<link rel="stylesheet" href="lib/style.css" />
+	</head>
+	<body>
+		<div id="container" v-cloak>
+			<h2 class="title">在线查公历农历、阳历阴历互转</h2>
+			<div class="container" v-if="showData">
+				<el-row :gutter="15"><el-col :span="24">
+					<span style="margin-right: 10px;">阳历(公历)</span>
+					<el-select v-model="solarIpt.year" placeholder="年" style="width: 120px;">
+					    <el-option  v-for="l in showData.year" :key="l" :label="l" :value="l"></el-option>
+					</el-select>
+					<span>&nbsp;年&nbsp;</span>
+					<el-select v-model="solarIpt.moth" placeholder="月" style="width: 80px;" @change="changeDate()">
+					    <el-option  v-for="l in showData.moth" :key="l" :label="l" :value="l"></el-option>
+					</el-select>
+					<span>&nbsp;日&nbsp;</span>
+					<el-select v-model="solarIpt.date" placeholder="日" style="width: 80px;">
+					    <el-option  v-for="l in showData.date" :key="l" :label="l" :value="l"></el-option>
+					</el-select>
+					<el-button type="primary" @click="onSubmit(1)" style="margin-left: 15px;">阳历转阴历</el-button>
+				</el-col></el-row>
+				<el-row :gutter="15"><el-col :span="24">
+					<span style="margin-right: 10px;">阴历(农历)</span>
+					<el-select v-model="lunarIpt.year" placeholder="年" style="width: 120px;">
+					    <el-option  v-for="l in showData.year" :key="l" :label="l" :value="l"></el-option>
+					</el-select>
+					<span>&nbsp;年&nbsp;</span>
+					<el-select v-model="lunarIpt.moth" placeholder="月" style="width: 80px;">
+					    <el-option  v-for="l in showData.lMonth" :key="l.val" :label="l.name" :value="l.val"></el-option>
+					</el-select>
+					<span>&nbsp;日&nbsp;</span>
+					<el-select v-model="lunarIpt.date" placeholder="日" style="width: 80px;">
+					    <el-option  v-for="l in showData.lDate" :key="l.val" :label="l.name" :value="l.val"></el-option>
+					</el-select>
+					<el-button type="primary" @click="onSubmit(2)" style="margin-left: 15px;">阴历转阳历</el-button>
+				</el-col></el-row>	
+				<el-row :gutter="15">
+					<el-col :span="24">
+						<el-table :data="rels" style="width: 100%" border>
+							<el-table-column prop="date" label="阳历(公历)" header-align="center" align="center"></el-table-column>
+							<el-table-column prop="lunarDate" label="阴历(农历)" header-align="center" align="center">
+								<template slot-scope="scope">
+									<span v-text="scope.row.lunarDate"></span>&nbsp;<span v-text="scope.row.IMonthCn+scope.row.IDayCn"></span>
+								</template>
+							</el-table-column>
+							<el-table-column prop="Animal" label="生肖" header-align="center" align="center"></el-table-column>
+							<el-table-column prop="astro" label="星座" header-align="center" align="center"></el-table-column>
+							<el-table-column prop="ncWeek" label="星期" header-align="center" align="center"></el-table-column>
+							<el-table-column prop="ncWeek" label="天干地支" header-align="center" align="center">
+								<template slot-scope="scope">
+									<span v-text="scope.row.gzYear+'年'"></span>&nbsp;<span v-text="scope.row.gzMonth+'/'+scope.row.gzDay"></span>
+								</template>
+							</el-table-column>
+						</el-table>
+						<div class="ts" v-if="toDay">
+							<h3>系统今日</h3>
+							<span v-text="'阳历: '+toDay.cYear+'年'+toDay.cMonth+'月'+toDay.cDay+'日 ('+toDay.astro+') '+toDay.ncWeek"></span><br/>
+							<span v-text="'农历: '+toDay.lYear+'年'+toDay.IMonthCn+toDay.IDayCn+', '+toDay.gzYear+'年'+toDay.gzMonth+'月'+toDay.gzDay+'日 ('+toDay.Animal+'年)'"></span>
+						</div>
+					</el-col>
+				</el-row>
+				<el-row :gutter="15">
+					<div id="ad_line" style="text-align: center;margin-bottom: 5px;"></div>
+					<el-col :span="24">
+						<div class="moretext">
+							<h3>日历</h3>
+							<el-calendar v-model="showData.now">
+								<template slot="dateCell" slot-scope="{ date, data }">
+								  <div class="rlbox" v-html="solarDate2lunar(data.day)"></div>
+								</template>
+							</el-calendar>
+						</div>
+					</el-col>
+				</el-row>
+				<el-row :gutter="15">
+					<el-col :span="24">
+						<div class="moretext">
+							<h3>工具简介</h3>
+							<p>阴阳历是兼顾月亮绕地球的运动周期和地球绕太阳的运动周期而制定的历法。阴阳历历月的平均长度接近朔望月，历年的平均长度接近回归年，是一种“阴月阳年”式的历法。它既能使每个年份基本符合季节变化，又使每一月份的日期与月相对应。它的缺点是历年长度相差过大，制历复杂，不于记忆。</p>
+							<p>国际通用的历法是以一年太阳回归年为周期，谓之太阳历，故称为阳历，全球公用，故亦称为公历。是由西方国家传入我国的纪元方式，台湾人亦称为西历、西元。</p>
+							<p>中国传统的历法自夏朝始，称为夏历，是以月球绕地球一周为一个月，十二个月为一年，谓之太阴历，故称为阴历。</p>
+							<p>中国的阴历配合了闰年及二十四节气，使得太阴历的年周期同步于太阳历。</p>
+							<p>网络之间互连的协议也就是为计算机网络相互连接进行通信而设计的协议。在因特网中，它是能使连接到网上的所有计算机网络实现相互通信的一套规则，规定了计算机在因特网上进行通信时应当遵守的规则。任何厂家生产的计算机系统，只要遵守IP协议就可以与因特网互连互通。IP地址具有唯一性，根据用户性质的不同，可以分为5类。另外，IP还有进入防护，知识产权，指针寄存器等含义。</p>
+						</div>
+					</el-col>
+				</el-row>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="lib/vue.min.js"></script>
+<script src="lib/element-ui/index.js"></script>
+<script src="lib/calendar.js"></script>
+<script src="lib/index.js"></script>
+<script src="../../add_page.js"></script>

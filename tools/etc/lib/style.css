@@ -1,0 +1,48 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+[v-cloak]{
+    display: none;
+}
+html{
+	background: #f1f2f3;
+	width: 100%;
+	height: 100%;
+}
+.el-row {
+    margin-bottom: 20px;
+}
+
+#container{
+	width: 1140px;
+	margin:30px auto;
+	padding: 20px 10px;
+	box-sizing: border-box;
+	background: #FFFFFF;
+}
+#container .lin{
+	text-align: center; margin: 20px auto;padding-bottom:20px;
+}
+#container .lin .txt{
+	color: #666;
+}
+.foot{
+	color: #666;
+	font-size: 13px;
+	text-align: center;
+	margin: 20px auto;
+}
+.moretext h3{
+	margin-bottom: 5px;
+	color: #333;	
+}
+.moretext .tit{
+	margin-top: 10px;
+	color: #333;
+	font-weight: bold;
+}
+.moretext p{
+	color: #666;
+	line-height: 24px;
+}

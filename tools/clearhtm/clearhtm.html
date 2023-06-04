@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>在线HTML标签清除工具_支持html/js/css代码过滤</title>
+	<meta name="description" content="本工具可以帮助你过滤掉文本中的html代码、js代码、css代码，生成干净的纯文本，也可以自己定义要替换的代码进行过滤。" />
+	<link rel="stylesheet" type="text/css" href="lib/style.css">
+</head>
+	<body>
+		<div class="container">
+			<h1 class="title">在线HTML标签清除工具</h1>
+			<div id="ad_line" style="text-align: center; margin: auto; margin-bottom: px;"></div>
+			<textarea id="content" name="content" style="width:95%;padding:5px;" rows="20" placeholder="请把你需要过滤的内容粘贴在这里"></textarea>
+			<div class="handle">
+				<input type="checkbox" name="type" checked="checked" value="0" id="type0"/><label for="type0">过滤HTML</label>
+				<input type="checkbox" name="type" value="1" id="type1" /><label for="type1">过滤JS</label>
+				<input type="checkbox" name="type" value="2" id="type2" /><label for="type2">过滤CSS</label>
+				<input type="checkbox" name="type" value="3" id="type3" /><label for="type3">自定义过滤</label>
+				<input type="checkbox" name="handle" checked="checked" value="0" id="handle1" /><label for="handle1">去除每行前后空格</label>
+				<input type="checkbox" name="handle" value="1" id="handle2" /><label for="handle2">去除去除所有空行</label>
+				<input type="button" value="过滤" onclick="Filter();" />
+				<input type="button" value="清空结果" onclick="jQuery('#result').val('')" />
+				<input type="button" value="举个例子" onclick="example();" />
+			</div>
+			<div id="place">
+				<span>想替换的字符：</span><input type="text" id="preplace" placeholder="替换前字符"/>
+				<span>替换后的字符：</span><input type="text" class="input" id="nextplace" placeholder="替换后字符"/>
+			</div>
+			<textarea id="result" name="result" style="width:95%;padding:5px;" rows="20"></textarea>
+			<p class="des">本工具可以清理HTML代码中所有的标签，包含js和css标签等,甚至支持自定义过滤方式。</p>
+		</div>
+	</body>
+</html>
+<script src="lib/jquery.js"></script>
+<script src="lib/index.js"></script>
+<script src="../../add_page.js"></script>

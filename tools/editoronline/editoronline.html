@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>代码在线编辑</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="res/style.css"/>
+</head>
+<body>
+    <h2 class="title">HTML+CSS+JS代码在线编辑</h2>
+    <div class="main">
+        <div class="editorBox">
+            <div class="editor">
+                <span class="label">html</span>
+                <div id="editor1"></div>
+            </div>
+            <div class="editor">
+                <span class="label">css</span>
+                <div id="editor2"></div>
+            </div>
+            <div class="editor">
+                <span class="label">javascript</span>
+                <div id="editor3"></div>
+            </div>
+          	<div class="btnbox">
+           		<a class="submit-btn" id="submit">提交运行</a>
+            	<div id="ad_area"></div>
+            </div>
+            <div class="editor runbox">
+                <iframe class="edit-area" id="preview" frameborder="0" srcdoc="<!DOCTYPE html><meta charset=&quot;utf-8&quot; /><script type=&quot;text/javascript&quot; src=&quot;https://cdn.bootcss.com/vConsole/3.2.0/vconsole.min.js&quot;></script><script type=&quot;text/javascript&quot;>new window.VConsole();</script>"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="foot">技术支持：ace.js；Powered by <a href="http://www.fly63.com/" target="_blank">fly63.com</a></div>
+</body>
+</html>
+<script src="https://cdn.bootcss.com/ace/1.4.5/ace.js"></script>
+<script src="https://cdn.bootcss.com/ace/1.4.5/ext-language_tools.js"></script>
+<script src="res/index.js"></script>
+<script src="../../add_page.js"></script>

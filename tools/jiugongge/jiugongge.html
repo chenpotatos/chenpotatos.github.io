@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>九宫格切图工具</title>
+	<meta name="description" content="在线生成制作九宫格图片,四宫格图片在线制作。可以安原图的比例，横竖均等切分，也可以从图片中选取一部分后在行切为九宫格图片，九宫格切图广泛应用于微信发朋友圈，非常实用的在线工具软件。" />
+	<link rel="stylesheet" type="text/css" href="lib/style.css">
+</head>
+<body>
+	<div class="container" id="app">
+		<h1 class="title">在线制作九宫格图片</h1>
+		<div id="ad_line" style="text-align: center; margin: auto; margin-bottom: 10px;"></div>
+		<div class="sel">
+			<input id="upload_input" type="file" accept="image/*" style="display: none;" @change="loadPic">
+			<label for="upload_input" class="upload_input">点击选择图片</label>
+			<div class="btn"  @click="down"  v-if="img">批量下载</div>
+		</div>
+		<div class="sel">
+			<span>生成类型：</span>
+			<input id="nine" type="radio" name="count" @change="draw(2)" checked="checked"><label for="nine">2*2(二格)</label>
+			<input id="nine" type="radio" name="count" @change="draw(3)" checked="checked"><label for="nine">3*3(九宫格)</label>
+			<input id="four" type="radio" name="count" @change="draw(4)"><label for="four">4*4(四格)</label>
+		</div>
+		<div class="sel">
+			<span>下载格式：</span>
+			<template v-for="(item,index) in formatData">
+				<input :id="'f_'+item" :value="item" type="radio" name="format" @change="selType(index)" v-model="format"><label :for="'f_'+item" v-text="item"></label>
+			</template>
+		</div>
+		<div id="make" :style="{width:width}" v-show="!doing && img">
+			<div class="li" :style="{width:(100/type)+'%'}" v-for="(item,idx) in Array(type*type)">
+				<canvas :id="'img_'+idx"  height="1" width="1"></canvas>
+			</div>
+		</div>
+		<div class="doing" v-show="doing">图片正在生成中...</div>
+		<div id="ad_line" style="text-align: center; margin: auto; margin-bottom: px;"></div>
+		<div class="examp">
+			<h3>工具说明:</h3>
+			<p>该工具可生成9宫图(3行*3列)，四格图(4行*4列)<br/>
+			上传图片，会自动生成，支持多图批量保存，也可以单图点击右键保存。<br/>
+			九宫格切图，主要用于发朋友圈，社区论坛等，你会发现使用后非常拉风哟。<br/>
+			程序纯前台操作，不会对你上传的图片进行任何保存，保护大家的隐私<br/>
+			</p>
+		</div>
+	</div>
+</body>
+</html>
+<script src="lib/vue.js"></script>
+<script src="lib/jszip.min.js"></script>
+<script src="lib/FileSaver.js"></script>
+<script src="lib/index.js"></script>
+<script src="../../add_page.js"></script>

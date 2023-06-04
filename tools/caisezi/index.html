@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+ <head>  
+  <meta charset="UTF-8" /> 
+  <meta http-equiv="Cache-Control" content="no-transform" /> 
+  <meta http-equiv="Cache-Control" content="no-siteapp" /> 
+  <meta name="mobile-agent" content="format=html5;url=http://www.12580sky.com" /> 
+  <link rel="alternate" media="only screen and (max-width: 640px)" href="http://www.12580sky.com" /> 
+  <meta name="csrf-param" content="_csrf" /> 
+  <meta name="csrf-token" content="VWxJcjAzLnRlLgoFc1cWO2E5ejlEWGQMHT09RARwZTIWJXgEd0ZaNg==" /> 
+<!--更多小程序源码www.12580sky.com--> 
+  <title>彩字在线制作</title>
+<!--更多小程序源码www.12580sky.com-->  
+  <link rel="shortcut icon" href="http://www.12580sky.com/favicon.ico" /> 
+  <link rel="stylesheet" type="text/css" href="/skins/pc/css/style.css?20171102" /> 
+  <link rel="stylesheet" type="text/css" href="/skins/pc/css/weather.css" /> 
+  <meta name="keywords" content="彩字在线制作" /> 
+  <meta name="description" content=" " /> 
+  <link href="/assets/abfc75c5/color.css" rel="stylesheet" /> 
+  <script src="/assets/fc67e995/jquery.js"></script>
+ </head> 
+ <body>    
+  <!--main_beg--> 
+  <div class="main"> 
+   <div class="pt10"> 
+   </div> 
+   <div class="box02"> 
+    <div class="hd"> 
+     <h1 class="h1List"><img src="/uploads/images/app/colorfont.png" />彩字生成器</h1> 
+     <p>超酷主页装饰素材和工具</p> 
+    </div> 
+   </div> 
+   <div class="pb10"> 
+    <div class="color"> 
+     <form id="form1" method="post" name="form1" action=""> 
+      <div class="source"> 
+       <div class="code">
+        <textarea id="inp_text" name="inp_text" rows="10">追赶着潮流，拒绝着落伍，使用着一种据说来自“火星”的语言，这就是新新人类。可是尽管是新新人类，要想快速的输入与识别火星文可不是一件容易的事情，怎么办？那就交给火星文输入法来办！它可是新新人类QQ聊天的必备工具！</textarea>
+       </div> 
+       <div class="copy"> 
+        <select onchange="SetColor(this.value);"> <option selected="" value="2">2种颜色</option> <option value="3">3种颜色</option> <option value="4">4种颜色</option> <option value="5">5种颜色</option> <option value="6">6种颜色</option> <option value="7">7种颜色</option> </select> 
+        <table style="display:inline;cursor:pointer;border:solid 1px #000;background-color:#000;" id="colorDiv1" onclick="ShowColorDiv(event,'colorDiv1','fontcolor1')" border="0" cellspacing="0" cellpadding="0" width="20" height="20"> 
+         <tbody> 
+          <tr> 
+           <td border="0" cellspacing="0" cellpadding="0" width="20" height="20"></td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <input id="fontcolor1" value="#ff0000" type="hidden" name="fontcolor1" /> 
+        <table style="display:inline;cursor:pointer;border:solid 1px #000;background-color:#000;" id="colorDiv2" onclick="ShowColorDiv(event,'colorDiv2','fontcolor2')" border="0" cellspacing="0" cellpadding="0" width="20" height="20"> 
+         <tbody> 
+          <tr> 
+           <td border="0" cellspacing="0" cellpadding="0" width="20" height="20"></td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <input id="fontcolor2" value="null" type="hidden" name="fontcolor2" /> 
+        <table style="display:inline;cursor:pointer;border:solid 1px #000;background-color:#000;" id="colorDiv3" onclick="ShowColorDiv(event,'colorDiv3','fontcolor3')" border="0" cellspacing="0" cellpadding="0" width="20" height="20"> 
+         <tbody> 
+          <tr> 
+           <td border="0" cellspacing="0" cellpadding="0" width="20" height="20"></td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <input id="fontcolor3" value="null" type="hidden" name="fontcolor3" /> 
+        <table style="display:inline;cursor:pointer;border:solid 1px #000;background-color:#000;" id="colorDiv4" onclick="ShowColorDiv(event,'colorDiv4','fontcolor4')" border="0" cellspacing="0" cellpadding="0" width="20" height="20"> 
+         <tbody> 
+          <tr> 
+           <td border="0" cellspacing="0" cellpadding="0" width="20" height="20"></td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <input id="fontcolor4" value="null" type="hidden" name="fontcolor4" /> 
+        <table style="display:inline;cursor:pointer;border:solid 1px #000;background-color:#000;" id="colorDiv5" onclick="ShowColorDiv(event,'colorDiv5','fontcolor5')" border="0" cellspacing="0" cellpadding="0" width="20" height="20"> 
+         <tbody> 
+          <tr> 
+           <td border="0" cellspacing="0" cellpadding="0" width="20" height="20"></td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <input id="fontcolor5" value="null" type="hidden" name="fontcolor5" /> 
+        <table style="display:inline;cursor:pointer;border:solid 1px #000;background-color:#000;" id="colorDiv6" onclick="ShowColorDiv(event,'colorDiv6','fontcolor6')" border="0" cellspacing="0" cellpadding="0" width="20" height="20"> 
+         <tbody> 
+          <tr> 
+           <td border="0" cellspacing="0" cellpadding="0" width="20" height="20"></td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <input id="fontcolor6" value="null" type="hidden" name="fontcolor6" /> 
+        <table style="display:inline;cursor:pointer;border:solid 1px #000;background-color:#000;" id="colorDiv7" onclick="ShowColorDiv(event,'colorDiv7','fontcolor7')" border="0" cellspacing="0" cellpadding="0" width="20" height="20"> 
+         <tbody> 
+          <tr> 
+           <td border="0" cellspacing="0" cellpadding="0" width="20" height="20"></td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <input id="fontcolor7" value="#66CC00" type="hidden" name="fontcolor7" /> 
+        <input id="inp_mode" value="QQ" type="hidden" name="inp_mode" /> 
+        <input id="inp_colormode" value="1" type="hidden" name="inp_colormode" /> 
+        <input onclick="inp_colormode.value=&quot;1&quot;;" checked="" type="radio" name="r2" id="id01" /> 
+        <label for="id01">渐变&nbsp;</label> 
+        <input onclick="inp_colormode.value=&quot;2&quot;;" type="radio" name="r2" id="id02" /> 
+        <label for="id02">彩虹&nbsp;</label> 
+        <input class="btn01" onclick="BeginMake()" value="生成代码" type="button" /> 
+       </div> 
+      </div> 
+      <div class="result"> 
+       <div class="code">
+        <strong>文字预览</strong>
+       </div> 
+       <div class="area">
+        <p id="text_view"></p>
+       </div> 
+       <div class="zone"> 
+        <script type="text/javascript" src="/skins/pc/js/baidum4.js"></script> 
+       </div> 
+       <div class="code">
+        <textarea id="text_output" name="text_output" rows="10"></textarea>
+       </div> 
+       <div class="copy"> 
+        <input onclick="inp_mode.value=&quot;QQ&quot;;BeginMake();" checked="" type="radio" name="r1" id="id03" /> 
+        <label for="id03">Qzone代码&nbsp;</label> 
+        <input onclick="inp_mode.value=&quot;HTML&quot;;BeginMake();" type="radio" name="r1" id="id04" /> 
+        <label for="id04">HTML代码&nbsp;</label> 
+        <input onclick="inp_mode.value=&quot;UBB&quot;;BeginMake();" type="radio" name="r1" id="id05" /> 
+        <label for="id05">论坛UBB代码</label> &nbsp;&nbsp; 
+        <input class="btn02" onclick="text_output.select();document.execCommand(&quot;Copy&quot;)" value="复制" type="button" /> 
+        <input class="btn02" onclick="form1.text_output.value='';" value="清空" type="button" /> 
+       </div> 
+      </div> 
+     </form> 
+     <script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_showHideLayers() { //v6.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) if ((obj=MM_findObj(args[i]))!=null) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+ function pick_color(obj){
+	document.form1.cur_color.value=obj;
+	var MouseX=event.x;
+	var MouseY=event.y;
+	Layer1.style.left=MouseX;
+	Layer1.style.top=MouseY;
+	MM_showHideLayers('Layer1','','show')
+ }
+
+ function set_color(szColor){
+	obj=document.form1.cur_color.value;
+	if(obj=='s'){
+		document.form1.start_color.value=szColor;
+		document.all.td_start.bgColor='#'+szColor;
+	}else{
+		document.form1.end_color.value=szColor;
+		document.all.td_end.bgColor='#'+szColor;
+	}
+	MM_showHideLayers('Layer1','','hide')
+ }
+
+function pv(){ //preview
+	if(!document.form1.text1.value){
+		alert('没有文字可以转换！');
+		document.form1.text1.focus();
+	}else{
+		document.all.preview.innerHTML=generate('html',document.form1.text1.value);
+	}
+}
+
+function gen_onclick(){
+	if(document.form1.format[0].status==true){
+		document.form1.text2.value=generate('ubb',document.form1.text1.value);
+	}else{
+		document.form1.text2.value=generate('html',document.form1.text1.value);
+
+	}
+}
+
+
+function ColorSetInText(mode,colors,text){
+  //将颜色参数加入文字
+  //输入:转换的类型(QQ,HTML,UBB), 颜色数组, 文字串
+  //输出:转换后的文字
+  var code1, code2, code3;
+  var i;
+  var rlt;
+  if ('UBB'==mode){
+    code1='[color=#';
+	code2=']';
+	code3='[/color]';
+  }else if ('HTML'==mode){
+    code1='<font color=#';
+	code2='>';
+	code3='</font>';
+  }else if ('QQ'==mode){
+    code1='[ftc=#';
+	code2=']';
+	code3='[/ftc]';
+  }
+  rlt='';
+  for (i=0;i<colors.length;i++){
+    rlt+=code1 + colors[i] + code2 + text.substr(i,1) + code3;
+  }
+  return (rlt);
+}
+
+function GetRepeatColor(colors,count){
+  var rltA=new Array();
+  var i,m;
+  m=0
+  for (i=0;i<count;i++){
+    rltA[i]=colors[m];
+	m=(m+1)%colors.length;
+  }
+  return (rltA);
+}
+
+function GetGradualColor(colors,count){
+  //获取线性渐变颜色组
+  //输入:关键颜色值数组,转换出的颜色个数
+  //输出:渐变数组
+  var rltA=new Array();
+  var rA=new Array();
+  var gA=new Array();
+  var bA=new Array();
+  var i;
+  var j;
+  var color_r, color_g, color_b;
+  var r1,g1,b1,r2,g2,b2;
+  var step_r, step_g, step_b;
+  var partcount=parseInt((count-1)/(colors.length-1));
+  var curI;
+  curI=0;
+
+  if (colors.length>count){
+  //如果颜色组比字数还要多
+    rltA[0]=colors[0];
+    for(i=1;i<count;i++){
+	  rltA[i]=colors[colors.length-count+i];
+	}
+	return (rltA);
+	//提前返回
+  }
+
+  for (i=0;i<colors.length;i++){
+    scolor=colors[i];
+	rA[i]=HexToNum(scolor.substring(0,2));
+	gA[i]=HexToNum(scolor.substring(2,4));
+	bA[i]=HexToNum(scolor.substring(4,6));
+  }
+  rltA[curI++]=colors[0];
+  //alert('count'+count);
+ // alert('rltA.length'+rltA.length);
+
+  for (i=0;i<colors.length-1;i++){
+ 	color_r=rA[i];
+	color_g=gA[i];
+	color_b=bA[i];
+ 	r1=rA[i];
+	g1=gA[i];
+	b1=bA[i];
+ 	r2=rA[i+1];
+	g2=gA[i+1];
+	b2=bA[i+1];
+    step_r=(r2-r1)/partcount;
+    step_g=(g2-g1)/partcount;
+    step_b=(b2-b1)/partcount;
+	//document.write('colors.length:'+colors.length+'<br>');
+	//document.write('partcount:'+partcount+'<br>');
+	//document.write('step_r:'+step_r+'<br>');
+	//document.write('step_g:'+step_g+'<br>');
+	//document.write('step_b:'+step_b+'<br>');
+	//cur_color=NumToHex(color_r)+''+NumToHex(color_g)+''+NumToHex(color_b);
+    for (j=0;j<partcount;j++){
+	  color_r+=step_r;
+	  color_g+=step_g;
+	  color_b+=step_b;
+	  cur_color=NumToHex(color_r)+''+NumToHex(color_g)+''+NumToHex(color_b);
+	  rltA[curI++]=cur_color;
+  //alert('rltA.length'+rltA.length);
+	//document.write('color_r:'+color_r+'<br>');
+	//document.write('color_g:'+color_g+'<br>');
+	//document.write('color_b:'+color_b+'<br>');
+	}
+  }
+
+  for (i=curI;i<count;i++){
+    rltA[i]=cur_color;
+  }
+
+  return (rltA);
+}
+
+
+function generate(action,str){
+	scolor=document.form1.start_color.value;
+	ecolor=document.form1.end_color.value;
+	r1=HexToNum(scolor.substring(0,2));
+	g1=HexToNum(scolor.substring(2,4));
+	b1=HexToNum(scolor.substring(4,6));
+	r2=HexToNum(ecolor.substring(0,2));
+	g2=HexToNum(ecolor.substring(2,4));
+	b2=HexToNum(ecolor.substring(4,6));
+	r_step=(r1-r2-((r1-r2)%str.length))/str.length;
+	g_step=(g1-g2-((g1-g2)%str.length))/str.length;
+	b_step=(b1-b2-((b1-b2)%str.length))/str.length;
+	if(r_step==0){r_step=3;}
+	if(g_step==0){g_step=3;}
+	if(b_step==0){b_step=3;}
+	var str2='';
+	r_color=r1;
+	g_color=g1;
+	b_color=b1;
+	for(var i=0;i<str.length;i++){
+		cur_str=str.substring(i,i+1);
+		r_color=r_color-r_step;
+		g_color=g_color-g_step;
+		b_color=b_color-b_step;
+		if(r_color>=255||r_color<0){r_color=r1;}
+		if(g_color>=255||g_color<0){g_color=g1;}
+		if(b_color>=255||b_color<0){b_color=b1;}
+		cur_color=NumToHex(r_color)+''+NumToHex(g_color)+''+NumToHex(b_color)
+		if(action=='html'){
+			if(cur_str=='\n'){
+				str2+='<br>';
+			}else{
+				str2+='<font color=#' +cur_color+ '>' + cur_str + '</font>';
+			}
+		}else{
+			str2+='[ftc=#' +cur_color+ ']'+cur_str+'[/ft]';
+		}
+	}
+	return str2;
+}
+
+function reset_form(){
+	document.form1.reset();
+	document.all.td_start.bgColor='#'+document.form1.start_color.value;
+	document.all.td_end.bgColor='#'+document.form1.end_color.value;
+	document.all.preview.innerHTML='';
+}
+
+function about(){
+	var about='<font color=blue><center><b>彩色日志编辑器</b><br><br><a href=http://24cm.cntarget=_blank>http://tool.baifan97.cn </a><br><br>工具箱</center></font>';
+	document.all.preview.innerHTML=about;
+
+}
+
+function copy_to_cb() {
+	if(document.form1.text2.value){
+		document.form1.text2.focus();
+		document.form1.text2.select();
+		therange=document.form1.text2.createTextRange();
+		therange.execCommand("Copy");
+		alert("OK 代码已经拷贝到你的剪贴板上了！\n\n请按Ctrl+V将其粘贴到适当的位置。");
+	}
+}
+
+
+function MakeNum(str) {
+	if((str >= 0) && (str <= 9)){
+		return str;
+	}
+	switch(str.toUpperCase()) {
+	case "A": return 10;
+	case "B": return 11;
+	case "C": return 12;
+	case "D": return 13;
+	case "E": return 14;
+	case "F": return 15;
+	}
+}
+
+function HexToNum(hex) {
+	tens = MakeNum(hex.substring(0,1));
+	ones = 0;
+	ones=MakeNum(hex.substring(1,2));
+	num = (tens * 16) + (ones * 1);
+	return num;
+}
+
+function NumToHex(strNum) {
+	var base,rem,baseS,remS;
+	var Num=parseInt(strNum);
+	base = Num / 16;
+	rem = Num % 16;
+	base = base - (rem / 16);
+	baseS = MakeHex(base);
+	remS = MakeHex(rem);
+	hex = baseS + '' + remS;
+	return hex;
+}
+
+function MakeHex(x) {
+	if((x >= 0) && (x <= 9)){
+		return x;
+	}else{
+		switch(x) {
+		case 10: return "A";
+		case 11: return "B";
+		case 12: return "C";
+		case 13: return "D";
+		case 14: return "E";
+		case 15: return "F";
+		  }
+	}
+}
+
+
+function MM_callJS(jsStr) { //v2.0
+  return eval(jsStr)
+}
+//-->
+
+function BeginMake(){
+  var colors=new Array();
+  var newcolors;
+  var text,mode;
+  var i;
+  var m;
+  var obj;
+  var rlt;
+  m=0;
+  for (i=1;i<=7;i++){
+    obj=eval('form1.fontcolor'+i);
+	if (obj.value!='null'){
+	  colors[m++]=obj.value.substr(2,6);
+	  //alert(colors[m-1]);
+	}
+  }
+  text=form1.inp_text.value;
+  mode=form1.inp_mode.value;
+  if (form1.inp_colormode.value==1){
+    newcolors=GetGradualColor(colors,text.length);
+  }else{
+    newcolors=GetRepeatColor(colors,text.length);
+  }
+  rlt=ColorSetInText(mode,newcolors,text);
+
+  if (form1.inp_colormode.value==1){
+    text_view.innerHTML=ColorSetInText("HTML",GetGradualColor(colors,text.length),text);
+  }else{
+    text_view.innerHTML=ColorSetInText("HTML",GetRepeatColor(colors,text.length),text);
+  }
+
+  form1.text_output.value=rlt;
+ // document.write(rlt);
+}
+
+
+function SetColor(count){
+  var i,j;
+  var obj;
+ 
+
+  for (i=1;i<=count;i++){
+	//document.all['form1.fontcolor'+i].value='';
+	//alert(document.all['colorDiv'+i].style);
+	document.all['colorDiv'+i].style.display='inline';
+	document.all['colorDiv'+i].style.backgroundColor='#000000';
+	document.all['fontcolor'+i].value='0x000000';
+  }
+  for (j=i;j<=7;j++){
+	//alert(document.all['fontcolor'+j]);
+	document.all['fontcolor'+j].value='null';
+	document.all['colorDiv'+j].style.display='none';
+  }
+}
+
+
+</script> 
+     <script>
+document.onLoad=SetColor(2);
+document.all['colorDiv1'].style.backgroundColor='#ff0000';
+document.all['fontcolor1'].value='0xff0000';
+document.all['colorDiv2'].style.backgroundColor='#66cc00';
+document.all['fontcolor2'].value='0x66cc00';
+</script> 
+    </div> 
+    <div class="pb10"> 
+    </div> 
+   </div>  
+   <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script> 
+   <!--main_end--> 
+   <div class="footer"> 
+    <div class="inner"> 
+     <div class="top clearfix"> 
+     </div> 
+     <div class="tool"> 
+      <ul> 
+      </ul> 
+     </div> 
+     <div class="info"> 
+      <ul> 
+      </ul> 
+     </div> 
+     <div class="sear"> 
+     </div> 
+    </div> 
+    <div class="bot clearfix"> 
+     <div class="div">
+       &copy; 2019 
+      <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+     </div> 
+    </div> 
+   </div> 
+  </div>  
+  <script type="text/javascript" src="/skins/pc/js/jquery.cookie.js"></script> 
+  <script type="text/javascript" src="/skins/pc/js/script.js"></script> 
+  <script type="text/javascript">
+	var city = $.cookie('city');
+	if (city) {
+		weather(city);
+	}else{
+		$.ajax({type: "get",url: "/api/city",dataType: "jsonp",jsonp: "callback",jsonpCallback:"flightHandler",
+		success: function(re) {
+			if (re != ''&&re != null) {
+				$.cookie('city', re, {
+					path: '/',
+					domain: '.24cm.cn',
+					expires: 600
+				});
+				weather(re);
+			}
+		}
+		});
+	}
+
+</script> 
+  <div class="couplet left"> 
+   <style type="text/css">
+	.couplet {position: fixed; z-index:9; top:150px;overflow: visible;width:100px;}
+	.couplet.left { left: 15px;}
+	.couplet.right { right: 15px;}
+	.couplet .btn {position:absolute;top:100%;left:0; width:100px;height:20px;line-height:20px;text-align: center;font-size:12px; cursor:pointer;color:#fff;background:#999999;padding: 0;margin: 0;border: none;border-radius: 0;}
+	.couplet .btn:hover { background-color:#a9a9a9}
+<style type="text/css">
+.zone5{position: fixed; z-index:9; right: 15px; bottom: 15px;overflow: visible;width:250px;}
+.zone5 .btn {position:absolute;top:-22px;right:0; width:40px;height:20px;line-height:20px;text-align: center;font-size:12px; cursor:pointer;color:#fff;background:#999999;padding: 0;margin: 0;border: none;border-radius: 0;}
+.zone5 .btn:hover { background-color:#a9a9a9}
+</style> 
+   <script type="text/javascript">
+    /*24CM PC图+ 创建于 2017/12/26*/
+    var cpro_id = "u2990880";
+</script> 
+   <script type="text/javascript" src="https://cpro.baidustatic.com/cpro/ui/i.js"></script>
+   <script>
+/*PC-总*/
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1c93b08a236fd3a29a5bc35d9eea56ca";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+   <script>
+/*PC-工*/
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1f0b1dc06c2219625cc60d3abd85f23f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script> 
+   <script src="/assets/abfc75c5/color.js"></script> 
+   <script src="/assets/192ba05e/yii.js"></script> 
+  </table> 
+   <div id="coin" class="coin">
+    <script>var Coin = true;</script>
+   </div> 
+   <style>
+	#right_bottom{width:179px;height:223px;position:fixed;bottom:0;right:0;}
+	#right_bottom img{width:100%;height:100%;border-radius:5px;}
+	#right_bottom #fuchuanga{ position: absolute;right: 0px;top: 0; background: rgba(0, 0, 0, 0.48); color: #FFF;font-size: 14px;padding: 5px 16px;text-decoration: none;border-radius: 4px;cursor: pointer;}
+	#right_bottom span{position: absolute;left: 10px;top: 10;font-size:13px;}
+</style> 
+   <div id="right_bottom"> 
+    <a rel="nofollow" href="http://www.weifenshi.com/index.php?r=l&u=399524" target="_blank"><img src="//inke.ren/111.png" width="197" height="223" title="" align="" alt="" /></a> 
+    <a id="fuchuanga" href="javaScript:void(0)">关闭</a> 
+   </div> 
+   <script>
+  </div>
+ </body>
+</html>

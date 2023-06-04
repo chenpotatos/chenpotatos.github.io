@@ -1,0 +1,50 @@
+﻿<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Code blast plugin for Codemirror</title>
+		<link rel="stylesheet" href="css/codemirror_1.css">
+		<link rel="stylesheet" href="css/monokai_1.css">
+
+		<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background: #222;
+		}
+
+		/* Codemirror */
+		.Codemirror {
+			width: 100%;
+			height: 100%;
+			font-size: 20px;
+		}
+
+		</style>
+	</head>
+
+	<body>
+
+	    <script src="js/codemirror_1.js"></script>
+	    <script src="js/closetag_1.js"></script>
+	    <script src="js/xml_1.js"></script>
+	    <script src="js/javascript_1.js"></script>
+	    <script src="js/css_1.js"></script>
+	    <script src="js/htmlmixed_1.js"></script>
+	    <script src="js/code-blast_1.js"></script>
+
+	    <script>
+		window.cm = CodeMirror(document.body, {
+			lineNumbers: true,
+			mode:  "htmlmixed",
+			theme: 'monokai',
+			lineWrapping: true,
+			autofocus: true,
+			tabSize: 2,
+			value: "<article>\n  <h1>Code blast plugin for Codmirror</h1>\n  <div class=\"based-on\">\n    Based on uixsj's experiment:\n    https://tecms.net/\n  </div>\n  \n  <div>\n\t   This is a very cool code effect.\n  </div>\n  \n</article>",
+			autoCloseTags: true,
+			blastCode: { effect: 2 },
+		});
+	    </script>
+
+	</body>
+</html>

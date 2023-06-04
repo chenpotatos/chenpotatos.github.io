@@ -1,0 +1,27 @@
+*{
+	outline: none;
+}
+.center{
+  min-width:800px;
+}
+.center h2{
+	text-align: center;height: 60px;line-height: 60px;border-bottom: 1px solid #ddd;
+}
+.fli{
+	color:#666;font-size: 16px;margin: 10px auto;width: 800px;
+}
+.fli .name{
+	font-size: 16px;margin: 10px auto;color:#1FBCB6;
+}
+.fli img{
+	max-width: 400px;
+}
+button{
+	border: 0;background: #1FBCB6;color:#fff;padding: 8px 15px;cursor: pointer;
+}
+textarea{
+	width: 100%;max-width: 100%;max-height: 500px;
+}
+button:hover{
+	background: #1B6D85;
+}

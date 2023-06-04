@@ -1,0 +1,63 @@
+*{
+	margin: 0;
+	padding: 0
+}
+[v-cloak]{
+    display: none;
+}
+html{
+	background: #f1f2f3;
+	width: 100%;
+	height: 100%;
+}
+.el-row {
+    margin-bottom: 20px;
+}
+.radiobox{
+	display: flex;
+	align-items: center;
+}
+.radiobox .label{
+	font-size: 14px;
+	color: #666;
+	margin-right: 10px;
+}
+.radiobox .el-radio{
+	margin-right: 20px;
+}
+.title{
+	width: 1140px;
+	margin:30px auto;
+}
+.ts{
+	overflow: hidden;
+	margin: 10px auto;
+	color: #999;
+	height: 50px;
+	line-height: 25px;
+	font-size: 13px;
+}
+.container{
+	width: 1140px;
+	margin:30px auto;
+	padding: 20px 10px;
+	box-sizing: border-box;
+	background: #FFFFFF;
+}
+.moretext h3{
+	margin-bottom: 5px;
+	color: #333;	
+}
+.moretext .tit{
+	margin-top: 10px;
+	color: #333;
+	font-weight: bold;
+}
+.moretext p{
+	color: #666;
+	line-height: 24px;
+	margin-bottom: 5px;
+}
+.el-table__empty-block{
+	height: auto !important;	
+}
