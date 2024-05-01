@@ -1,5 +1,5 @@
 # 某人的小站
-想要加入DEV计划的直接加入DEV-Plan BETA分支就可以了
+想要加入DEV计划的直接加入DEV-Plan BETA分支就可以了。
 # 全新的扩展！（附源码）
 [Potato iTab.zip](https://github.com/chenpotatos/chenpotatos.github.io/files/10145940/Potato.iTab.zip)
 [1.3.21_0.zip](https://github.com/chenpotatos/chenpotatos.github.io/files/10145943/1.3.21_0.zip)
